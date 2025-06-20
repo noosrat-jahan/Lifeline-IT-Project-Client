@@ -1,47 +1,3 @@
-# LifeLine IT Institute 🚀
-
-<!--
-_Developed by — Proxima IT_
-
-_Designer_: Hasan Mondol
-_FrontEnd Developer_: Noosrat Jahan Meem
-_Backend Developer_: Ettisaf Rup
--->
-
-## Backend APIs
-
-_🔴 /api/auth:_
-
-- /otp-verify — Otp Verification
-- /register — Registering User After Verification
-- /login — User Login
-
-_🔴 /api/courses:_
-
-- / — Get all Courses
-
-_🔴 /api/admin:_
-\_\_ ADMIN APIs
-
-#
-
-_🔷 Students:_
-
-- /student/list — Get All Students
-- /student/create — Add Student
-- /student/delete/:id — Delete Student with Id Param
-
-_🔷 Courses_
-
-- /course/add — Add a new Course
-- /course/delete — Add a new Course
-- /course/edit — Add a new Course
-- /course/add — Add a new Course
-
-## 📁 Project Structure
-
-```text
-
 📁 Application Structure:
 
 .
@@ -90,5 +46,3 @@ _🔷 Courses_
 │   │   ├── Router.jsx
 ├── tailwind.config.js
 ├── vite.config.js
-
-```
