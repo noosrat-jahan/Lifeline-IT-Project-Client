@@ -18,9 +18,9 @@ import { Link } from "react-router-dom";
 const Header = () => {
   const [enabled, setEnabled] = React.useState(false);
   return (
-    <div className="p-4 flex items-start justify-around shadow-xl">
+    <div className="p-3 flex items-start justify-around shadow-xl">
       {/* logo */}
-      <div className=" w-4/12">
+      <div className=" w-3/12">
         <img src={logo} alt="" className="w-full" />
       </div>
       <div className="flex flex-col items-center gap-5">
