@@ -54,6 +54,7 @@ module.exports = {
         ring: "hsl(var(--ring))",
         heading: "hsl(var(--heading))",
         button: "hsl(var(--button))",
+        gold: "hsl(var(--gold))",
         chart: {
           1: "hsl(var(--chart-1))",
           2: "hsl(var(--chart-2))",

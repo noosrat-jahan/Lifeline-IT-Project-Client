@@ -5,6 +5,7 @@ import HomePage from '@/pages/Homepage/HomePage';
 import AboutPage from '@/pages/Aboutpage/AboutPage';
 import ContactPage from '@/pages/Contactpage/ContactPage';
 import LoginPage from '@/pages/Loginpage/LoginPage';
+import OurCourses from '@/pages/OurCourses/OurCourses';
 
 const Router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const Router = createBrowserRouter([
       {
         path: "/",
         element: <HomePage></HomePage>
+      },
+      {
+        path: "/our-courses",
+        element: <OurCourses></OurCourses>
       },
       {
         path: "/about",

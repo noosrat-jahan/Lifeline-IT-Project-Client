@@ -29,9 +29,7 @@ const Hero = () => {
               Courses <FaArrowRight />
             </button>
             <button
-              className="flex items-center gap-2 font-medium text-[17px] px-6 py-3 text-white bg-gradient-to-t from-[#4D36D0] to-[#bc7115] 
-             rounded-full border-none shadow-[0_0.7em_1.5em_-0.5em_#4d36d0be] tracking-wide transition-all 
-             hover:shadow-[0_0.5em_1.5em_-0.5em_#4d36d0be] active:shadow-[0_0.3em_1em_-0.5em_#4d36d0be]"
+              className="text-white text-center  flex items-center gap-3 px-[40px] py-[10px] rounded-full shadow-[0_0_20px_#eee] bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-500 hover:bg-[position:right_center] "
             >
               Sign Up <FaArrowRight />
             </button>

@@ -5,7 +5,7 @@ import { Outlet } from 'react-router-dom';
 const MainLayout = () => {
     return (
         <div className=' '>
-            <div className='bg-button w-full p-2 text-secondary'>
+            <div className='bg-gold w-full p-2 text-secondary'>
                 🚀Boost Your Skills with 90% OFF🔥 WhatsApp us: 📱 +8801866725093 | +8801705725296
             </div>
             <Header></Header>

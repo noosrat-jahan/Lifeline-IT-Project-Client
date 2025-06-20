@@ -40,3 +40,31 @@
 .read-the-docs {
   color: #888;
 }
+
+.background-image {
+  position: relative;
+  min-height: 500px; /* বা যত height দরকার */
+  background-image: url('./assets/team.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* এইটা ensure করে ::before ভিতরেই থাকে */
+}
+
+/* Overlay */
+.background-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Transparent black */
+  z-index: 1;
+}
+
+/* Overlay এর উপর content রাখার জন্য */
+.background-image > * {
+  position: relative;
+  z-index: 2;
+}

@@ -14,8 +14,8 @@ import { ListItem } from "@mui/material";
 const Navbar = () => {
   return (
     <div>
-      <NavigationMenu viewport={false}>
-        <NavigationMenuList className="gap-4">
+      <NavigationMenu >
+        <NavigationMenuList className="gap-6">
           <NavigationMenuItem>
             <NavigationMenuLink
               asChild
@@ -29,23 +29,23 @@ const Navbar = () => {
               asChild
               className={navigationMenuTriggerStyle()}
             >
-              <Link to="/">Courses</Link>
+              <Link to="/our-courses">Courses</Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
 
-          <NavigationMenuItem>
+          <NavigationMenuItem >
             <NavigationMenuTrigger>Students</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="grid gap-2 md:w-[100px] lg:w-[200px] lg:grid-cols-[.75fr_1fr]">
+            <NavigationMenuContent side="bottom" align="start" sideOffset={8}>
+              <ul className="grid gap-2 md:w-[100px] lg:w-[200px] ">
                 <li className="flex flex-col items-start p-4 gap-4">
                   <NavigationMenuLink asChild>
-                    <Link to="#">SSC</Link>
+                    <Link to="#">Freelancer Story</Link>
                   </NavigationMenuLink>
                   <NavigationMenuLink asChild>
-                    <Link to="#">HSC</Link>
+                    <Link to="#">Success Story</Link>
                   </NavigationMenuLink>
                   <NavigationMenuLink asChild>
-                    <Link to="#">University</Link>
+                    <Link to="#">Student Reviews</Link>
                   </NavigationMenuLink>
                 </li>
               </ul>
@@ -57,7 +57,7 @@ const Navbar = () => {
               asChild
               className={navigationMenuTriggerStyle()}
             >
-              <Link to="/about">About</Link>
+              <Link to="/about">About Us</Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
 
