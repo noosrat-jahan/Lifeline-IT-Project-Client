@@ -39,13 +39,13 @@ const Navbar = () => {
               <ul className="grid gap-2 md:w-[100px] lg:w-[200px] ">
                 <li className="flex flex-col items-start p-4 gap-4">
                   <NavigationMenuLink asChild>
-                    <Link to="/certificate-verify">Freelancer Story</Link>
+                    <Link to="#">Freelancer Story</Link>
                   </NavigationMenuLink>
                   <NavigationMenuLink asChild>
-                    <Link to="/success-story">Success Story</Link>
+                    <Link to="#">Success Story</Link>
                   </NavigationMenuLink>
                   <NavigationMenuLink asChild>
-                    <Link to="/student-review">Student Reviews</Link>
+                    <Link to="#">Student Reviews</Link>
                   </NavigationMenuLink>
                 </li>
               </ul>
@@ -78,7 +78,7 @@ const Navbar = () => {
 export default Navbar;
 
 
-// // demo
+// demo
 // import React from "react";
 // import {
 //   NavigationMenu,
@@ -93,23 +93,25 @@ export default Navbar;
 
 // const Navbar = ({ vertical = false }) => {
 //   return (
-//     <NavigationMenu>
-//       <NavigationMenuList
-//         className={`gap-6 ${
-//           vertical ? "flex flex-col space-y-4" : "flex flex-row"
-//         }`}
-//       >
-//         <NavigationMenuItem>
-//           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-//             <Link to="/">Home</Link>
-//           </NavigationMenuLink>
-//         </NavigationMenuItem>
-
-//         <NavigationMenuItem>
-//           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-//             <Link to="/our-courses">Courses</Link>
-//           </NavigationMenuLink>
-//         </NavigationMenuItem>
+//     <div>
+//       <NavigationMenu >
+//         <NavigationMenuList className="gap-6">
+//           <NavigationMenuItem>
+//             <NavigationMenuLink
+//               asChild
+//               className={navigationMenuTriggerStyle()}
+//             >
+//               <Link to="/">Home</Link>
+//             </NavigationMenuLink>
+//           </NavigationMenuItem>
+//           <NavigationMenuItem>
+//             <NavigationMenuLink
+//               asChild
+//               className={navigationMenuTriggerStyle()}
+//             >
+//               <Link to="/our-courses">Courses</Link>
+//             </NavigationMenuLink>
+//           </NavigationMenuItem>
 
 //         <NavigationMenuItem>
 //           <NavigationMenuTrigger>Students</NavigationMenuTrigger>
@@ -134,11 +136,14 @@ export default Navbar;
 //           </NavigationMenuContent>
 //         </NavigationMenuItem>
 
-//         <NavigationMenuItem>
-//           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-//             <Link to="/about">About Us</Link>
-//           </NavigationMenuLink>
-//         </NavigationMenuItem>
+//           <NavigationMenuItem>
+//             <NavigationMenuLink
+//               asChild
+//               className={navigationMenuTriggerStyle()}
+//             >
+//               <Link to="/about">About Us</Link>
+//             </NavigationMenuLink>
+//           </NavigationMenuItem>
 
 //         <NavigationMenuItem>
 //           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
