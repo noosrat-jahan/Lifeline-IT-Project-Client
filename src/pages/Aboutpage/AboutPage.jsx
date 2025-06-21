@@ -1,5 +1,6 @@
-import React from "react";
-import about from "../../assets/about.jpg";
+import React from "react"
+import mission from "../../assets/mission.jpg"
+import vision from "../../assets/vision.jpg"
 const AboutPage = () => {
   return (
     <div className="pb-10">
@@ -16,7 +17,7 @@ const AboutPage = () => {
       <div className="mt-14 w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
         <div className="">
           <img
-            src={about}
+            src={mission}
             alt=""
             className="rounded-xl border border-gray-100"
           />
@@ -46,11 +47,9 @@ const AboutPage = () => {
         </div>
       </div>
 
+      {/* our vision  */}
 
-      {/* our vission  */}
-
-       <div className="mt-14 w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
-        
+      <div className="mt-14 w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
         <div className="flex flex-col items-start gap-5 text-left">
           <button className="rounded-full bg-gold/50 px-5 py-1.5 border border-gold">
             HOW WE WORK
@@ -77,14 +76,14 @@ const AboutPage = () => {
 
         <div className="">
           <img
-            src={about}
+            src={vision}
             alt=""
             className="rounded-xl border border-gray-100"
           />
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default AboutPage;
+export default AboutPage
