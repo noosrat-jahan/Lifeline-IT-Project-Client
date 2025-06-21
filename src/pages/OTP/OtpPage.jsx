@@ -1,7 +1,27 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from "react"
+import { Link } from "react-router-dom"
 
 const OtpPage = () => {
+  const handleOTP = async (e) => {
+    e.preventDefault()
+    const form = e.target
+    const email = form.email.value
+
+    console.log(email)
+
+    try {
+      const request = await axios.post(
+        "http://localhost:5000/api/auth/otp-verify",
+        { email }
+      )
+      console.log(request.data)
+      navigate("/otppage")
+    } catch (error) {
+      console.error("Axios Error:", error.response?.data || error.message)
+      alert("Registration failed! Check console for details.")
+    }
+  }
+
   return (
     <div
       className="font-sans bg-gradient-to-br from-[#78A6D9] to-[#DEAE40] flex items-center justify-center h-screen m-0
@@ -86,7 +106,7 @@ const OtpPage = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default OtpPage;
+export default OtpPage

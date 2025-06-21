@@ -1,19 +1,28 @@
-import React from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { Checkbox } from "@mui/material";
-import axios from "axios";
+import React from "react"
+import { Link, useNavigate } from "react-router-dom"
+import { Checkbox } from "@mui/material"
+import axios from "axios"
 
 const RegisterPage = () => {
-
   const navigate = useNavigate()
-  const handleRegister = (e)=>{
+  const handleRegister = async (e) => {
     e.preventDefault()
-    const form = e.target 
-    const email = form.email.value 
+    const form = e.target
+    const email = form.email.value
+
     console.log(email)
-    axios.post('https://lifelineit-back.onrender.com/api/auth/otp-verify', email)
-    .then(res=>console.log(res.data))
-    navigate('/otppage')
+
+    try {
+      const request = await axios.post(
+        "http://localhost:5000/api/auth/otp-verify",
+        { email }
+      )
+      console.log(request.data)
+      navigate("/otppage")
+    } catch (error) {
+      console.error("Axios Error:", error.response?.data || error.message)
+      alert("Registration failed! Check console for details.")
+    }
   }
   return (
     <div className="min-h-screen flex items-center justify-center bg-[linear-gradient(135deg,_#dbeafe_0%,_#e0e7ff_100%)] font-sans p-4">
@@ -50,8 +59,8 @@ const RegisterPage = () => {
               <label
                 htmlFor="name"
                 className="
-                    absolute left-4 text-gray-400 pointer-events-none transition-all duration-300 ease-in-out 
-                    top-1/2 -translate-y-1/2 text-base 
+                    absolute left-4 text-gray-400 pointer-events-none transition-all duration-300 ease-in-out
+                    top-1/2 -translate-y-1/2 text-base
                     peer-placeholder-shown:top-1/2
                     peer-placeholder-shown:text-base
                     peer-focus:top-2
@@ -99,8 +108,8 @@ const RegisterPage = () => {
               <label
                 htmlFor="email"
                 className="
-                    absolute left-4 text-gray-400 pointer-events-none transition-all duration-300 ease-in-out 
-                    top-1/2 -translate-y-1/2 text-base 
+                    absolute left-4 text-gray-400 pointer-events-none transition-all duration-300 ease-in-out
+                    top-1/2 -translate-y-1/2 text-base
                     peer-placeholder-shown:top-1/2
                     peer-placeholder-shown:text-base
                     peer-focus:top-2
@@ -147,8 +156,8 @@ const RegisterPage = () => {
               <label
                 htmlFor="phone"
                 className="
-                    absolute left-4 text-gray-400 pointer-events-none transition-all duration-300 ease-in-out 
-                    top-1/2 -translate-y-1/2 text-base 
+                    absolute left-4 text-gray-400 pointer-events-none transition-all duration-300 ease-in-out
+                    top-1/2 -translate-y-1/2 text-base
                     peer-placeholder-shown:top-1/2
                     peer-placeholder-shown:text-base
                     peer-focus:top-2
@@ -196,8 +205,8 @@ const RegisterPage = () => {
               <label
                 htmlFor="password"
                 className="
-                    absolute left-4 text-gray-400 pointer-events-none transition-all duration-300 ease-in-out 
-                    top-1/2 -translate-y-1/2 text-base 
+                    absolute left-4 text-gray-400 pointer-events-none transition-all duration-300 ease-in-out
+                    top-1/2 -translate-y-1/2 text-base
                     peer-placeholder-shown:top-1/2
                     peer-placeholder-shown:text-base
                     peer-focus:top-2
@@ -259,7 +268,7 @@ const RegisterPage = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default RegisterPage;
+export default RegisterPage
