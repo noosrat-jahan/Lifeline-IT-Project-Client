@@ -1,7 +1,7 @@
-import React from "react";
-import '../../Footer.css'
-import { Link } from "react-router-dom";
-import mainlogo from '../../assets/mainlogo.png'
+import React from "react"
+import "../../Footer.css"
+import { Link } from "react-router-dom"
+import mainlogo from "../../assets/mainlogo.png"
 const Footer = () => {
   return (
     <div>
@@ -95,9 +95,10 @@ const Footer = () => {
 
           <div class="copyright">
             <p>
-              &copy;
+              2025 &copy;
               <script>document.write(new Date().getFullYear());</script>
-              All rights reserved | <Link to="#">Company name</Link>
+              All rights reserved |{" "}
+              <Link to="#">LifeLine IT Training Institue</Link>
             </p>
           </div>
         </div>
@@ -109,7 +110,7 @@ const Footer = () => {
         </Link>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
