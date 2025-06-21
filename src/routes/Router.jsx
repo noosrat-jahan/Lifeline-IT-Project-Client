@@ -12,6 +12,7 @@ import OtpPage from "@/pages/OTP/OtpPage";
 import SuccessStory from "@/pages/SuccessStory/SuccessStory";
 import StudentReview from "@/pages/StudentReview/StudentReview";
 import CertificateVerify from "@/pages/CertificateVerify/CertificateVerify";
+import CourseDetails from "@/pages/CourseDetails/CourseDetails";
 
 const Router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const Router = createBrowserRouter([
       {
         path: "/student-review",
         element: <StudentReview></StudentReview>,
+      },
+      {
+        path: "/course-details",
+        element: <CourseDetails></CourseDetails>,
       },
 
       {

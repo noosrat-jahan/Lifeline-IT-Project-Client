@@ -10,7 +10,7 @@ const Hero = () => {
       </div> */}
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 text-left">
-        <div className="flex flex-col items-start gap-3">
+        <div className="flex flex-col items-start gap-8">
           <h1 className="text-primary text-5xl font-bold">
             One of the Best IT <br /> Training Institute <br /> In Bangladesh
           </h1>

@@ -2,14 +2,22 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Star } from "lucide-react";
 import { FaArrowRight } from "react-icons/fa6";
-import feature from "../../../assets/feature.jpg"
+import feature from "../../../assets/feature.jpg";
+import course1 from "../../../assets/course1.jpg";
 const FeaturedCouses = () => {
+  const handleClick = () => {
+    // navigate("/our-courses");
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 100); // delay to ensure page loads
+  };
   return (
     <div>
       <div className="flex justify-between pt-5">
         <h1 className="text-4xl font-bold">Featured Courses</h1>
         <Link to="/our-courses">
           <button
+            onClick={handleClick}
             className="
                 flex items-center gap-2 font-medium
                 text-sm sm:text-base lg:text-lg
@@ -34,111 +42,73 @@ const FeaturedCouses = () => {
         </Link>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-10">
-        <div className="bg-white rounded-xl shadow-md border border-gold p-4 flex flex-col sm:flex-row gap-4  ">
-          {/* Left: Image */}
-          <div className="w-full sm:w-1/3">
-            <img
-              src={feature} // Replace with your image path
-              alt="AI Bootcamp"
-              className="w-full h-full object-cover rounded-lg"
-            />
-          </div>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-10">
+        <div className="max-w-sm rounded-xl overflow-hidden shadow-md bg-white relative border border-[#f09619e2] hover:shadow-lg hover:scale-[1.02] transition duration-300 cursor-pointer">
+          {/* Gradient top border */}
+          <div className="h-2 bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819]"></div>
 
-          {/* Right: Content */}
-          <div className="flex flex-col justify-between w-full">
-            {/* Title and rating */}
-            <div>
-              <div className="flex items-center gap-1 text-yellow-500 mb-1">
-                {Array(5)
-                  .fill(0)
-                  .map((_, i) => (
-                    <Star key={i} size={16} fill="#facc15" stroke="none" />
-                  ))}
-                <span className="text-sm text-gray-600 ml-1">(14 Reviews)</span>
-              </div>
+          {/* Course image */}
+          <img
+            src={course1}
+            alt="Course"
+            className="w-full h-48 object-cover"
+          />
 
-              <h3 className="text-xl font-bold text-blue-700">
-                AI Content Creation Bootcamp
-              </h3>
+          <div className="p-5 space-y-3">
+            <h2 className="text-xl font-semibold text-gray-800 group-hover:text-[#F09819] transition">
+              Full Stack Web Development
+            </h2>
+            <p className="text-gray-600 text-sm">
+              Learn MERN stack from scratch and build real-world projects with
+              hands-on guidance.
+            </p>
 
-              <div className="flex items-center text-gray-600 text-sm mt-2 gap-4">
-                <span>📁 5 Classes</span>
-                <span>⏱ 10 Hours +</span>
-              </div>
-
-              <p className="mt-2 text-gray-700 text-sm leading-relaxed">
-                AI প্রযুক্তি ব্যবহার করে দক্ষভাবে আকর্ষণীয় কনটেন্ট তৈরি করুন।
-                এসইও-ফ্রেন্ডলি, ডিজিটাল এবং অটোমেটেড ক্যাম্পেইন তৈরির মাধ্যমে
-                আপনার স্ট্রাটেজি শক্ত ...
-              </p>
+            {/* Extra info */}
+            <div className="flex justify-between text-sm text-gray-500 pt-2">
+              <span>Duration: 3 Months</span>
+              <span>৳ 5,000</span>
             </div>
 
-            {/* Price and Button */}
-            <div className="flex items-center justify-between mt-4">
-              <div className="text-lg font-semibold text-gray-800">
-                <span className="line-through text-gray-400 mr-2">
-                  ৳10000.00
-                </span>
-                <span className="text-black font-bold">৳999.00</span>
-              </div>
-              <button className="text-blue-600 hover:underline text-sm">
-                Learn More →
+            {/* Button */}
+            <Link to="/course-details">
+              <button className="text-white mt-4 w-full text-center uppercase px-[25px] py-[10px] rounded-[10px] shadow-[0_0_20px_#eee] bg-gradient-to-r from-[#FF8008] via-[#FFC837] to-[#FF8008] bg-[length:200%_auto] transition-all duration-500 hover:bg-[position:right_center] block">
+                Enroll Now
               </button>
-            </div>
+            </Link>
           </div>
         </div>
-        <div className="bg-white rounded-xl shadow-md border border-gold p-4 flex flex-col sm:flex-row gap-4  ">
-          {/* Left: Image */}
-          <div className="w-full sm:w-1/3">
-            <img
-              src={feature} // Replace with your image path
-              alt="AI Bootcamp"
-              className="w-full h-full object-cover rounded-lg"
-            />
-          </div>
+        <div className="max-w-sm rounded-xl overflow-hidden shadow-md bg-white relative border border-[#f09619e2] hover:shadow-lg hover:scale-[1.02] transition duration-300 cursor-pointer">
+          {/* Gradient top border */}
+          <div className="h-2 bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819]"></div>
 
-          {/* Right: Content */}
-          <div className="flex flex-col justify-between w-full">
-            {/* Title and rating */}
-            <div>
-              <div className="flex items-center gap-1 text-yellow-500 mb-1">
-                {Array(5)
-                  .fill(0)
-                  .map((_, i) => (
-                    <Star key={i} size={16} fill="#facc15" stroke="none" />
-                  ))}
-                <span className="text-sm text-gray-600 ml-1">(14 Reviews)</span>
-              </div>
+          {/* Course image */}
+          <img
+            src={course1}
+            alt="Course"
+            className="w-full h-48 object-cover"
+          />
 
-              <h3 className="text-xl font-bold text-blue-700">
-                AI Content Creation Bootcamp
-              </h3>
+          <div className="p-5 space-y-3">
+            <h2 className="text-xl font-semibold text-gray-800 group-hover:text-[#F09819] transition">
+              Full Stack Web Development
+            </h2>
+            <p className="text-gray-600 text-sm">
+              Learn MERN stack from scratch and build real-world projects with
+              hands-on guidance.
+            </p>
 
-              <div className="flex items-center text-gray-600 text-sm mt-2 gap-4">
-                <span>📁 5 Classes</span>
-                <span>⏱ 10 Hours +</span>
-              </div>
-
-              <p className="mt-2 text-gray-700 text-sm leading-relaxed">
-                AI প্রযুক্তি ব্যবহার করে দক্ষভাবে আকর্ষণীয় কনটেন্ট তৈরি করুন।
-                এসইও-ফ্রেন্ডলি, ডিজিটাল এবং অটোমেটেড ক্যাম্পেইন তৈরির মাধ্যমে
-                আপনার স্ট্রাটেজি শক্ত ...
-              </p>
+            {/* Extra info */}
+            <div className="flex justify-between text-sm text-gray-500 pt-2">
+              <span>Duration: 3 Months</span>
+              <span>৳ 5,000</span>
             </div>
 
-            {/* Price and Button */}
-            <div className="flex items-center justify-between mt-4">
-              <div className="text-lg font-semibold text-gray-800">
-                <span className="line-through text-gray-400 mr-2">
-                  ৳10000.00
-                </span>
-                <span className="text-black font-bold">৳999.00</span>
-              </div>
-              <button className="text-blue-600 hover:underline text-sm">
-                Learn More →
+            {/* Button */}
+            <Link to="/course-details">
+              <button className="text-white mt-4 w-full text-center uppercase px-[25px] py-[10px] rounded-[10px] shadow-[0_0_20px_#eee] bg-gradient-to-r from-[#FF8008] via-[#FFC837] to-[#FF8008] bg-[length:200%_auto] transition-all duration-500 hover:bg-[position:right_center] block">
+                Enroll Now
               </button>
-            </div>
+            </Link>
           </div>
         </div>
       </div>

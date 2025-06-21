@@ -1,5 +1,6 @@
-import React from "react"
-import course1 from "../../assets/course1.jpg"
+import React from "react";
+import course1 from "../../assets/course1.jpg";
+import { Link } from "react-router-dom";
 // import { motion } from "framer-motion"
 
 const OurCourses = () => {
@@ -44,9 +45,11 @@ const OurCourses = () => {
               </div>
 
               {/* Button */}
-              <button className="text-white w-full text-center uppercase px-[25px] py-[10px] rounded-[10px] shadow-[0_0_20px_#eee] bg-gradient-to-r from-[#FF8008] via-[#FFC837] to-[#FF8008] bg-[length:200%_auto] transition-all duration-500 hover:bg-[position:right_center] block">
-                Enroll Now
-              </button>
+              <Link to="/course-details">
+                <button  className="text-white mt-4 w-full text-center uppercase px-[25px] py-[10px] rounded-[10px] shadow-[0_0_20px_#eee] bg-gradient-to-r from-[#FF8008] via-[#FFC837] to-[#FF8008] bg-[length:200%_auto] transition-all duration-500 hover:bg-[position:right_center] block">
+                  Enroll Now
+                </button>
+              </Link>
             </div>
           </div>
           <div
@@ -79,9 +82,11 @@ const OurCourses = () => {
               </div>
 
               {/* Button */}
-              <button className="text-white w-full text-center uppercase px-[25px] py-[10px] rounded-[10px] shadow-[0_0_20px_#eee] bg-gradient-to-r from-[#FF8008] via-[#FFC837] to-[#FF8008] bg-[length:200%_auto] transition-all duration-500 hover:bg-[position:right_center] block">
-                Enroll Now
-              </button>
+              <Link to="/course-details">
+                <button  className="text-white mt-4 w-full text-center uppercase px-[25px] py-[10px] rounded-[10px] shadow-[0_0_20px_#eee] bg-gradient-to-r from-[#FF8008] via-[#FFC837] to-[#FF8008] bg-[length:200%_auto] transition-all duration-500 hover:bg-[position:right_center] block">
+                  Enroll Now
+                </button>
+              </Link>
             </div>
           </div>
           <div
@@ -115,15 +120,17 @@ const OurCourses = () => {
 
               {/* Button */}
 
-              <button className="text-white w-full text-center uppercase px-[25px] py-[10px] rounded-[10px] shadow-[0_0_20px_#eee] bg-gradient-to-r from-[#FF8008] via-[#FFC837] to-[#FF8008] bg-[length:200%_auto] transition-all duration-500 hover:bg-[position:right_center] block">
-                Enroll Now
-              </button>
+              <Link to="/course-details">
+                <button  className="text-white mt-4 w-full text-center uppercase px-[25px] py-[10px] rounded-[10px] shadow-[0_0_20px_#eee] bg-gradient-to-r from-[#FF8008] via-[#FFC837] to-[#FF8008] bg-[length:200%_auto] transition-all duration-500 hover:bg-[position:right_center] block">
+                  Enroll Now
+                </button>
+              </Link>
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default OurCourses
+export default OurCourses;

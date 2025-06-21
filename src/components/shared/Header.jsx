@@ -18,20 +18,33 @@ import { Link } from "react-router-dom";
 const Header = () => {
   const [enabled, setEnabled] = React.useState(false);
   return (
-    <div className="p-3 flex items-start justify-around shadow-xl">
+    <div className="p-3 flex items-start justify-around  shadow-xl">
       {/* logo */}
       <div className=" w-3/12">
         <img src={logo} alt="" className="w-full" />
       </div>
-      <div className="flex flex-col items-center gap-5">
+      <div className="flex lg:flex-col items-center lg:gap-5">
         <div className="flex items-center justify-around gap-4">
-          <div className="text-primary bg-secondary rounded-sm p-2 text-lg">
+          <div className="text-primary bg-secondary rounded-sm p-2 text-lg hidden lg:block">
             <HiAdjustments />
           </div>
 
           {/* search bar  */}
 
-          <Paper
+          {/* Search icon for mobile */}
+           <div className="lg:hidden flex items-center gap-2">
+             <IconButton
+              sx={{ p: "10px" }}
+              aria-label="search"
+              onClick={() => setMobileSearchOpen(!mobileSearchOpen)}
+            >
+              <SearchIcon />
+            </IconButton>
+          </div>
+
+          {/* Search bar */}
+         <div className="hidden lg:flex items-center justify-center flex-1">
+           <Paper
             component="form"
             sx={{
               p: "2px 4px",
@@ -52,6 +65,29 @@ const Header = () => {
               <SearchIcon />
             </IconButton>
           </Paper>
+        </div>
+
+          {/* <Paper
+            component="form"
+            sx={{
+              p: "2px 4px",
+              display: "flex",
+              alignItems: "center",
+              width: 300,
+            }}
+          >
+            <IconButton sx={{ p: "10px" }} aria-label="menu">
+              <MenuIcon />
+            </IconButton>
+            <InputBase
+              sx={{ ml: 1, flex: 1 }}
+              placeholder="Search here..."
+              inputProps={{ "aria-label": "Search here..." }}
+            />
+            <IconButton type="button" sx={{ p: "10px" }} aria-label="search">
+              <SearchIcon />
+            </IconButton>
+          </Paper> */}
 
           <Link to="/login">
             <button className="text-white text-center uppercase px-[25px] py-[10px] rounded-[10px] shadow-[0_0_20px_#eee] bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-500 hover:bg-[position:right_center] block">
@@ -60,13 +96,13 @@ const Header = () => {
           </Link>
 
           <Link to="/">
-            <button className="btn-grad text-white text-center uppercase px-[35px] py-[12px] rounded-[10px] shadow-[0_0_20px_#eee] bg-gradient-to-r from-[#1FA2FF] via-[#1fc6e3] to-[#2b96e2] bg-[length:200%_auto] transition-all duration-500 hover:bg-[position:right_center]">
+            <button className="hidden lg:block btn-grad  text-white text-center uppercase px-[35px] py-[12px] rounded-[10px] shadow-[0_0_20px_#eee] bg-gradient-to-r from-[#1FA2FF] via-[#1fc6e3] to-[#2b96e2] bg-[length:200%_auto] transition-all duration-500 hover:bg-[position:right_center]">
               Our Success Story
             </button>
           </Link>
 
           {/* language select  */}
-          <div className="flex items-center  rounded-full p-1 w-24 select-none">
+          <div className="lg:flex items-center hidden  rounded-full p-1 w-24 select-none">
             {/* EN text, active hole white, inactive hole gray */}
             <span
               className={`text-xs font-semibold mr-1  z-10 ${
