@@ -44,7 +44,7 @@
 .background-image {
   position: relative;
   min-height: 500px; /* বা যত height দরকার */
-  background-image: url('./assets/team.jpg');
+  background-image: url("./assets/team.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

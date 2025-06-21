@@ -82,3 +82,17 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Contact Page Animations */
+@keyframes shine {
+  0% {
+    transform: translate(150%, 150%) rotate(45deg);
+  }
+  100% {
+    transform: translate(-150%, -150%) rotate(45deg);
+  }
+}
+
+.animate-shine {
+  animation: shine 1s ease-in-out forwards;
+}
