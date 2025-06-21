@@ -6,6 +6,9 @@ import AboutPage from '@/pages/Aboutpage/AboutPage';
 import ContactPage from '@/pages/Contactpage/ContactPage';
 import LoginPage from '@/pages/Loginpage/LoginPage';
 import OurCourses from '@/pages/OurCourses/OurCourses';
+import RegisterPage from '@/pages/Registerpage/RegisterPage';
+import ForgotPassword from '@/pages/ForgotPassword/ForgotPassword';
+import OtpPage from '@/pages/OTP/OtpPage';
 
 const Router = createBrowserRouter([
   {
@@ -31,6 +34,18 @@ const Router = createBrowserRouter([
       {
         path: "/login",
         element: <LoginPage></LoginPage>
+      },
+      {
+        path: "/forgot-password",
+        element: <ForgotPassword></ForgotPassword>
+      },
+      {
+        path: "/otppage",
+        element: <OtpPage></OtpPage>
+      },
+      {
+        path: "/register",
+        element: <RegisterPage></RegisterPage>
       }
     ]
   },

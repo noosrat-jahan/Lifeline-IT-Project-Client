@@ -2,9 +2,9 @@ import React from "react";
 import about from "../../assets/about.jpg";
 const AboutPage = () => {
   return (
-    <div>
+    <div className="pb-10">
       {/* hero  */}
-      <div className="background-image w-full ">
+      <div className="background-image w-full">
         <h1 className="text-secondary lg:text-5xl font-semibold">
           Take Challenge for Build Your Life. <br /> The World Most Lessons for
           Back to Your Life.

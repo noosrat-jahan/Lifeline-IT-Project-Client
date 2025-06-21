@@ -22,14 +22,43 @@ const Hero = () => {
 
           <div className="flex gap-5">
             <button
-              className="flex items-center gap-2 font-medium text-[17px] px-6 py-3 text-white bg-gradient-to-t from-[#4D36D0] to-[#8474FE] 
-             rounded-full border-none shadow-[0_0.7em_1.5em_-0.5em_#4d36d0be] tracking-wide transition-all 
-             hover:shadow-[0_0.5em_1.5em_-0.5em_#4d36d0be] active:shadow-[0_0.3em_1em_-0.5em_#4d36d0be] scale-95"
+              className="
+                flex items-center gap-2 font-medium
+                text-sm sm:text-base lg:text-lg
+                px-4 sm:px-6 lg:px-8
+                py-2 sm:py-3
+                text-white
+                bg-gradient-to-t from-[#4D36D0] to-[#8474FE]
+                rounded-full
+                border-none
+                shadow-[0_0.7em_1.5em_-0.5em_#4d36d0be]
+                tracking-wide
+                transition
+                duration-300
+                hover:shadow-[0_0.5em_1.5em_-0.5em_#4d36d0be]
+                active:shadow-[0_0.3em_1em_-0.5em_#4d36d0be]
+                active:scale-95
+                focus:outline-none focus:ring-2 focus:ring-[#8474FE] focus:ring-offset-2
+              "
             >
               Courses <FaArrowRight />
             </button>
+
             <button
-              className="text-white text-center  flex items-center gap-3 px-[40px] py-[10px] rounded-full shadow-[0_0_20px_#eee] bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-500 hover:bg-[position:right_center] "
+              className="
+                flex items-center gap-3
+                text-white text-center
+                text-sm sm:text-base lg:text-lg
+                px-8 sm:px-10 lg:px-12
+                py-2 sm:py-3
+                rounded-full
+                shadow-[0_0_20px_#eee]
+                bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819]
+                bg-[length:200%_auto]
+                transition-all duration-500
+                hover:bg-[position:right_center]
+                focus:outline-none focus:ring-2 focus:ring-[#EDDE5D] focus:ring-offset-2
+              "
             >
               Sign Up <FaArrowRight />
             </button>
@@ -37,10 +66,8 @@ const Hero = () => {
         </div>
 
         <div className="bg-accent rounded-3xl shadow-2xl flex justify-center items-center text-3xl">
-            <FaPlay />
+          <FaPlay />
         </div>
-
-        
       </div>
     </div>
   );

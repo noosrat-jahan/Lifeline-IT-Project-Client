@@ -4,7 +4,7 @@
   color: #fff;
 } */
 
-:root {
+/* :root {
   --footer-primary: #f38b00;
   --footer-primary-dark: #4d44db;
   --footer-primary-light: #a5a1ff;
@@ -12,6 +12,11 @@
   --dark: #000000;
   --darker: #0f0f1b;
 }
+
+ :root {
+        --login-color-primary: #deae40;
+        --login-color-secondary: #78a6d9;
+      } */
 
 /* Reset moderne */
 *,
@@ -46,7 +51,11 @@ footer::before {
   left: 0;
   width: 100%;
   height: 4px;
-  background: linear-gradient(90deg, var(--footer-primary), var(--footer-secondary));
+  background: linear-gradient(
+    90deg,
+    var(--footer-primary),
+    var(--footer-secondary)
+  );
 }
 
 .footer-grid {
@@ -184,7 +193,11 @@ footer::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, var(--footer-primary), var(--footer-primary-dark));
+  background: linear-gradient(
+    45deg,
+    var(--footer-primary),
+    var(--footer-primary-dark)
+  );
   opacity: 0;
   transition: var(--transition);
 }
@@ -225,7 +238,7 @@ footer::before {
 }
 
 .developer {
-  text-align: center;  
+  text-align: center;
   font-size: 0.85rem;
   background-color: rgb(43, 43, 43);
   color: #fff;
