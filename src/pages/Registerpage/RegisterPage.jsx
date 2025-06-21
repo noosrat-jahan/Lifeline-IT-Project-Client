@@ -9,13 +9,23 @@ const RegisterPage = () => {
     e.preventDefault()
     const form = e.target
     const email = form.email.value
+    const name = form.name.value
+    const phone = form.phone.value
+    const password = form.password.value
+
+    const registerInfo = {
+      name, email, phone, password
+    }
+
+    localStorage.setItem("RegisterInfo", JSON.stringify(registerInfo));
+    alert("Data saved to localStorage!");
 
     console.log(email)
 
     try {
       const request = await axios.post(
-        "http://localhost:5000/api/auth/otp-verify",
-        { email }
+        "https://lifelineit-back.onrender.com/api/auth/otp-verify",
+        { email },  {withCredentials: true}
       )
       console.log(request.data)
       navigate("/otppage")
@@ -37,6 +47,7 @@ const RegisterPage = () => {
               <input
                 type="text"
                 id="name"
+                name="name"
                 placeholder=" "
                 required
                 className="
@@ -134,6 +145,7 @@ const RegisterPage = () => {
               <input
                 type="text"
                 id="phone"
+                name="phone"
                 placeholder=" "
                 required
                 className="
@@ -183,6 +195,7 @@ const RegisterPage = () => {
               <input
                 type="password"
                 id="password"
+                name="password"
                 placeholder=" "
                 required
                 className="
@@ -228,28 +241,7 @@ const RegisterPage = () => {
               <div className="absolute bottom-0 left-1/2 h-[2px] bg-gradient-to-r from-blue-500 to-indigo-500 transition-all duration-300 ease-in-out transform -translate-x-1/2 w-0"></div>
             </div>
 
-            {/* password rules  */}
-            <p id="rulesText" className="text-green-500 text-[13px]">
-              <span id="rule-length" class="rule">
-                At least 8 characters
-              </span>
-              ,
-              <span id="rule-number" class="rule">
-                1 number
-              </span>
-              ,
-              <span id="rule-uppercase" class="rule">
-                1 uppercase
-              </span>{" "}
-              &
-              <span id="rule-lowercase" class="rule">
-                1 lowercase
-              </span>
-              ,
-              <span id="rule-special" class="rule">
-                1 special character
-              </span>
-            </p>
+           
             <input
               type="submit"
               className="inline-block w-full mt-1.5 text-[var(--login-color-secondary)] py-2 text-base tracking-wider cursor-pointer bg-transparent border border-[var(--login-color-secondary)] rounded-[30px] shadow-[inset_0_0_0_0_var(--login-color-secondary)] transition duration-200 hover:text-white hover:shadow-[inset_500px_0_0_0_var(--login-color-primary)]"

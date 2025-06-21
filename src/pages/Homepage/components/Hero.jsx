@@ -1,9 +1,10 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa6";
 import { FaPlay } from "react-icons/fa";
+import { Link } from "react-router-dom";
 const Hero = () => {
   return (
-    <div className="w-10/12 mx-auto space-y-10 mt-10">
+    <div className=" space-y-10 mt-20">
       {/* <div className="text-primary text-3xl border border-accent w-auto mx-auto shadow-xl rounded-full px-5 py-2">
         <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-white to-red-400 font-bold">From Zero to Skilled, Your IT Journey Starts Here</h1>
       </div> */}
@@ -21,8 +22,9 @@ const Hero = () => {
           </p>
 
           <div className="flex gap-5">
-            <button
-              className="
+            <Link to="/our-courses">
+              <button
+                className="
                 flex items-center gap-2 font-medium
                 text-sm sm:text-base lg:text-lg
                 px-4 sm:px-6 lg:px-8
@@ -40,12 +42,14 @@ const Hero = () => {
                 active:scale-95
                 focus:outline-none focus:ring-2 focus:ring-[#8474FE] focus:ring-offset-2
               "
-            >
-              Courses <FaArrowRight />
-            </button>
+              >
+                Courses <FaArrowRight />
+              </button>
+            </Link>
 
-            <button
-              className="
+            <Link to="/register">
+              <button
+                className="
                 flex items-center gap-3
                 text-white text-center
                 text-sm sm:text-base lg:text-lg
@@ -59,9 +63,10 @@ const Hero = () => {
                 hover:bg-[position:right_center]
                 focus:outline-none focus:ring-2 focus:ring-[#EDDE5D] focus:ring-offset-2
               "
-            >
-              Sign Up <FaArrowRight />
-            </button>
+              >
+                Sign Up <FaArrowRight />
+              </button>
+            </Link>
           </div>
         </div>
 

@@ -22,7 +22,7 @@ const ForgotPassword = () => {
               <input
                 type="email"
                 id="name"
-                placeholder=" "
+                 required
                 className="
                     peer
                     w-full pt-6 pb-2 px-4
@@ -37,7 +37,7 @@ const ForgotPassword = () => {
                     focus:border-blue-500
                     focus:shadow-[0_10px_25px_-5px_rgba(59,130,246,0.2)]
                     hover:border-gray-400
-                  "
+                "
               />
 
               <label
@@ -52,8 +52,13 @@ const ForgotPassword = () => {
                     peer-focus:font-medium
                     peer-focus:text-blue-600
                     peer-focus:scale-90
+                    peer-valid:top-2
+                    peer-valid:text-sm
+                    peer-valid:font-medium
+                    peer-valid:text-blue-600
+                    peer-valid:scale-90
                     transform origin-left
-                  "
+                "
               >
                 Your Email*
               </label>

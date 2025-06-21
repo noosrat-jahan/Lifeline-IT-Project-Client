@@ -1,9 +1,29 @@
 import React from "react";
 import "../../Footer.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Checkbox } from "@mui/material";
+import axios from "axios";
 
 const LoginPage = () => {
+
+  const navigate = useNavigate()
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    try {
+      const request = await axios.post(
+        "https://lifelineit-back.onrender.com/api/auth/login",
+        { email, password }, {withCredentials: true}
+      );
+      console.log(request.data);
+      navigate("/");
+    } catch (error) {
+      console.error("Axios Error:", error.response?.data || error.message);
+      alert("Registration failed! Check console for details.");
+    }
+  };
   return (
     <div className="min-h-screen flex items-center justify-center bg-[linear-gradient(135deg,_#dbeafe_0%,_#e0e7ff_100%)] font-sans p-4">
       <div className="w-full max-w-[28rem]">
@@ -12,11 +32,12 @@ const LoginPage = () => {
             Login
           </h1>
 
-          <form class="login-form">
+          <form class="login-form" onSubmit={handleLogin}>
             <div className="relative mb-6">
               <input
-                type="text"
-                id="name"
+                type="email"
+                id="email"
+                name="email"
                 placeholder=" "
                 className="
                     peer
@@ -36,7 +57,7 @@ const LoginPage = () => {
               />
 
               <label
-                htmlFor="name"
+                htmlFor="email"
                 className="
                     absolute left-4 text-gray-400 pointer-events-none transition-all duration-300 ease-in-out 
                     top-1/2 -translate-y-1/2 text-base 
@@ -50,7 +71,7 @@ const LoginPage = () => {
                     transform origin-left
                   "
               >
-                Name*
+                Email*
               </label>
 
               <div className="absolute bottom-0 left-1/2 h-[2px] bg-gradient-to-r from-blue-500 to-indigo-500 transition-all duration-300 ease-in-out transform -translate-x-1/2 w-0"></div>
@@ -60,6 +81,7 @@ const LoginPage = () => {
               <input
                 type="password"
                 id="pass"
+                name="password"
                 placeholder=" "
                 className="
                       peer
