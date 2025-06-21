@@ -1,12 +1,12 @@
-import React from "react";
-import course1 from "../../assets/course1.jpg";
-import { motion } from "framer-motion";
+import React from "react"
+import course1 from "../../assets/course1.jpg"
+// import { motion } from "framer-motion"
 
 const OurCourses = () => {
-  const cardVariants = {
-    hidden: { opacity: 0, y: 0 }, // Start hidden, move up
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  };
+  // const cardVariants = {
+  //   hidden: { opacity: 0, y: 0 }, // Start hidden, move up
+  //   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  // };
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#ffffff] via-[#f9e59dee] to-[#e5a641ec] shadow-inner">
       <div className="w-10/12 mx-auto pt-10 text-left space-y-5">
@@ -123,7 +123,7 @@ const OurCourses = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default OurCourses;
+export default OurCourses

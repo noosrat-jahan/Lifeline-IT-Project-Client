@@ -77,9 +77,8 @@
 
 // export default Navbar;
 
-
 // demo
-import React from "react";
+import React from "react"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -88,8 +87,8 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
-import { Link } from "react-router-dom";
+} from "@/components/ui/navigation-menu"
+import { Link } from "react-router-dom"
 
 const Navbar = ({ vertical = false }) => {
   return (
@@ -121,10 +120,10 @@ const Navbar = ({ vertical = false }) => {
             <ul className="grid gap-2 md:w-[100px] lg:w-[200px] ">
               <li className="flex flex-col items-start p-4 gap-4">
                 <NavigationMenuLink asChild>
-                  <Link to="#">Freelancer Story</Link>
+                  <Link to="#">Certificate Verification</Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
-                  <Link to="#">Success Story</Link>
+                  <Link to="#">Success Stories</Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
                   <Link to="#">Student Reviews</Link>
@@ -147,7 +146,7 @@ const Navbar = ({ vertical = false }) => {
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
