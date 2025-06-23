@@ -1,5 +1,5 @@
 import React from "react";
-import about from "../../../assets/team.jpg";
+import about from "../../../assets/Community Photo.png";
 
 const About = () => {
   return (
@@ -15,11 +15,11 @@ const About = () => {
           />
         </div>
         <div className="flex flex-col items-start gap-5 text-left">
-          <button className="rounded-full bg-gold/50 px-5 py-1.5 border border-gold">
+          <button className="rounded-full text-accent bg-gold/50 px-5 py-1.5 border border-gold">
             ABOUT LIFELINE IT
           </button>
-          <h1 className="text-5xl font-bold text-gold">Our Origins and Story</h1>
-          <p>
+          <h1 className="text-5xl font-bold text-accent">Our Origins and Story</h1>
+          <p className="text-secondary">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde saepe
             voluptas totam animi aspernatur harum pariatur dolorem optio porro
             illo. Unde possimus veritatis quisquam ea facilis, quam odit?

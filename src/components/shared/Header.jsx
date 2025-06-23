@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/Website Logo.png";
 import { HiAdjustments } from "react-icons/hi";
 
 import Paper from "@mui/material/Paper";
@@ -14,11 +14,12 @@ import Button from "@mui/material/Button";
 import { Switch } from "@/components/ui/switch";
 import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa";
 
 const Header = () => {
   const [enabled, setEnabled] = React.useState(false);
   return (
-    <div className="p-3 flex items-start justify-around  shadow-xl">
+    <div className="p-3 flex items-start justify-around ">
       {/* logo */}
       <div className=" w-3/12">
         <img src={logo} alt="" className="w-full" />
@@ -32,8 +33,8 @@ const Header = () => {
           {/* search bar  */}
 
           {/* Search icon for mobile */}
-           <div className="lg:hidden flex items-center gap-2">
-             <IconButton
+          <div className="lg:hidden flex items-center gap-2">
+            <IconButton
               sx={{ p: "10px" }}
               aria-label="search"
               onClick={() => setMobileSearchOpen(!mobileSearchOpen)}
@@ -43,29 +44,29 @@ const Header = () => {
           </div>
 
           {/* Search bar */}
-         <div className="hidden lg:flex items-center justify-center flex-1">
-           <Paper
-            component="form"
-            sx={{
-              p: "2px 4px",
-              display: "flex",
-              alignItems: "center",
-              width: 300,
-            }}
-          >
-            <IconButton sx={{ p: "10px" }} aria-label="menu">
-              <MenuIcon />
-            </IconButton>
-            <InputBase
-              sx={{ ml: 1, flex: 1 }}
-              placeholder="Search here..."
-              inputProps={{ "aria-label": "Search here..." }}
-            />
-            <IconButton type="button" sx={{ p: "10px" }} aria-label="search">
-              <SearchIcon />
-            </IconButton>
-          </Paper>
-        </div>
+          <div className="hidden lg:flex items-center justify-center flex-1">
+            <Paper
+              component="form"
+              sx={{
+                p: "2px 4px",
+                display: "flex",
+                alignItems: "center",
+                width: 300,
+              }}
+            >
+              <IconButton sx={{ p: "10px" }} aria-label="menu">
+                <MenuIcon />
+              </IconButton>
+              <InputBase
+                sx={{ ml: 1, flex: 1 }}
+                placeholder="Search here..."
+                inputProps={{ "aria-label": "Search here..." }}
+              />
+              <IconButton type="button" sx={{ p: "10px" }} aria-label="search">
+                <SearchIcon />
+              </IconButton>
+            </Paper>
+          </div>
 
           {/* <Paper
             component="form"
@@ -96,8 +97,8 @@ const Header = () => {
           </Link>
 
           <Link to="/">
-            <button className="hidden lg:block btn-grad  text-white text-center uppercase px-[35px] py-[12px] rounded-[10px] shadow-[0_0_20px_#eee] bg-gradient-to-r from-[#1FA2FF] via-[#1fc6e3] to-[#2b96e2] bg-[length:200%_auto] transition-all duration-500 hover:bg-[position:right_center]">
-              Our Success Story
+            <button className="m-2 px-[45px] py-[15px] font-bold text-center flex items-center transition-all duration-500 bg-[linear-gradient(to_right,_#fc00ff_0%,_#00dbde_51%,_#fc00ff_100%)] bg-[length:200%_auto] text-white rounded-[10px] shadow-[0_0_20px_#eee] gap-3 hover:bg-[position:right_center] hover:text-white">
+              Success Stories <FaArrowRight />
             </button>
           </Link>
 
@@ -106,10 +107,10 @@ const Header = () => {
             {/* EN text, active hole white, inactive hole gray */}
             <span
               className={`text-xs font-semibold mr-1  z-10 ${
-                !enabled ? "text-primary" : "text-primary"
+                !enabled ? "text-secondary " : "text-secondary"
               }`}
             >
-              {!enabled ? "EN" : "BN"}
+              {!enabled ? "বাং" : "EN"}
             </span>
             <Switch checked={enabled} onCheckedChange={setEnabled} />
           </div>
@@ -122,7 +123,6 @@ const Header = () => {
 };
 
 export default Header;
-
 
 // // demo
 // import React, { useState } from "react";
@@ -212,8 +212,6 @@ export default Header;
 //           </Paper>
 //         </div>
 
-      
-        
 //       </div>
 
 //       {/* Floating Mobile Search */}

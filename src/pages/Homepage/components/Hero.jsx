@@ -4,45 +4,29 @@ import { FaPlay } from "react-icons/fa";
 import { Link } from "react-router-dom";
 const Hero = () => {
   return (
-    <div className=" space-y-10 mt-20">
-      {/* <div className="text-primary text-3xl border border-accent w-auto mx-auto shadow-xl rounded-full px-5 py-2">
-        <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-white to-red-400 font-bold">From Zero to Skilled, Your IT Journey Starts Here</h1>
-      </div> */}
+    <div className=" space-y-10 mt-10">
+      <div className="bg-accent w-11/12 mx-auto h-20">Offer Image</div>
+      <div className="text-primary text-3xl  w-auto mx-auto shadow-xl rounded-full px-5 py-3">
+        <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-white to-red-400 font-bold">
+          From Zero to Skilled, Your IT Journey Starts Here.
+        </h1>
+      </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 text-left">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-28 text-left pt-10">
         <div className="flex flex-col items-start gap-8">
-          <h1 className="text-primary text-5xl font-bold">
+          <h1 className="text-secondary text-5xl font-bold">
             One of the Best IT <br /> Training Institute <br /> In Bangladesh
           </h1>
-          <p className="text-sm text-primary">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque
-            assumenda repudiandae tempore dolor nisi pariatur odit voluptas
-            eaque enim sit voluptatibus incidunt laboriosam, eligendi, eius hic
-            suscipit possimus ab doloribus!
+          <p className="text-sm text-secondary">
+            Lifeline IT is operated by a Govt. approved organization | Est. 2021
+            | Over 25,000+ Students Trained | Trusted by 2.30 Lakh+ Followers on
+            Social Media.
           </p>
 
           <div className="flex gap-5">
             <Link to="/our-courses">
-              <button
-                className="
-                flex items-center gap-2 font-medium
-                text-sm sm:text-base lg:text-lg
-                px-4 sm:px-6 lg:px-8
-                py-2 sm:py-3
-                text-white
-                bg-gradient-to-t from-[#4D36D0] to-[#8474FE]
-                rounded-full
-                border-none
-                shadow-[0_0.7em_1.5em_-0.5em_#4d36d0be]
-                tracking-wide
-                transition
-                duration-300
-                hover:shadow-[0_0.5em_1.5em_-0.5em_#4d36d0be]
-                active:shadow-[0_0.3em_1em_-0.5em_#4d36d0be]
-                active:scale-95
-                focus:outline-none focus:ring-2 focus:ring-[#8474FE] focus:ring-offset-2
-              "
-              >
+              <button className="  px-8 sm:px-10 lg:px-12
+                py-2 sm:py-3 rounded-full font-bold text-center flex items-center transition-all duration-500 bg-[linear-gradient(to_right,_#fc00ff_0%,_#00dbde_51%,_#fc00ff_100%)] bg-[length:200%_auto] text-white  shadow-[0_0_20px_#eee] gap-3 hover:bg-[position:right_center] hover:text-white">
                 Courses <FaArrowRight />
               </button>
             </Link>

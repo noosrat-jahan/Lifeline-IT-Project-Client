@@ -9,10 +9,10 @@ const OurCourses = () => {
   //   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   // };
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#ffffff] via-[#f9e59dee] to-[#e5a641ec] shadow-inner">
+    <div className="min-h-screen  ">
       <div className="w-10/12 mx-auto pt-10 text-left space-y-5">
-        <h1 className="text-3xl font-bold">All Courses</h1>
-        <p>
+        <h1 className="text-3xl text-accent font-bold">All Courses</h1>
+        <p className="text-accent">
           Unlock Your Creative Potential: Learn the Skills to Dominate the
           Digital Landscape.
         </p>
@@ -43,19 +43,28 @@ const OurCourses = () => {
                 <span>Duration: 3 Months</span>
                 <span>৳ 5,000</span>
               </div>
-
-              {/* Button */}
-              <Link to="/course-details">
-                <button  className="text-white mt-4 w-full text-center uppercase px-[25px] py-[10px] rounded-[10px] shadow-[0_0_20px_#eee] bg-gradient-to-r from-[#FF8008] via-[#FFC837] to-[#FF8008] bg-[length:200%_auto] transition-all duration-500 hover:bg-[position:right_center] block">
-                  Enroll Now
-                </button>
-              </Link>
+              <div className="text-left">
+                <p>Reviews</p>
+              </div>
+              <div className="flex justify-between">
+                {/* Button */}
+                <Link to="/course-details">
+                  <button
+                    className="px-8 sm:px-10 lg:px-8
+                                py-2 sm:py-3 rounded-full font-bold text-center flex items-center transition-all duration-500 bg-[linear-gradient(to_right,_#fc00ff_0%,_#00dbde_51%,_#fc00ff_100%)] bg-[length:200%_auto] text-white  shadow-[0_0_20px_#eee]  hover:bg-[position:right_center] hover:text-white"
+                  >
+                    Enroll Now
+                  </button>
+                </Link>
+                <Link to="/course-details">
+                  <button className="text-white  text-center  px-[20px] py-[10px] rounded-full shadow-[0_0_20px_#eee] bg-gradient-to-r from-[#FF8008] via-[#FFC837] to-[#FF8008] bg-[length:200%_auto] transition-all duration-500 hover:bg-[position:right_center] block">
+                    View Details
+                  </button>
+                </Link>
+              </div>
             </div>
           </div>
-          <div
-            // Trigger when 20% is visible
-            className="max-w-sm rounded-xl overflow-hidden shadow-md bg-white relative border border-[#f09619e2] hover:shadow-lg hover:scale-[1.02] transition duration-300 cursor-pointer"
-          >
+          <div className="max-w-sm rounded-xl overflow-hidden shadow-md bg-white relative border border-[#f09619e2] hover:shadow-lg hover:scale-[1.02] transition duration-300 cursor-pointer">
             {/* Gradient top border */}
             <div className="h-2 bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819]"></div>
 
@@ -80,19 +89,28 @@ const OurCourses = () => {
                 <span>Duration: 3 Months</span>
                 <span>৳ 5,000</span>
               </div>
-
-              {/* Button */}
-              <Link to="/course-details">
-                <button  className="text-white mt-4 w-full text-center uppercase px-[25px] py-[10px] rounded-[10px] shadow-[0_0_20px_#eee] bg-gradient-to-r from-[#FF8008] via-[#FFC837] to-[#FF8008] bg-[length:200%_auto] transition-all duration-500 hover:bg-[position:right_center] block">
-                  Enroll Now
-                </button>
-              </Link>
+              <div className="text-left">
+                <p>Reviews</p>
+              </div>
+              <div className="flex justify-between">
+                {/* Button */}
+                <Link to="/course-details">
+                  <button
+                    className="px-8 sm:px-10 lg:px-8
+                               py-2 sm:py-3 rounded-full font-bold text-center flex items-center transition-all duration-500 bg-[linear-gradient(to_right,_#fc00ff_0%,_#00dbde_51%,_#fc00ff_100%)] bg-[length:200%_auto] text-white  shadow-[0_0_20px_#eee]  hover:bg-[position:right_center] hover:text-white"
+                  >
+                    Enroll Now
+                  </button>
+                </Link>
+                <Link to="/course-details">
+                  <button className="text-white  text-center  px-[20px] py-[10px] rounded-full shadow-[0_0_20px_#eee] bg-gradient-to-r from-[#FF8008] via-[#FFC837] to-[#FF8008] bg-[length:200%_auto] transition-all duration-500 hover:bg-[position:right_center] block">
+                    View Details
+                  </button>
+                </Link>
+              </div>
             </div>
           </div>
-          <div
-            // Trigger when 20% is visible
-            className="max-w-sm rounded-xl overflow-hidden shadow-md bg-white relative border border-[#f09619e2] hover:shadow-lg hover:scale-[1.02] transition duration-300 cursor-pointer"
-          >
+          <div className="max-w-sm rounded-xl overflow-hidden shadow-md bg-white relative border border-[#f09619e2] hover:shadow-lg hover:scale-[1.02] transition duration-300 cursor-pointer">
             {/* Gradient top border */}
             <div className="h-2 bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819]"></div>
 
@@ -117,14 +135,25 @@ const OurCourses = () => {
                 <span>Duration: 3 Months</span>
                 <span>৳ 5,000</span>
               </div>
-
-              {/* Button */}
-
-              <Link to="/course-details">
-                <button  className="text-white mt-4 w-full text-center uppercase px-[25px] py-[10px] rounded-[10px] shadow-[0_0_20px_#eee] bg-gradient-to-r from-[#FF8008] via-[#FFC837] to-[#FF8008] bg-[length:200%_auto] transition-all duration-500 hover:bg-[position:right_center] block">
-                  Enroll Now
-                </button>
-              </Link>
+              <div className="text-left">
+                <p>Reviews</p>
+              </div>
+              <div className="flex justify-between">
+                {/* Button */}
+                <Link to="/course-details">
+                  <button
+                    className="px-8 sm:px-10 lg:px-8
+                                py-2 sm:py-3 rounded-full font-bold text-center flex items-center transition-all duration-500 bg-[linear-gradient(to_right,_#fc00ff_0%,_#00dbde_51%,_#fc00ff_100%)] bg-[length:200%_auto] text-white  shadow-[0_0_20px_#eee]  hover:bg-[position:right_center] hover:text-white"
+                  >
+                    Enroll Now
+                  </button>
+                </Link>
+                <Link to="/course-details">
+                  <button className="text-white  text-center  px-[20px] py-[10px] rounded-full shadow-[0_0_20px_#eee] bg-gradient-to-r from-[#FF8008] via-[#FFC837] to-[#FF8008] bg-[length:200%_auto] transition-all duration-500 hover:bg-[position:right_center] block">
+                    View Details
+                  </button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>

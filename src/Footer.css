@@ -1,24 +1,4 @@
-/* body {
-  font-family: "Segoe UI", sans-serif;
-  background: #ffffff;
-  color: #fff;
-} */
 
-/* :root {
-  --footer-primary: #f38b00;
-  --footer-primary-dark: #4d44db;
-  --footer-primary-light: #a5a1ff;
-  --footer-secondary: #ff6584;
-  --dark: #000000;
-  --darker: #0f0f1b;
-}
-
- :root {
-        --login-color-primary: #deae40;
-        --login-color-secondary: #78a6d9;
-      } */
-
-/* Reset moderne */
 *,
 *::before,
 *::after {
@@ -37,14 +17,14 @@
 
 /* Footer */
 footer {
-  background: linear-gradient(135deg, var(--darker), var(--dark));
+  background: none;
   color: #fff;
   padding: 5rem 0 2rem;
   position: relative;
   overflow: hidden;
 }
 
-footer::before {
+/* footer::before {
   content: "";
   position: absolute;
   top: 0;
@@ -56,7 +36,7 @@ footer::before {
     var(--footer-primary),
     var(--footer-secondary)
   );
-}
+} */
 
 .footer-grid {
   display: grid;
