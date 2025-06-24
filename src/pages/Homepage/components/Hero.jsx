@@ -14,7 +14,7 @@ const Hero = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-28 text-left pt-10">
         <div className="flex flex-col items-start gap-8">
-          <h1 className="text-secondary text-5xl font-bold">
+          <h1 className="text-secondary font-poppins text-5xl font-bold">
             One of the Best IT <br /> Training Institute <br /> In Bangladesh
           </h1>
           <p className="text-sm text-secondary">

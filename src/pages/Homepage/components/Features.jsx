@@ -7,21 +7,21 @@ const Features = () => {
   return (
     <div className="text-[#3473a8]">
       <div>
-        <button className="rounded-full bg-gold/50 px-5 py-1.5 border border-gold">
+        <button className="rounded-full bg-white text-black px-5 py-1.5 border border-gold">
           WHY CHOOSE US
         </button>
-        <h1 className="text-2xl mt-5">
+        <h1 className="text-2xl text-white mt-5">
           Creating A Community Of Life Long Learners.
         </h1>
       </div>
       <div className="py-16 px-4  text-white relative">
         {/* Heading */}
-        <h2 className="text-center text-xl font-semibold mb-16">
-          Creating A Community Of Life Long Learners
+        <h2 className="text-center  text-xl font-semibold mb-12">
+          
         </h2>
 
         {/* Top horizontal white line */}
-        <div className="absolute top-[110px] left-1/2 transform -translate-x-1/2 w-[90%] h-[2px] bg-white/50 z-0" />
+        <div className="absolute top-[50px] left-1/2 transform -translate-x-1/2 w-[90%] h-[2px] bg-white/50 z-0" />
 
         {/* Cards Wrapper */}
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">

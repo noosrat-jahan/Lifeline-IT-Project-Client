@@ -12,6 +12,8 @@ module.exports = {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
         roboto: ["Roboto", "sans-serif"],
+        baloo: ["'Baloo Da 2'", "cursive"],
+        anek: ["'Anek Bangla'", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",

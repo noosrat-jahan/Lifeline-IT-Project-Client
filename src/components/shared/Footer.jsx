@@ -148,7 +148,7 @@ const Footer = () => {
         </div>
 
         {/* Useful Links */}
-        <div className="text-left lg:ml-10">
+        <div className="text-left lg:ml-20">
           <h3 className="text-lg font-semibold mb-3">Useful Links</h3>
           <ul className="space-y-1 text-sm text-gray-200">
             <li>Free Software</li>
