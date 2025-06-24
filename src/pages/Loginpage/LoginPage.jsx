@@ -1,29 +1,29 @@
-import React from "react";
-import "../../Footer.css";
-import { Link, useNavigate } from "react-router-dom";
-import { Checkbox } from "@mui/material";
-import axios from "axios";
+import React from "react"
+import "../../Footer.css"
+import { Link, useNavigate } from "react-router-dom"
+import { Checkbox } from "@mui/material"
+import axios from "axios"
 
 const LoginPage = () => {
-
   const navigate = useNavigate()
   const handleLogin = async (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const email = form.email.value;
-    const password = form.password.value;
+    e.preventDefault()
+    const form = e.target
+    const email = form.email.value
+    const password = form.password.value
     try {
       const request = await axios.post(
-        "https://lifelineit-back.onrender.com/api/auth/login",
-        { email, password }, {withCredentials: true}
-      );
-      console.log(request.data);
-      navigate("/");
+        import.meta.env.VITE_API_URL + "/api/auth/login",
+        { email, password },
+        { withCredentials: true }
+      )
+      console.log(request.data)
+      navigate("/")
     } catch (error) {
-      console.error("Axios Error:", error.response?.data || error.message);
-      alert("Registration failed! Check console for details.");
+      console.error("Axios Error:", error.response?.data || error.message)
+      alert("Registration failed! Check console for details.")
     }
-  };
+  }
   return (
     <div className="min-h-screen flex items-center justify-center bg-[linear-gradient(135deg,_#dbeafe_0%,_#e0e7ff_100%)] font-sans p-4">
       <div className="w-full max-w-[28rem]">
@@ -167,7 +167,7 @@ const LoginPage = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default LoginPage;
+export default LoginPage
