@@ -22,7 +22,7 @@ const AboutPage = () => {
             className="rounded-xl border border-gray-100"
           />
         </div>
-        <div className="flex flex-col items-start gap-5 text-left">
+        <div className="flex flex-col items-start text-accent gap-5 text-left">
           <button className="rounded-full bg-gold/50 px-5 py-1.5 border border-gold">
             KNOW ABOUT US
           </button>
@@ -50,8 +50,8 @@ const AboutPage = () => {
       {/* our vision  */}
 
       <div className="mt-14 w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
-        <div className="flex flex-col items-start gap-5 text-left">
-          <button className="rounded-full bg-gold/50 px-5 py-1.5 border border-gold">
+        <div className="flex flex-col text-accent items-start gap-5 text-left">
+          <button className="rounded-full  bg-gold/50 px-5 py-1.5 border border-gold">
             HOW WE WORK
           </button>
           <h1 className="text-5xl font-bold">Our Vission</h1>
