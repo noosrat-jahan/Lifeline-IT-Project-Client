@@ -1,23 +1,50 @@
-import React from "react";
-import logo from "../../assets/Website Logo.png";
-import { HiAdjustments } from "react-icons/hi";
+import React from "react"
+import logo from "../../assets/Website Logo.png"
+import { HiAdjustments } from "react-icons/hi"
 
-import Paper from "@mui/material/Paper";
-import InputBase from "@mui/material/InputBase";
-import Divider from "@mui/material/Divider";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
-import SearchIcon from "@mui/icons-material/Search";
-import DirectionsIcon from "@mui/icons-material/Directions";
-import Button from "@mui/material/Button";
+import Paper from "@mui/material/Paper"
+import InputBase from "@mui/material/InputBase"
+import Divider from "@mui/material/Divider"
+import IconButton from "@mui/material/IconButton"
+import MenuIcon from "@mui/icons-material/Menu"
+import SearchIcon from "@mui/icons-material/Search"
+import DirectionsIcon from "@mui/icons-material/Directions"
+import Button from "@mui/material/Button"
 
-import { Switch } from "@/components/ui/switch";
-import Navbar from "./Navbar";
-import { Link } from "react-router-dom";
-import { FaArrowRight } from "react-icons/fa";
+import { Switch } from "@/components/ui/switch"
+import Navbar from "./Navbar"
+import { Link } from "react-router-dom"
+import { FaArrowRight } from "react-icons/fa"
+import { useEffect, useState } from "react"
+import axios from "axios"
 
 const Header = () => {
-  const [enabled, setEnabled] = React.useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false) // default: not logged in
+  const [user, setUser] = useState({}) // Making this useState to use later.
+
+  useEffect(() => {
+    const verifyLogin = async () => {
+      try {
+        const result = await axios.get(
+          import.meta.env.VITE_API_URL + "/api/auth/check",
+          {
+            withCredentials: true,
+          }
+        )
+        if (result.status == 200 && result.data.loggedIn == true) {
+          setIsLoggedIn(true)
+          setUser(result.data.user)
+        }
+      } catch (error) {
+        setIsLoggedIn(false)
+        console.error("Error setting up request:", error.message)
+      }
+    }
+
+    verifyLogin()
+  }, [])
+
+  const [enabled, setEnabled] = React.useState(false)
   return (
     <div className="p-3 flex items-start justify-around ">
       {/* logo */}
@@ -37,7 +64,7 @@ const Header = () => {
             <IconButton
               sx={{ p: "10px" }}
               aria-label="search"
-              onClick={() => setMobileSearchOpen(!mobileSearchOpen)}
+              // onClick={() => setMobileSearchOpen(!mobileSearchOpen)}
             >
               <SearchIcon />
             </IconButton>
@@ -90,9 +117,9 @@ const Header = () => {
             </IconButton>
           </Paper> */}
 
-          <Link to="/login">
-            <button className="text-white text-center uppercase px-[25px] py-[10px] rounded-[10px] shadow-[0_0_20px_#eee] bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-500 hover:bg-[position:right_center] block">
-              Login
+          <Link to={isLoggedIn ? "/future-dashboard-link-goes-here" : "/login"}>
+            <button className="text-white text-center px-[25px] py-[10px] rounded-[10px] shadow-[0_0_20px_#eee] bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-500 hover:bg-[position:right_center] block">
+              {isLoggedIn ? "🎓 Dashboard" : "Login"}
             </button>
           </Link>
 
@@ -119,10 +146,10 @@ const Header = () => {
         <Navbar></Navbar>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
 
 // // demo
 // import React, { useState } from "react";

@@ -1,62 +1,63 @@
-import axios from "axios";
-import React, { useEffect, useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import axios from "axios"
+import React, { useEffect, useRef, useState } from "react"
+import { Link, useNavigate } from "react-router-dom"
 
 const OtpPage = () => {
-    const navigate = useNavigate()
+  const navigate = useNavigate()
   const handleChange = (e, index) => {
-    const value = e.target.value;
+    const value = e.target.value
     if (value.length === 1 && index < 5) {
-      inputRefs.current[index + 1].focus();
+      inputRefs.current[index + 1].focus()
     }
-  };
+  }
 
   const handleKeyDown = (e, index) => {
     if (e.key === "Backspace" && !e.target.value && index > 0) {
-      inputRefs.current[index - 1].focus();
+      inputRefs.current[index - 1].focus()
     }
-  };
+  }
 
   const handlePaste = (e) => {
-    e.preventDefault();
-    const paste = (e.clipboardData || window.clipboardData).getData("text");
+    e.preventDefault()
+    const paste = (e.clipboardData || window.clipboardData).getData("text")
     if (/^\d{6}$/.test(paste)) {
       for (let i = 0; i < 6; i++) {
-        inputRefs.current[i].value = paste[i];
+        inputRefs.current[i].value = paste[i]
       }
-      inputRefs.current[5].focus();
+      inputRefs.current[5].focus()
     }
-  };
+  }
 
-  const [registerInfo, setRegisterInfo] = useState({});
+  const [registerInfo, setRegisterInfo] = useState({})
   useEffect(() => {
-    const saved = localStorage.getItem("RegisterInfo");
-    console.log(saved);
-    setRegisterInfo(saved);
-  }, []);
-  console.log(registerInfo);
+    const saved = localStorage.getItem("RegisterInfo")
+    console.log(saved)
+    setRegisterInfo(saved)
+  }, [])
+  console.log(registerInfo)
 
-  const inputRefs = useRef([]);
+  const inputRefs = useRef([])
   const handleOTP = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
-    const otp = inputRefs.current.map((input) => input.value).join("");
-    console.log("Full OTP:", otp);
+    const otp = inputRefs.current.map((input) => input.value).join("")
+    console.log("Full OTP:", otp)
 
     try {
-        const info = JSON.parse(registerInfo)
-      console.log({ ...info, otp });
+      const info = JSON.parse(registerInfo)
+      console.log({ ...info, otp })
       const request = await axios.post(
-        "https://lifelineit-back.onrender.com/api/auth/register",
-        { ...info, otp },  {withCredentials: true}
-      );
-      console.log(request.data);
-      navigate("/login");
+        import.meta.env.VITE_API_URL + "/api/auth/register",
+        { ...info, otp },
+        { withCredentials: true }
+      )
+      console.log(request.data)
+      navigate("/login")
     } catch (error) {
-      console.error("Axios Error:", error.response?.data || error.message);
-      alert("Registration failed! Check console for details.");
+      console.error("Axios Error:", error.response?.data || error.message)
+      alert("Registration failed! Check console for details.")
     }
-  };
+  }
 
   return (
     <div
@@ -118,7 +119,7 @@ const OtpPage = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default OtpPage;
+export default OtpPage

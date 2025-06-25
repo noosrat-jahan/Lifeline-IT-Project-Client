@@ -14,18 +14,22 @@ const RegisterPage = () => {
     const password = form.password.value
 
     const registerInfo = {
-      name, email, phone, password
+      name,
+      email,
+      phone,
+      password,
     }
 
-    localStorage.setItem("RegisterInfo", JSON.stringify(registerInfo));
-    alert("Data saved to localStorage!");
+    localStorage.setItem("RegisterInfo", JSON.stringify(registerInfo))
+    alert("Data saved to localStorage!")
 
     console.log(email)
 
     try {
       const request = await axios.post(
-        "https://lifelineit-back.onrender.com/api/auth/otp-verify",
-        { email },  {withCredentials: true}
+        import.meta.env.VITE_API_URL + "/api/auth/otp-verify",
+        { email },
+        { withCredentials: true }
       )
       console.log(request.data)
       navigate("/otppage")
@@ -241,7 +245,6 @@ const RegisterPage = () => {
               <div className="absolute bottom-0 left-1/2 h-[2px] bg-gradient-to-r from-blue-500 to-indigo-500 transition-all duration-300 ease-in-out transform -translate-x-1/2 w-0"></div>
             </div>
 
-           
             <input
               type="submit"
               className="inline-block w-full mt-1.5 text-[var(--login-color-secondary)] py-2 text-base tracking-wider cursor-pointer bg-transparent border border-[var(--login-color-secondary)] rounded-[30px] shadow-[inset_0_0_0_0_var(--login-color-secondary)] transition duration-200 hover:text-white hover:shadow-[inset_500px_0_0_0_var(--login-color-primary)]"
