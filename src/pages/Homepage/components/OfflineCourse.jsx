@@ -114,7 +114,7 @@ const OfflineCourse = () => {
         </div>
       </div>
       <div className="flex justify-center mt-4">
-        <Link to="/our-courses">
+        <Link to="/offline-course">
           <button
             onClick={handleClick}
             className="

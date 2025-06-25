@@ -7,7 +7,7 @@ const Features = () => {
   return (
     <div className="text-[#3473a8]">
       <div>
-        <button className="rounded-full bg-white text-black px-5 py-1.5 border border-gold">
+        <button className="rounded-full bg-white shadow-lg text-black px-5 py-1.5 border border-gold">
           WHY CHOOSE US
         </button>
         <h1 className="text-2xl text-white mt-5">
@@ -30,18 +30,18 @@ const Features = () => {
             {/* Vertical line from top */}
             <div className="absolute -top-16 h-16 w-[2px] bg-white"></div>
             {/* Top dot */}
-            <div className="absolute -top-4 w-4 h-4 rounded-full bg-white border-4 border-[#6C93B7]"></div>
+            <div className="absolute -top-16 w-4 h-4 rounded-full bg-white border-4 border-[#6C93B7]"></div>
 
             {/* <BookOpen size={48} className=" mb-4" /> */}
             <img src={people} alt="" />
-            <h3 className="text-3xl font-bold text-[#3473a8]">5,00,000+</h3>
+            <h3 className="text-3xl font-bold text-[#3473a8] mt-3">5,00,000+</h3>
             <p className="text-[#3473a8] mt-2">Learners & Counting</p>
           </div>
 
           {/* Card 2 */}
           <div className="relative flex flex-col items-center text-center bg-white rounded-xl shadow-md p-6 border border-white/30">
             <div className="absolute -top-16 h-16 w-[2px] bg-white"></div>
-            <div className="absolute -top-4 w-4 h-4 rounded-full bg-white border-4 border-[#6C93B7]"></div>
+            <div className="absolute -top-16 w-4 h-4 rounded-full bg-white border-4 border-[#6C93B7]"></div>
 
             {/* <GraduationCap size={48} className=" mb-4" /> */}
             <img src={live} alt="" className=""/>
@@ -52,11 +52,11 @@ const Features = () => {
           {/* Card 3 */}
           <div className="relative flex flex-col items-center justify-center text-center bg-white rounded-xl shadow-md p-6 border border-white/30">
             <div className="absolute -top-16 h-16 w-[2px] bg-white"></div>
-            <div className="absolute -top-4 w-4 h-4 rounded-full bg-white border-4 border-[#6C93B7]"></div>
+            <div className="absolute -top-16 w-4 h-4 rounded-full bg-white border-4 border-[#6C93B7]"></div>
 
             {/* <ShieldCheck size={48} className=" mb-4" /> */}
             <img src={support} alt="" />
-            <h3 className="text-xl font-semibold text-[#3473a8]">
+            <h3 className="text-xl font-semibold text-[#3473a8] mt-3">
               Free Lifetime Support
             </h3>
             <p className="text-[#3473a8] text-sm mt-2">

@@ -111,7 +111,7 @@ const OnlineCourse = () => {
         </div>
       </div>
       <div className="flex justify-center mt-4">
-        <Link to="/our-courses">
+        <Link to="/online-course">
           <button
             onClick={handleClick}
             className="

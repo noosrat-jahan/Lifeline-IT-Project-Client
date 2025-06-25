@@ -13,6 +13,8 @@ import SuccessStory from "@/pages/SuccessStory/SuccessStory";
 import StudentReview from "@/pages/StudentReview/StudentReview";
 import CertificateVerify from "@/pages/CertificateVerify/CertificateVerify";
 import CourseDetails from "@/pages/CourseDetails/CourseDetails";
+import Online from "@/pages/OurCourses/online";
+import Offline from "@/pages/OurCourses/Offline";
 
 const Router = createBrowserRouter([
   {
@@ -26,6 +28,14 @@ const Router = createBrowserRouter([
       {
         path: "/our-courses",
         element: <OurCourses></OurCourses>,
+      },
+      {
+        path: "/online-course",
+        element: <Online></Online>,
+      },
+      {
+        path: "/offline-course",
+        element: <Offline></Offline>,
       },
       {
         path: "/about",

@@ -4,12 +4,12 @@ import Marquee from "react-fast-marquee";
 
 const Reviews = () => {
   return (
-    <div className="w-10/12 mx-auto py-10">
+    <div className="w-full  mx-auto py-10 ">
       <div className="flex flex-col gap-3 justify-center items-center">
-        <h1 className="text-xl md:text-4xl lg:text-5xl font-extrabold">
+        <h1 className="text-xl md:text-4xl lg:text-5xl text-secondary font-extrabold">
           What Our Learners Say
         </h1>
-        <p className="text-sm md:text-lg">
+        <p className="text-sm md:text-lg text-secondary">
           Learning communicate to global world and build a bright future with
           our histudy.
         </p>
@@ -18,173 +18,181 @@ const Reviews = () => {
         </button>
       </div>
 
-      <div className="space-y-5 mt-10">
-        <Marquee>
-          <div className="max-w-md bg-white shadow-lg rounded-lg p-6 mx-3">
-            <div className="flex items-center mb-4">
-              <img
-                src="https://randomuser.me/api/portraits/women/68.jpg"
-                alt="Reviewer"
-                className="w-16 h-16 rounded-full border-2 border-gray-300 object-cover"
-              />
-              <div className="flex items-center ml-4 space-x-2">
-                <h3 className="text-lg font-semibold">Noosrat Meem</h3>
-                <FaQuoteRight className="text-gray-400 text-xl" />
+      <div className="bg-white py-10 mt-6">
+        <div className="space-y-5  w-11/12 mx-auto  relative overflow-hidden ">
+          <Marquee>
+            <div className="max-w-md bg-white shadow-lg rounded-lg p-6 mx-3">
+              <div className="flex items-center mb-4">
+                <img
+                  src="https://randomuser.me/api/portraits/women/68.jpg"
+                  alt="Reviewer"
+                  className="w-16 h-16 rounded-full border-2 border-gray-300 object-cover"
+                />
+                <div className="flex items-center ml-4 space-x-2">
+                  <h3 className="text-lg font-semibold">Noosrat Meem</h3>
+                  <FaQuoteRight className="text-gray-400 text-xl" />
+                </div>
+              </div>
+
+              <p className="text-gray-700 mb-4">
+                Ei review ta khub bhalo, design ta sundor ar use korte onek moja
+                laglo.
+              </p>
+
+              {/* Hardcoded rating stars */}
+              <div className="flex space-x-1 text-yellow-400">
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
               </div>
             </div>
+            <div className="max-w-md bg-white shadow-lg rounded-lg p-6 mx-3">
+              <div className="flex items-center mb-4">
+                <img
+                  src="https://randomuser.me/api/portraits/women/68.jpg"
+                  alt="Reviewer"
+                  className="w-16 h-16 rounded-full border-2 border-gray-300 object-cover"
+                />
+                <div className="flex items-center ml-4 space-x-2">
+                  <h3 className="text-lg font-semibold">Noosrat Meem</h3>
+                  <FaQuoteRight className="text-gray-400 text-xl" />
+                </div>
+              </div>
 
-            <p className="text-gray-700 mb-4">
-              Ei review ta khub bhalo, design ta sundor ar use korte onek moja
-              laglo.
-            </p>
+              <p className="text-gray-700 mb-4">
+                Ei review ta khub bhalo, design ta sundor ar use korte onek moja
+                laglo.
+              </p>
 
-            {/* Hardcoded rating stars */}
-            <div className="flex space-x-1 text-yellow-400">
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-            </div>
-          </div>
-          <div className="max-w-md bg-white shadow-lg rounded-lg p-6 mx-3">
-            <div className="flex items-center mb-4">
-              <img
-                src="https://randomuser.me/api/portraits/women/68.jpg"
-                alt="Reviewer"
-                className="w-16 h-16 rounded-full border-2 border-gray-300 object-cover"
-              />
-              <div className="flex items-center ml-4 space-x-2">
-                <h3 className="text-lg font-semibold">Noosrat Meem</h3>
-                <FaQuoteRight className="text-gray-400 text-xl" />
+              {/* Hardcoded rating stars */}
+              <div className="flex space-x-1 text-yellow-400">
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
               </div>
             </div>
+            <div className="max-w-md bg-white shadow-lg rounded-lg p-6 mx-3">
+              <div className="flex items-center mb-4">
+                <img
+                  src="https://randomuser.me/api/portraits/women/68.jpg"
+                  alt="Reviewer"
+                  className="w-16 h-16 rounded-full border-2 border-gray-300 object-cover"
+                />
+                <div className="flex items-center ml-4 space-x-2">
+                  <h3 className="text-lg font-semibold">Noosrat Meem</h3>
+                  <FaQuoteRight className="text-gray-400 text-xl" />
+                </div>
+              </div>
 
-            <p className="text-gray-700 mb-4">
-              Ei review ta khub bhalo, design ta sundor ar use korte onek moja
-              laglo.
-            </p>
+              <p className="text-gray-700 mb-4">
+                Ei review ta khub bhalo, design ta sundor ar use korte onek moja
+                laglo.
+              </p>
 
-            {/* Hardcoded rating stars */}
-            <div className="flex space-x-1 text-yellow-400">
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-            </div>
-          </div>
-          <div className="max-w-md bg-white shadow-lg rounded-lg p-6 mx-3">
-            <div className="flex items-center mb-4">
-              <img
-                src="https://randomuser.me/api/portraits/women/68.jpg"
-                alt="Reviewer"
-                className="w-16 h-16 rounded-full border-2 border-gray-300 object-cover"
-              />
-              <div className="flex items-center ml-4 space-x-2">
-                <h3 className="text-lg font-semibold">Noosrat Meem</h3>
-                <FaQuoteRight className="text-gray-400 text-xl" />
+              {/* Hardcoded rating stars */}
+              <div className="flex space-x-1 text-yellow-400">
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
               </div>
             </div>
+          </Marquee>
+          {/* ✅ Fade effect for top marquee */}
+          <div className="absolute top-0 left-0 h-full w-10 bg-gradient-to-r from-[#fff] to-transparent z-10 pointer-events-none" />
+          <div className="absolute top-0 right-0 h-full w-10 bg-gradient-to-l from-[#fff] to-transparent z-10 pointer-events-none" />
+          <Marquee direction="right">
+            <div className="max-w-md bg-white shadow-lg rounded-lg p-6 mx-3">
+              <div className="flex items-center mb-4">
+                <img
+                  src="https://randomuser.me/api/portraits/women/68.jpg"
+                  alt="Reviewer"
+                  className="w-16 h-16 rounded-full border-2 border-gray-300 object-cover"
+                />
+                <div className="flex items-center ml-4 space-x-2">
+                  <h3 className="text-lg font-semibold">Noosrat Meem</h3>
+                  <FaQuoteRight className="text-gray-400 text-xl" />
+                </div>
+              </div>
 
-            <p className="text-gray-700 mb-4">
-              Ei review ta khub bhalo, design ta sundor ar use korte onek moja
-              laglo.
-            </p>
+              <p className="text-gray-700 mb-4">
+                Ei review ta khub bhalo, design ta sundor ar use korte onek moja
+                laglo.
+              </p>
 
-            {/* Hardcoded rating stars */}
-            <div className="flex space-x-1 text-yellow-400">
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-            </div>
-          </div>
-        </Marquee>
-        <Marquee direction="right">
-          <div className="max-w-md bg-white shadow-lg rounded-lg p-6 mx-3">
-            <div className="flex items-center mb-4">
-              <img
-                src="https://randomuser.me/api/portraits/women/68.jpg"
-                alt="Reviewer"
-                className="w-16 h-16 rounded-full border-2 border-gray-300 object-cover"
-              />
-              <div className="flex items-center ml-4 space-x-2">
-                <h3 className="text-lg font-semibold">Noosrat Meem</h3>
-                <FaQuoteRight className="text-gray-400 text-xl" />
+              {/* Hardcoded rating stars */}
+              <div className="flex space-x-1 text-yellow-400">
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
               </div>
             </div>
+            <div className="max-w-md bg-white shadow-lg rounded-lg p-6 mx-3">
+              <div className="flex items-center mb-4">
+                <img
+                  src="https://randomuser.me/api/portraits/women/68.jpg"
+                  alt="Reviewer"
+                  className="w-16 h-16 rounded-full border-2 border-gray-300 object-cover"
+                />
+                <div className="flex items-center ml-4 space-x-2">
+                  <h3 className="text-lg font-semibold">Noosrat Meem</h3>
+                  <FaQuoteRight className="text-gray-400 text-xl" />
+                </div>
+              </div>
 
-            <p className="text-gray-700 mb-4">
-              Ei review ta khub bhalo, design ta sundor ar use korte onek moja
-              laglo.
-            </p>
+              <p className="text-gray-700 mb-4">
+                Ei review ta khub bhalo, design ta sundor ar use korte onek moja
+                laglo.
+              </p>
 
-            {/* Hardcoded rating stars */}
-            <div className="flex space-x-1 text-yellow-400">
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-            </div>
-          </div>
-          <div className="max-w-md bg-white shadow-lg rounded-lg p-6 mx-3">
-            <div className="flex items-center mb-4">
-              <img
-                src="https://randomuser.me/api/portraits/women/68.jpg"
-                alt="Reviewer"
-                className="w-16 h-16 rounded-full border-2 border-gray-300 object-cover"
-              />
-              <div className="flex items-center ml-4 space-x-2">
-                <h3 className="text-lg font-semibold">Noosrat Meem</h3>
-                <FaQuoteRight className="text-gray-400 text-xl" />
+              {/* Hardcoded rating stars */}
+              <div className="flex space-x-1 text-yellow-400">
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
               </div>
             </div>
+            <div className="max-w-md bg-white shadow-lg rounded-lg p-6 mx-3">
+              <div className="flex items-center mb-4">
+                <img
+                  src="https://randomuser.me/api/portraits/women/68.jpg"
+                  alt="Reviewer"
+                  className="w-16 h-16 rounded-full border-2 border-gray-300 object-cover"
+                />
+                <div className="flex items-center ml-4 space-x-2">
+                  <h3 className="text-lg font-semibold">Noosrat Meem</h3>
+                  <FaQuoteRight className="text-gray-400 text-xl" />
+                </div>
+              </div>
 
-            <p className="text-gray-700 mb-4">
-              Ei review ta khub bhalo, design ta sundor ar use korte onek moja
-              laglo.
-            </p>
+              <p className="text-gray-700 mb-4">
+                Ei review ta khub bhalo, design ta sundor ar use korte onek moja
+                laglo.
+              </p>
 
-            {/* Hardcoded rating stars */}
-            <div className="flex space-x-1 text-yellow-400">
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-            </div>
-          </div>
-          <div className="max-w-md bg-white shadow-lg rounded-lg p-6 mx-3">
-            <div className="flex items-center mb-4">
-              <img
-                src="https://randomuser.me/api/portraits/women/68.jpg"
-                alt="Reviewer"
-                className="w-16 h-16 rounded-full border-2 border-gray-300 object-cover"
-              />
-              <div className="flex items-center ml-4 space-x-2">
-                <h3 className="text-lg font-semibold">Noosrat Meem</h3>
-                <FaQuoteRight className="text-gray-400 text-xl" />
+              {/* Hardcoded rating stars */}
+              <div className="flex space-x-1 text-yellow-400">
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
               </div>
             </div>
-
-            <p className="text-gray-700 mb-4">
-              Ei review ta khub bhalo, design ta sundor ar use korte onek moja
-              laglo.
-            </p>
-
-            {/* Hardcoded rating stars */}
-            <div className="flex space-x-1 text-yellow-400">
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-            </div>
-          </div>
-        </Marquee>
+          </Marquee>
+          {/* ✅ Fade effect for bottom marquee */}
+          <div className="absolute bottom-0 left-0 h-full w-10 bg-gradient-to-r from-[#fff] to-transparent z-10 pointer-events-none" />
+          <div className="absolute bottom-0 right-0 h-full w-10 bg-gradient-to-l from-[#fff] to-transparent z-10 pointer-events-none" />
+        </div>
       </div>
     </div>
   );

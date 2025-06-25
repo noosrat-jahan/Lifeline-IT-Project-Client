@@ -113,28 +113,28 @@ export default function Navbar() {
             <NavigationMenuList className="gap-6">
               <NavigationMenuItem>
                 <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                  <Link to="/">Home</Link>
+                  <Link to="/" className="bg-transparent text-navmenu">Home</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                  <Link to="/our-courses">Courses</Link>
+                  <Link to="/our-courses" className="bg-transparent text-navmenu">Courses</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Students</NavigationMenuTrigger>
+                <NavigationMenuTrigger  className="bg-transparent text-navmenu">Students</NavigationMenuTrigger>
                 <NavigationMenuContent side="bottom" align="start" sideOffset={8}>
                   <ul className="grid gap-2 md:w-[100px] lg:w-[200px]">
                     <li className="flex flex-col items-start p-4 gap-4">
                       <NavigationMenuLink asChild>
-                        <Link to="/certificate-verify">Freelancer Story</Link>
+                        <Link to="/certificate-verify" >Freelancer Story</Link>
                       </NavigationMenuLink>
                       <NavigationMenuLink asChild>
-                        <Link to="/success-story">Success Story</Link>
+                        <Link to="/success-story" >Success Story</Link>
                       </NavigationMenuLink>
                       <NavigationMenuLink asChild>
-                        <Link to="/student-review">Student Reviews</Link>
+                        <Link to="/student-review" >Student Reviews</Link>
                       </NavigationMenuLink>
                     </li>
                   </ul>
@@ -143,13 +143,13 @@ export default function Navbar() {
 
               <NavigationMenuItem>
                 <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                  <Link to="/about">About Us</Link>
+                  <Link to="/about" className="bg-transparent text-navmenu">About Us</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
                 <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                  <Link to="/contact">Contact</Link>
+                  <Link to="/contact" className="bg-transparent text-navmenu">Contact</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>

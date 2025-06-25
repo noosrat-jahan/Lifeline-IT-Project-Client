@@ -57,6 +57,8 @@ module.exports = {
         heading: "hsl(var(--heading))",
         button: "hsl(var(--button))",
         gold: "hsl(var(--gold))",
+        navmenu: "hsl(var(--navmenu))",
+         
         chart: {
           1: "hsl(var(--chart-1))",
           2: "hsl(var(--chart-2))",
