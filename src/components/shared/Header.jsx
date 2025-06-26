@@ -1,26 +1,27 @@
-import React from "react"
-import logo from "../../assets/Website Logo.png"
-import { HiAdjustments } from "react-icons/hi"
+import React from "react";
+import logo from "../../assets/Website Logo.png";
+import { HiAdjustments } from "react-icons/hi";
 
-import Paper from "@mui/material/Paper"
-import InputBase from "@mui/material/InputBase"
-import Divider from "@mui/material/Divider"
-import IconButton from "@mui/material/IconButton"
-import MenuIcon from "@mui/icons-material/Menu"
-import SearchIcon from "@mui/icons-material/Search"
-import DirectionsIcon from "@mui/icons-material/Directions"
-import Button from "@mui/material/Button"
+import Paper from "@mui/material/Paper";
+import InputBase from "@mui/material/InputBase";
+import Divider from "@mui/material/Divider";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
+import SearchIcon from "@mui/icons-material/Search";
+import DirectionsIcon from "@mui/icons-material/Directions";
+import Button from "@mui/material/Button";
 
-import { Switch } from "@/components/ui/switch"
-import Navbar from "./Navbar"
-import { Link } from "react-router-dom"
-import { FaArrowRight } from "react-icons/fa"
-import { useEffect, useState } from "react"
-import axios from "axios"
+import { Switch } from "@/components/ui/switch";
+import Navbar from "./Navbar";
+import { Link } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { AiOutlineMenuFold } from "react-icons/ai";
 
 const Header = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false) // default: not logged in
-  const [user, setUser] = useState({}) // Making this useState to use later.
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // default: not logged in
+  const [user, setUser] = useState({}); // Making this useState to use later.
 
   useEffect(() => {
     const verifyLogin = async () => {
@@ -30,25 +31,25 @@ const Header = () => {
           {
             withCredentials: true,
           }
-        )
+        );
         if (result.status == 200 && result.data.loggedIn == true) {
-          setIsLoggedIn(true)
-          setUser(result.data.user)
+          setIsLoggedIn(true);
+          setUser(result.data.user);
         }
       } catch (error) {
-        setIsLoggedIn(false)
-        console.error("Error setting up request:", error.message)
+        setIsLoggedIn(false);
+        console.error("Error setting up request:", error.message);
       }
-    }
+    };
 
-    verifyLogin()
-  }, [])
+    verifyLogin();
+  }, []);
 
-  const [enabled, setEnabled] = React.useState(false)
+  const [enabled, setEnabled] = React.useState(false);
   return (
-    <div className="p-3 flex items-start justify-around ">
+    <div className="p-3 flex items-center justify-around ">
       {/* logo */}
-      <div className=" w-3/12">
+      <div className=" lg:w-3/12">
         <img src={logo} alt="" className="w-full" />
       </div>
       <div className="flex lg:flex-col items-center lg:gap-5">
@@ -62,8 +63,9 @@ const Header = () => {
           {/* Search icon for mobile */}
           <div className="lg:hidden flex items-center gap-2">
             <IconButton
-              sx={{ p: "10px" }}
+              sx={{ p: "10px", color: "white" }}
               aria-label="search"
+              
               // onClick={() => setMobileSearchOpen(!mobileSearchOpen)}
             >
               <SearchIcon />
@@ -118,12 +120,12 @@ const Header = () => {
           </Paper> */}
 
           <Link to={isLoggedIn ? "/future-dashboard-link-goes-here" : "/login"}>
-            <button className="text-white text-center px-[25px] py-[10px] rounded-[10px] shadow-[0_0_20px_#eee] bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-500 hover:bg-[position:right_center] block">
+            <button className="text-white text-center lg:px-[25px] px-[20px] py-[8px] lg:py-[10px] rounded-[10px] shadow-[0_0_20px_#eee] bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-500 hover:bg-[position:right_center] block">
               {isLoggedIn ? "🎓 Dashboard" : "Login"}
             </button>
           </Link>
 
-          <Link to="/">
+          <Link to="/" className="hidden lg:flex">
             <button className="m-2 px-[45px] py-[15px] font-bold text-center flex items-center transition-all duration-500 bg-[linear-gradient(to_right,_#fc00ff_0%,_#00dbde_51%,_#fc00ff_100%)] bg-[length:200%_auto] text-white rounded-[10px] shadow-[0_0_20px_#eee] gap-3 hover:bg-[position:right_center] hover:text-white">
               Success Stories <FaArrowRight />
             </button>
@@ -141,15 +143,21 @@ const Header = () => {
             </span>
             <Switch checked={enabled} onCheckedChange={setEnabled} />
           </div>
+
+          <div className="text-white text-lg">
+            <AiOutlineMenuFold />
+          </div>
         </div>
 
-        <Navbar></Navbar>
+        <div className="hidden lg:flex">
+          <Navbar></Navbar>
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
 
 // // demo
 // import React, { useState } from "react";

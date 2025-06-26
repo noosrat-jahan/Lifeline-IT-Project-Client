@@ -6,7 +6,7 @@ import hotline from "../../assets/Hotline.png";
 const ContactPage = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-6">
-      <section className="w-11/12 mx-auto py-10 text-center">
+      <section className="w-11/12 mx-auto py-8 text-center">
         <button className="px-6 py-2 bg-blue-600 text-white rounded-full shadow-md mb-6">
           Contact us
         </button>
@@ -17,7 +17,7 @@ const ContactPage = () => {
         {/* Grid Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 text-black">
           {/* Phone Section */}
-          <div className="bg-white shadow-md border p-6">
+          <div className="bg-white/95 shadow-md rounded border p-6">
             <div className="flex justify-center mb-3">
               <img
                 src={hotline}
@@ -38,7 +38,7 @@ const ContactPage = () => {
           </div>
 
           {/* Messenger Section */}
-          <div className="bg-white shadow-md border p-6">
+          <div className="bg-white/95 rounded shadow-md border p-6">
             <div className="flex justify-center mb-3">
               <FaFacebookF className="text-blue-600 text-5xl" />
             </div>
@@ -67,7 +67,7 @@ const ContactPage = () => {
           </div>
 
           {/* Email Section */}
-          <div className="bg-white shadow-md border p-6">
+          <div className="bg-white/95 rounded shadow-md border p-6">
             <div className="flex justify-center mb-3">
               <MdEmail className="text-blue-600 text-5xl" />
             </div>
@@ -83,7 +83,7 @@ const ContactPage = () => {
         </div>
 
         {/* Location Section */}
-        <div className="bg-white shadow-md border p-6 mt-6">
+        <div className="bg-white shadow-md border rounded-sm p-6 mt-6">
           <div className="flex justify-center mb-2">
             <FaMapMarkerAlt className="text-blue-600 text-4xl" />
           </div>

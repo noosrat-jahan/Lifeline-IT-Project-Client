@@ -26,7 +26,7 @@ const Features = () => {
         {/* Cards Wrapper */}
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
           {/* Card 1 */}
-          <div className="relative flex flex-col items-center justify-center text-center bg-white rounded-xl shadow-md p-6 border border-white/30">
+          <div className="relative flex flex-col items-center justify-center text-center bg-white rounded-xl hover:scale-105 transition-all duration-500 cursor-pointer shadow-md p-6 border border-white/30">
             {/* Vertical line from top */}
             <div className="absolute -top-16 h-16 w-[2px] bg-white"></div>
             {/* Top dot */}
@@ -39,7 +39,7 @@ const Features = () => {
           </div>
 
           {/* Card 2 */}
-          <div className="relative flex flex-col items-center text-center bg-white rounded-xl shadow-md p-6 border border-white/30">
+          <div className="relative flex flex-col items-center text-center bg-white rounded-xl cursor-pointer hover:scale-105 transition-all duration-500 shadow-md p-6 border border-white/30">
             <div className="absolute -top-16 h-16 w-[2px] bg-white"></div>
             <div className="absolute -top-16 w-4 h-4 rounded-full bg-white border-4 border-[#6C93B7]"></div>
 
@@ -50,7 +50,7 @@ const Features = () => {
           </div>
 
           {/* Card 3 */}
-          <div className="relative flex flex-col items-center justify-center text-center bg-white rounded-xl shadow-md p-6 border border-white/30">
+          <div className="relative flex flex-col items-center justify-center text-center bg-white rounded-xl hover:scale-105 transition-all duration-500 cursor-pointer shadow-md p-6 border border-white/30">
             <div className="absolute -top-16 h-16 w-[2px] bg-white"></div>
             <div className="absolute -top-16 w-4 h-4 rounded-full bg-white border-4 border-[#6C93B7]"></div>
 
