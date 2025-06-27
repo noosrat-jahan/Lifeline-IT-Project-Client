@@ -49,7 +49,22 @@ const videos = [
 
 const SuccessStory = () => {
   const [selectedVideo, setSelectedVideo] = useState(null);
- const [sliderRef, instanceRef] = useKeenSlider({
+ const [picsliderRef, picinstanceRef] = useKeenSlider({
+  loop: false,
+  slides: {
+    perView: 4, // mobile default
+    spacing: 20,
+  },
+   breakpoints: {
+    640: {
+      slides: { perView: 2 },
+    },
+    1024: {
+      slides: { perView: 4 },
+    },
+  },
+});
+ const [videosliderRef, videoinstanceRef] = useKeenSlider({
   loop: false,
   slides: {
     perView: 4, // mobile default
@@ -70,20 +85,20 @@ const SuccessStory = () => {
       <div className="relative px-6 py-10 ">
         {/* Arrows */}
         <button
-          onClick={() => instanceRef.current?.prev()}
+          onClick={() => picinstanceRef.current?.prev()}
           className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white shadow px-2 py-1 rounded-full z-10"
         >
           ◀
         </button>
         <button
-          onClick={() => instanceRef.current?.next()}
+          onClick={() => picinstanceRef.current?.next()}
           className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white shadow px-2 py-1 rounded-full z-10"
         >
           ▶
         </button>
 
         {/* Slider */}
-        <div ref={sliderRef} className="keen-slider">
+        <div ref={picsliderRef} className="keen-slider">
           {students.map((student, i) => (
             <div
               key={i}
@@ -114,20 +129,20 @@ const SuccessStory = () => {
       <div className="relative px-6 py-10 ">
         {/* Arrows */}
         <button
-          onClick={() => instanceRef.current?.prev()}
+          onClick={() => videoinstanceRef.current?.prev()}
           className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white shadow px-2 py-1 rounded-full z-10"
         >
           ◀
         </button>
         <button
-          onClick={() => instanceRef.current?.next()}
+          onClick={() => videoinstanceRef.current?.next()}
           className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white shadow px-2 py-1 rounded-full z-10"
         >
           ▶
         </button>
 
         {/* Video Slider */}
-        <div ref={sliderRef} className="keen-slider">
+        <div ref={videosliderRef} className="keen-slider">
           {videos.map((video, i) => (
             <div key={i} className="keen-slider__slide">
               <div
