@@ -12,7 +12,7 @@ const students = [
     instituteLogo: logo,
   },
   {
-    name: "Noosrat Meem",
+    name: "Sarika Sabah",
     designation: "UI/UX Designer",
     image: "https://i.ibb.co/6R0phCbk/pic1.jpg",
     instituteLogo: logo,
