@@ -17,7 +17,7 @@ const Footer = () => {
         {/* Left Section */}
         <div className="text-left ">
           <div className="flex items-center gap-2 mb-3">
-            <img src={logo} alt="Logo" className="" />
+            <Link to="/"><img src={logo} alt="Logo" className="" /></Link>
           </div>
           <p className="text-sm text-gray-200 text-justify leading-relaxed">
             Lifeline IT Training Institute is a Govt. approved IT Training

@@ -50,7 +50,7 @@ const Header = () => {
     <div className="p-3 flex items-center justify-around ">
       {/* logo */}
       <div className=" lg:w-3/12">
-        <img src={logo} alt="" className="w-full" />
+        <Link to="/"><img src={logo} alt="" className="w-full" /></Link>
       </div>
       <div className="flex lg:flex-col items-center lg:gap-5">
         <div className="flex items-center justify-around gap-4">
@@ -144,7 +144,7 @@ const Header = () => {
             <Switch checked={enabled} onCheckedChange={setEnabled} />
           </div>
 
-          <div className="text-white text-lg">
+          <div className="text-white text-lg lg:hidden">
             <AiOutlineMenuFold />
           </div>
         </div>
