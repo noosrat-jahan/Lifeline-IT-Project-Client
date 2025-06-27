@@ -11,6 +11,7 @@ import logo from "../../assets/Website Logo.png";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+  
   return (
     <footer className="text-white px-4 md:px-20 ">
       <div className=" grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -36,7 +37,7 @@ const Footer = () => {
         {/* Useful Links */}
         <div className="text-left lg:ml-20">
           <h3 className="text-lg font-semibold mb-3">Useful Links</h3>
-          <ul className="space-y-1 text-sm text-gray-200">
+       <ul className="space-y-1 text-sm text-gray-200 [&>li:hover]:text-gold cursor-pointer">
             <li>Free Software</li>
             <li>Free Resources</li>
             <li>Certificate Verify</li>
@@ -50,7 +51,7 @@ const Footer = () => {
         {/* Our Company */}
         <div className="text-left  lg:ml-10">
           <h3 className="text-lg font-semibold mb-3">Our Company</h3>
-          <ul className="space-y-1 text-sm text-gray-200">
+          <ul className="space-y-1 text-sm text-gray-200 [&>li:hover]:text-gold cursor-pointer">
             <li>Join as a Mentor</li>
             <li>Our Team</li>
             <li>Our Agency</li>
@@ -61,7 +62,7 @@ const Footer = () => {
         {/* Contact Info */}
         <div className="text-left">
           <h3 className="text-lg font-semibold mb-3">Contact with us</h3>
-          <ul className="text-sm text-gray-200 space-y-1">
+          <ul className="text-sm text-gray-200 space-y-1 [&>li:hover]:text-gold cursor-pointer">
             <li>
               Call:{" "}
               <span className="text-yellow-400 font-semibold">

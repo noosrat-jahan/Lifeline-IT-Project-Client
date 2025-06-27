@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import { FaArrowRight } from "react-icons/fa6";
 import { FaPlay } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import banner from "../../../assets/banner.jpg";
 const Hero = () => {
   const [showVideo, setShowVideo] = useState(false);
   const videoId = "FJ6F-defbbo";
   return (
     <div className=" space-y-10 mt-10">
-      <div className="bg-accent w-11/12 mx-auto h-20">Offer Image</div>
+      <div className="bg-accent w-11/12 mx-auto h-20">
+      <img src={banner} alt="" className="h-full w-full bg-cover" />
+      </div>
       <div className="text-primary text-3xl  w-auto mx-auto shadow-xl rounded-full px-5 py-3">
         <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-white to-red-400 font-bold text-base md:text-xl lg:text-3xl">
           From Zero to Skilled, Your IT Journey Starts Here.
@@ -64,12 +67,12 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="relative ">
+        <div className="relative max-w-xl w-full h-full">
           {/* YouTube Thumbnail */}
           <img
             src={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
             alt="YouTube Video Preview"
-            className="rounded-lg shadow-lg w-full"
+            className="rounded-lg shadow-lg w-full h-full"
           />
           {/* https://youtu.be/FJ6F-defbbo?si=D7YZUcQezTnpBFvo */}
           {/* Play Button */}

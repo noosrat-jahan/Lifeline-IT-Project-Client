@@ -73,7 +73,7 @@ const Header = () => {
 
   const [enabled, setEnabled] = React.useState(false);
   return (
-    <div className="p-3 flex items-center justify-around ">
+    <div className="p-3 flex items-center justify-around">
       {/* logo */}
       <div className=" lg:w-3/12">
         <Link to="/">
