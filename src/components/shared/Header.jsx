@@ -4,12 +4,11 @@ import { HiAdjustments } from "react-icons/hi";
 
 import Paper from "@mui/material/Paper";
 import InputBase from "@mui/material/InputBase";
-import Divider from "@mui/material/Divider";
+
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
-import DirectionsIcon from "@mui/icons-material/Directions";
-import Button from "@mui/material/Button";
+
 
 import { Switch } from "@/components/ui/switch";
 import Navbar from "./Navbar";
@@ -18,10 +17,16 @@ import { FaArrowRight } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { AiOutlineMenuFold } from "react-icons/ai";
+import { IoMdClose } from "react-icons/io";
+
 
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false); // default: not logged in
   const [user, setUser] = useState({}); // Making this useState to use later.
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const verifyLogin = async () => {
@@ -45,12 +50,35 @@ const Header = () => {
     verifyLogin();
   }, []);
 
+  const toggleNavbar = () => {
+    setIsOpen(!isOpen);
+  };
+
+  // Function to handle scroll event
+  const handleScroll = () => {
+    if (window.scrollY > 50) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
+  };
+
+  // Adding event listener on mount and removing on unmount
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const [enabled, setEnabled] = React.useState(false);
   return (
     <div className="p-3 flex items-center justify-around ">
       {/* logo */}
       <div className=" lg:w-3/12">
-        <Link to="/"><img src={logo} alt="" className="w-full" /></Link>
+        <Link to="/">
+          <img src={logo} alt="" className="w-full md:w-1/2 lg:w-full" />
+        </Link>
       </div>
       <div className="flex lg:flex-col items-center lg:gap-5">
         <div className="flex items-center justify-around gap-4">
@@ -65,7 +93,7 @@ const Header = () => {
             <IconButton
               sx={{ p: "10px", color: "white" }}
               aria-label="search"
-              
+
               // onClick={() => setMobileSearchOpen(!mobileSearchOpen)}
             >
               <SearchIcon />
@@ -144,8 +172,92 @@ const Header = () => {
             <Switch checked={enabled} onCheckedChange={setEnabled} />
           </div>
 
-          <div className="text-white text-lg lg:hidden">
+          <div className="text-white text-lg lg:hidden" onClick={toggleNavbar}>
             <AiOutlineMenuFold />
+          </div>
+
+          <div
+            className={`fixed  z-10 top-0 right-0 h-screen overflow-auto lg:hidden  w-11/12  bg-blue-50 border-l  border-neutral-300 lg:bg-transparent shadow-lg lg:shadow-none transition-transform duration-500 ease-in-out transform flex-1 ${
+              isOpen ? "translate-x-0" : "translate-x-full"
+            } lg:translate-x-0 z-60`}
+          >
+            {/* Logo and close icon Inside Toggle Menu */}
+            <div className="w-full  flex items-center justify-between px-4">
+              {/* Logo */}
+              <Link
+                to="/"
+                className="text-lg font-semibold text-sky-700 flex items-center gap-x-2"
+              >
+                <img src={logo} alt="" className="w-1/2 md:w-1/3" />
+              </Link>
+              {/* Close Icon */}
+              <div className="lg:hidden flex justify-end py-6">
+                <button
+                  onClick={toggleNavbar}
+                  className="text-gold focus:outline-none"
+                >
+                  <IoMdClose size={28} />
+                </button>
+              </div>
+            </div>
+            {/* Divider */}
+            <div className="border-b border-neutral-300"></div>
+            <div className="flex-1 flex flex-col  items-center justify-between gap-6 p-6 md:p-0">
+              {/* Navbar items */}
+              <ul
+                onClick={() => setIsOpen(false)}
+                className="flex flex-col items-center gap-6 text-base text-neutral-700 font-normal font-roboto"
+              >
+                <Link
+                  to="/"
+                  // className=" text-xl font-roboto"
+                >
+                  Home
+                </Link>
+                <Link
+                  to="/our-courses"
+                  // className="  text-xl font-roboto"
+                >
+                  Courses
+                </Link>
+                <Link to="/certificate-verify">Freelancer Story</Link>
+                <Link to="/success-story">Success Story</Link>
+                <Link to="/student-review">Student Reviews</Link>
+                <Link
+                  to="/about"
+                  // className=" text-xl font-roboto"
+                >
+                  About Us
+                </Link>
+                <Link
+                  to="/contact"
+                  // className=" text-xl font-roboto"
+                >
+                  Contact
+                </Link>
+              </ul>
+
+              {/* Buttons */}
+              <div
+                onClick={() => setIsOpen(false)}
+                className="flex flex-col items-center gap-4"
+              >
+                <Link
+                  to={
+                    isLoggedIn ? "/future-dashboard-link-goes-here" : "/login"
+                  }
+                >
+                  <button className="text-white text-center lg:px-[25px] px-[20px] py-[8px] lg:py-[10px] rounded-[10px] shadow-[0_0_20px_#eee] bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-500 hover:bg-[position:right_center] block">
+                    {isLoggedIn ? "🎓 Dashboard" : "Login"}
+                  </button>
+                </Link>
+                <Link to="/" className="">
+                  <button className="m-2 px-[24px] py-[12px] font-bold text-center flex items-center transition-all duration-500 bg-[linear-gradient(to_right,_#fc00ff_0%,_#00dbde_51%,_#fc00ff_100%)] bg-[length:200%_auto] text-white rounded-[10px] shadow-[0_0_20px_#eee] gap-3 hover:bg-[position:right_center] hover:text-white">
+                    Success Stories <FaArrowRight />
+                  </button>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
 
