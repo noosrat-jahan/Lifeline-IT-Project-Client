@@ -86,13 +86,13 @@ const SuccessStory = () => {
         {/* Arrows */}
         <button
           onClick={() => picinstanceRef.current?.prev()}
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white shadow px-2 py-1 rounded-full z-10"
+          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white shadow px-2 py-1 rounded-full z-10 duration-300"
         >
           ◀
         </button>
         <button
           onClick={() => picinstanceRef.current?.next()}
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white shadow px-2 py-1 rounded-full z-10"
+          className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white shadow px-2 py-1 rounded-full z-10 duration-300"
         >
           ▶
         </button>

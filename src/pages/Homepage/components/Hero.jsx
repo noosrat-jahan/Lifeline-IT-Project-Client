@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import banner from "../../../assets/banner.jpg";
 const Hero = () => {
   const [showVideo, setShowVideo] = useState(false);
-  const videoId = "FJ6F-defbbo";
+  const videoId = "uGx8wsKooBc";
   return (
     <div className=" space-y-10 mt-10">
       <div className="bg-accent w-11/12 mx-auto h-20">
