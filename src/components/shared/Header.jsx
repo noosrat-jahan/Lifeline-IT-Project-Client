@@ -242,15 +242,7 @@ const Header = () => {
                 onClick={() => setIsOpen(false)}
                 className="flex flex-col items-center gap-4"
               >
-                <Link
-                  to={
-                    isLoggedIn ? "/future-dashboard-link-goes-here" : "/login"
-                  }
-                >
-                  <button className="text-white text-center lg:px-[25px] px-[20px] py-[8px] lg:py-[10px] rounded-[10px] shadow-[0_0_20px_#eee] bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-500 hover:bg-[position:right_center] block">
-                    {isLoggedIn ? "🎓 Dashboard" : "Login"}
-                  </button>
-                </Link>
+                
                 <Link to="/" className="">
                   <button className="m-2 px-[24px] py-[12px] font-bold text-center flex items-center transition-all duration-500 bg-[linear-gradient(to_right,_#fc00ff_0%,_#00dbde_51%,_#fc00ff_100%)] bg-[length:200%_auto] text-white rounded-[10px] shadow-[0_0_20px_#eee] gap-3 hover:bg-[position:right_center] hover:text-white">
                     Success Stories <FaArrowRight />
