@@ -38,7 +38,6 @@ const students = [
   // Add more...
 ];
 
-
 const videos = [
   { id: "oaFJY1tBwEQ", title: "Student 1" },
   { id: "sY1LpZd7Jwo", title: "Student 2" },
@@ -49,17 +48,25 @@ const videos = [
 ];
 
 const SuccessStory = () => {
-    const [selectedVideo, setSelectedVideo] = useState(null);
-  const [sliderRef, instanceRef] = useKeenSlider({
-    loop: false,
-    slides: {
-      perView: 4,
-      spacing: 20,
+  const [selectedVideo, setSelectedVideo] = useState(null);
+ const [sliderRef, instanceRef] = useKeenSlider({
+  loop: false,
+  slides: {
+    perView: 4, // mobile default
+    spacing: 20,
+  },
+   breakpoints: {
+    640: {
+      slides: { perView: 2 },
     },
-  });
+    1024: {
+      slides: { perView: 4 },
+    },
+  },
+});
   return (
     <div>
-        {/* image card slider  */}
+      {/* image card slider  */}
       <div className="relative px-6 py-10 ">
         {/* Arrows */}
         <button
@@ -105,62 +112,67 @@ const SuccessStory = () => {
 
       {/* videos slider  */}
       <div className="relative px-6 py-10 ">
-      {/* Arrows */}
-      <button
-        onClick={() => instanceRef.current?.prev()}
-        className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white shadow px-2 py-1 rounded-full z-10"
-      >
-        ◀
-      </button>
-      <button
-        onClick={() => instanceRef.current?.next()}
-        className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white shadow px-2 py-1 rounded-full z-10"
-      >
-        ▶
-      </button>
+        {/* Arrows */}
+        <button
+          onClick={() => instanceRef.current?.prev()}
+          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white shadow px-2 py-1 rounded-full z-10"
+        >
+          ◀
+        </button>
+        <button
+          onClick={() => instanceRef.current?.next()}
+          className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white shadow px-2 py-1 rounded-full z-10"
+        >
+          ▶
+        </button>
 
-      {/* Video Slider */}
-      <div ref={sliderRef} className="keen-slider">
-        {videos.map((video, i) => (
-          <div key={i} className="keen-slider__slide">
-            <div className="relative group cursor-pointer" onClick={() => setSelectedVideo(video.id)}>
-              <img
-                src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
-                alt={video.title}
-                className="w-full h-48 object-cover rounded-lg shadow"
-              />
-              {/* Play button overlay */}
-              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition">
-                <div className="bg-white p-3 rounded-full shadow text-xl">▶</div>
+        {/* Video Slider */}
+        <div ref={sliderRef} className="keen-slider">
+          {videos.map((video, i) => (
+            <div key={i} className="keen-slider__slide">
+              <div
+                className="relative group cursor-pointer"
+                onClick={() => setSelectedVideo(video.id)}
+              >
+                <img
+                  src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
+                  alt={video.title}
+                  className="w-full h-48 object-cover rounded-lg shadow"
+                />
+                {/* Play button overlay */}
+                <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition">
+                  <div className="bg-white p-3 rounded-full shadow text-xl">
+                    ▶
+                  </div>
+                </div>
               </div>
+              {/* <p className="text-center text-sm mt-2 text-heading font-medium">{video.title}</p> */}
             </div>
-            {/* <p className="text-center text-sm mt-2 text-heading font-medium">{video.title}</p> */}
-          </div>
-        ))}
-      </div>
-
-      {/* Modal Popup */}
-      {selectedVideo && (
-        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
-          <div className="bg-white w-full max-w-3xl rounded-lg overflow-hidden relative">
-            <button
-              onClick={() => setSelectedVideo(null)}
-              className="absolute top-2 right-2 text-2xl font-bold text-gray-600 hover:text-red-500"
-            >
-              ✕
-            </button>
-            <iframe
-              width="100%"
-              height="450"
-              src={`https://www.youtube.com/embed/${selectedVideo}?autoplay=1`}
-              title="YouTube Video"
-              allow="autoplay; encrypted-media"
-              allowFullScreen
-            ></iframe>
-          </div>
+          ))}
         </div>
-      )}
-    </div>
+
+        {/* Modal Popup */}
+        {selectedVideo && (
+          <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
+            <div className="bg-white w-full max-w-3xl rounded-lg overflow-hidden relative">
+              <button
+                onClick={() => setSelectedVideo(null)}
+                className="absolute top-2 right-2 text-2xl font-bold text-gray-600 hover:text-red-500"
+              >
+                ✕
+              </button>
+              <iframe
+                width="100%"
+                height="450"
+                src={`https://www.youtube.com/embed/${selectedVideo}?autoplay=1`}
+                title="YouTube Video"
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
