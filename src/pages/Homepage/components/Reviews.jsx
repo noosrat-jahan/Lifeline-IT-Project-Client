@@ -1,6 +1,7 @@
 import React from "react";
 import { FaStar, FaQuoteRight, FaArrowRight } from "react-icons/fa";
 import Marquee from "react-fast-marquee";
+import { Link } from "react-router-dom";
 
 const Reviews = () => {
   return (
@@ -13,9 +14,11 @@ const Reviews = () => {
           Learning communicate to global world and build a bright future with
           our histudy.
         </p>
-        <button className="m-2 px-[45px] py-[15px] font-bold text-center flex items-center transition-all duration-500 bg-[linear-gradient(to_right,_#fc00ff_0%,_#00dbde_51%,_#fc00ff_100%)] bg-[length:200%_auto] text-white rounded-[10px] shadow-[0_0_20px_#eee] gap-3 hover:bg-[position:right_center] hover:text-white">
-          Success Stories <FaArrowRight />
-        </button>
+        <Link to="/success-story">
+          <button className="m-2 px-[45px] py-[15px] font-bold text-center flex items-center transition-all duration-500 bg-[linear-gradient(to_right,_#fc00ff_0%,_#00dbde_51%,_#fc00ff_100%)] bg-[length:200%_auto] text-white rounded-[10px] shadow-[0_0_20px_#eee] gap-3 hover:bg-[position:right_center] hover:text-white">
+            Success Stories <FaArrowRight />
+          </button>
+        </Link>
       </div>
 
       <div className="bg-white py-10 mt-6">

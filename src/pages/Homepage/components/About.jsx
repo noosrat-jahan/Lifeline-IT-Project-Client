@@ -1,5 +1,6 @@
 import React from "react";
 import about from "../../../assets/Community Photo.png";
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
@@ -18,7 +19,9 @@ const About = () => {
           <button className="rounded-full text-accent bg-gold/50 px-5 py-1.5 border border-gold">
             ABOUT LIFELINE IT
           </button>
-          <h1 className="text-5xl font-bold text-accent">Our Origins and Story</h1>
+          <h1 className="text-5xl font-bold text-accent">
+            Our Origins and Story
+          </h1>
           <p className="text-secondary">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde saepe
             voluptas totam animi aspernatur harum pariatur dolorem optio porro
@@ -33,9 +36,11 @@ const About = () => {
             inventore aut aliquid excepturi. Doloremque at libero eaque cumque
             consequuntur nihil voluptatem aut!
           </p>
-          <button className="text-white w-1/2 text-center uppercase px-[25px] py-[10px] rounded-[10px] shadow-[0_0_20px_#eee] bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-500 hover:bg-[position:right_center] block">
-            More About us
-          </button>
+          <Link to="/about">
+            <button className="text-white  text-center uppercase px-[25px] py-[10px] rounded-[10px] shadow-[0_0_20px_#eee] bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-500 hover:bg-[position:right_center] block">
+              More About us
+            </button>
+          </Link>
         </div>
       </div>
     </div>

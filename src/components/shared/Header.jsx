@@ -153,7 +153,7 @@ const Header = () => {
             </button>
           </Link>
 
-          <Link to="/" className="hidden lg:flex">
+          <Link to="/success-story" className="hidden lg:flex">
             <button className="m-2 px-[45px] py-[15px] font-bold text-center flex items-center transition-all duration-500 bg-[linear-gradient(to_right,_#fc00ff_0%,_#00dbde_51%,_#fc00ff_100%)] bg-[length:200%_auto] text-white rounded-[10px] shadow-[0_0_20px_#eee] gap-3 hover:bg-[position:right_center] hover:text-white">
               Success Stories <FaArrowRight />
             </button>
@@ -243,7 +243,7 @@ const Header = () => {
                 className="flex flex-col items-center gap-4"
               >
                 
-                <Link to="/" className="">
+                <Link to="/success-story" className="">
                   <button className="m-2 px-[24px] py-[12px] font-bold text-center flex items-center transition-all duration-500 bg-[linear-gradient(to_right,_#fc00ff_0%,_#00dbde_51%,_#fc00ff_100%)] bg-[length:200%_auto] text-white rounded-[10px] shadow-[0_0_20px_#eee] gap-3 hover:bg-[position:right_center] hover:text-white">
                     Success Stories <FaArrowRight />
                   </button>

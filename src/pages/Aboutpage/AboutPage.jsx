@@ -1,6 +1,7 @@
-import React from "react"
-import mission from "../../assets/mission.jpg"
-import vision from "../../assets/vision.jpg"
+import React from "react";
+import mission from "../../assets/mission.jpg";
+import vision from "../../assets/vision.jpg";
+import { Link } from "react-router-dom";
 const AboutPage = () => {
   return (
     <div className="pb-10">
@@ -41,9 +42,11 @@ const AboutPage = () => {
             inventore aut aliquid excepturi. Doloremque at libero eaque cumque
             consequuntur nihil voluptatem aut!
           </p>
-          <button className="text-white w-1/2 text-center uppercase px-[25px] py-[10px] rounded-[10px] shadow-[0_0_20px_#eee] bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-500 hover:bg-[position:right_center] block">
-            More About us
-          </button>
+          <Link to="https://www.youtube.com/@LifelineITInstitute">
+            <button className="text-white  text-center uppercase px-[25px] py-[10px] rounded-[10px] shadow-[0_0_20px_#eee] bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-500 hover:bg-[position:right_center] block">
+              More About us
+            </button>
+          </Link>
         </div>
       </div>
 
@@ -69,9 +72,12 @@ const AboutPage = () => {
             inventore aut aliquid excepturi. Doloremque at libero eaque cumque
             consequuntur nihil voluptatem aut!
           </p>
-          <button className="text-white w-1/2 text-center uppercase px-[25px] py-[10px] rounded-[10px] shadow-[0_0_20px_#eee] bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-500 hover:bg-[position:right_center] block">
-            Learn More About us
-          </button>
+
+          <Link to="https://www.facebook.com/lifeline.itti">
+            <button className="text-white  text-center uppercase px-[25px] py-[10px] rounded-[10px] shadow-[0_0_20px_#eee] bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-500 hover:bg-[position:right_center] block">
+              Learn More About us
+            </button>
+          </Link>
         </div>
 
         <div className="">
@@ -83,7 +89,7 @@ const AboutPage = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default AboutPage
+export default AboutPage;
