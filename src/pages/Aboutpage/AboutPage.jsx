@@ -2,6 +2,14 @@ import React from "react";
 import mission from "../../assets/mission.jpg";
 import vision from "../../assets/vision.jpg";
 import { Link } from "react-router-dom";
+
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
 const AboutPage = () => {
   return (
     <div className="pb-10">
@@ -88,6 +96,79 @@ const AboutPage = () => {
           />
         </div>
       </div>
+
+      {/* FAQ  */}
+
+      <h1 className="mt-14 text-5xl text-accent">Frequently Asked Question</h1>
+
+      <Accordion
+        type="single"
+        collapsible
+        className="w-11/12 mx-auto text-primary rounded-sm text-left bg-muted p-3 mt-5"
+        defaultValue="item-1"
+      >
+        <AccordionItem value="item-1">
+          <AccordionTrigger>
+            সঠিক কম্পিউটার কোর্সটি কিভাবে নির্বাচন করব?
+          </AccordionTrigger>
+          <AccordionContent className="flex flex-col gap-4 text-balance">
+            <p>
+              সঠিক কম্পিউটার কোর্স নির্বাচন করার জন্য আগে ভাবতে হবে আপনার আগ্রহ
+              এবং লক্ষ্য কী। যেমন — • আপনি চাকরির জন্য শিখতে চান, না
+              ফ্রিল্যান্সিং বা ব্যবসা করার জন্য? • আপনার আগ্রহ কিসে — ডিজাইন,
+              ভিডিও এডিটিং, ডিজিটাল মার্কেটিং, AI (Artificial Intelligence),
+              ওয়েব ডেভেলপমেন্ট, নাকি অফিস ম্যানেজমেন্ট? যদি আগ্রহ আর চাহিদা মিলে
+              যায়, তাহলে কোর্সটি করা সহজ আর লাভজনক হয়। যেমন: • শূন্য থেকে শুরু
+              করলে: কম্পিউটার বেসিক, অফিস ম্যানেজমেন্ট, MS Office, • ডিজাইন ভালো
+              লাগলে: গ্রাফিক্স ডিজাইন, UX/UI • ভিডিও এডিটিং ভালো লাগলে: ভিডিও
+              এডিটিং, মোশন গ্রাফিক্স, VFX • কোডিং আগ্রহ থাকলে: ওয়েব ডেভেলপমেন্ট,
+              অ্যাপ ডেভেলপমেন্ট • চাহিদা আর আয় খুঁজতে চাইলে: AI Content
+              Creation, Digital Marketing, Graphic Design সর্বদা এমন কোর্স বেছে
+              নেওয়া ভালো যা আগামী ৫–১০ বছরে চাহিদা থাকবে এবং আপনার আগ্রহের সাথেও
+              মেলে যায়। এভাবে কোর্সটি করলে কাজ খুঁজতে আর ভালোভাবে শিখতে পারবেন!
+            </p>
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-2">
+          <AccordionTrigger>কোর্সে কিভাবে ভর্তি হব?</AccordionTrigger>
+          <AccordionContent className="flex flex-col gap-4 text-balance">
+            <p>
+              খুব সহজ! ওয়েবসাইটে Sign Up করে, কোর্স সিলেক্ট করুন এবং “Enroll”
+              বাটনে ক্লিক করুন। পেমেন্ট সম্পূর্ণ করার পরই কোর্সে অ্যাক্সেস
+              পাবেন। ভিডিও গাইডলাইন পেতে লিংকে ক্লিক করুন-
+            </p>
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-3">
+          <AccordionTrigger>কিসের মাধ্যমে পেমেন্ট করা যায়?</AccordionTrigger>
+          <AccordionContent className="flex flex-col gap-4 text-balance">
+            <p>
+              আমরা বিকাশ, ব্যাংক এবং কার্ডের মাধ্যমে সুরক্ষিতভাবে পেমেন্ট গ্রহণ
+              করি।
+            </p>
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-4">
+          <AccordionTrigger>
+            কোর্স শেষ করার পর সার্টিফিকেট দেওয়া হয় কি?
+          </AccordionTrigger>
+          <AccordionContent className="flex flex-col gap-4 text-balance">
+            <p>
+              হ্যাঁ! প্রতিটি কোর্স শেষ করার পর আপনাকে ডাউনলোড করার মতো অনলাইন
+              সার্টিফিকেট দেওয়া হয়।
+            </p>
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-5">
+          <AccordionTrigger>কোর্স কন্টেন্ট কিভাবে পাব?</AccordionTrigger>
+          <AccordionContent className="flex flex-col gap-4 text-balance">
+            <p>
+              কোর্সে ভর্তি হওয়ার পর লগিন করে ড্যাশবোর্ডে কোর্স কন্টেন্ট দেখতে
+              পাবেন এবং নির্দিষ্ট মডিউল অনুসারে শিখতে পারবেন।
+            </p>
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
     </div>
   );
 };
