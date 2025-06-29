@@ -1,18 +1,20 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import axios from "axios"
+import React, { useEffect, useState } from "react"
+import { Link, useParams } from "react-router-dom"
 
 const CourseDetails = () => {
-  const { route } = useParams();
-  console.log(route);
-  const [courseDetails, setCourseDetails] = useState({});
+  const { route } = useParams()
+
+  const [courseDetails, setCourseDetails] = useState({})
   useEffect(() => {
     axios
       .get(`https://lifelineit-back.onrender.com/api/courses/${route}`)
       .then((res) => {
-        setCourseDetails(res.data[0]);
-      });
-  }, []);
+        console.log(res.data)
+        setCourseDetails(res.data)
+      })
+  }, [route])
+
   return (
     <div>
       <div className="mt-10 w-11/12 text-left mx-auto grid grid-cols-1 lg:grid-cols-2 justify-between gap-5">
@@ -22,10 +24,7 @@ const CourseDetails = () => {
           </h1>
           <p className="text-lg text-accent">{courseDetails.description}</p>
           <div>
-            <img
-              src="https://i.ibb.co.com/NpnnggZ/cybersecurity-concept-collage-design.jpg"
-              alt=""
-            />
+            <img src={courseDetails.thumbnail} alt="" />
           </div>
         </div>
 
@@ -41,7 +40,7 @@ const CourseDetails = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default CourseDetails;
+export default CourseDetails
