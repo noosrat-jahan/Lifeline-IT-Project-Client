@@ -27,6 +27,40 @@
   }
 }
 
+
+/* ripple animation in hero section  */
+
+@keyframes ripple {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+.ripple {
+  position: absolute;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 9999px;
+  /* background-color: white; */
+  border: 1.5px solid white;
+  opacity: 0.3;
+  animation: ripple 2s linear infinite;
+}
+
+.ripple-2 {
+  animation-delay: 0.4s;
+}
+
+.ripple-3 {
+  animation-delay: 0.8s;
+}
+
+
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;

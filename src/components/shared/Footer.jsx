@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 import logo from "../../assets/Website Logo.png";
 import { Link } from "react-router-dom";
+import paymentpic from "../../assets/payments.png";
 
 const Footer = () => {
   
@@ -102,9 +103,10 @@ const Footer = () => {
 
       {/* Bottom Pay With */}
       <div className="flex items-center mt-10 gap-8">
-        <p className="text-white text-sm">Pay with</p>
-        <div className=" border border-white/20 rounded-xl p-6 w-5/6">
+        <p className="text-white font-semibold text-xl">Pay with</p>
+        <div className=" border border-white/20 rounded-xl  w-5/6">
           {/* Payment logos here if needed */}
+          <img src={paymentpic} alt="" />
         </div>
       </div>
     </footer>

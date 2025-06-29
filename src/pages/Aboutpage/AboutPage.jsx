@@ -104,7 +104,7 @@ const AboutPage = () => {
       <Accordion
         type="single"
         collapsible
-        className="w-11/12 mx-auto text-primary rounded-sm text-left bg-muted p-3 mt-5"
+        className="w-9/12 mx-auto text-primary rounded-sm text-left bg-muted p-3 mt-5 font-anek hover:no-underline"
         defaultValue="item-1"
       >
         <AccordionItem value="item-1">

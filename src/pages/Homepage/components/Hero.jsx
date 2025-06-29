@@ -3,13 +3,16 @@ import { FaArrowRight } from "react-icons/fa6";
 import { FaPlay } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import banner from "../../../assets/banner.jpg";
+
+import "../../../App.css";
 const Hero = () => {
-  const [showVideo, setShowVideo] = useState(false);
+  const [open, setOpen] = useState(false);
   const videoId = "uGx8wsKooBc";
+
   return (
     <div className=" space-y-10 mt-10">
       <div className="bg-accent w-11/12 mx-auto h-20">
-      <img src={banner} alt="" className="h-full w-full bg-cover" />
+        <img src={banner} alt="" className="h-full w-full bg-cover" />
       </div>
       <div className="text-primary text-3xl  w-auto mx-auto shadow-xl rounded-full px-5 py-3">
         <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-white to-red-400 font-bold text-base md:text-xl lg:text-3xl">
@@ -18,6 +21,7 @@ const Hero = () => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-28 text-left pt-10">
+        {/* left section  */}
         <div className="flex flex-col items-start gap-8">
           <h1 className="text-secondary font-poppins text-3xl md:text-4xl lg:text-5xl font-bold">
             One of the Best IT <br /> Training Institute <br /> In Bangladesh
@@ -67,55 +71,60 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="relative max-w-xl w-full h-full">
-          {/* YouTube Thumbnail */}
-          <img
-            src={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
-            alt="YouTube Video Preview"
-            className="rounded-lg shadow-lg w-full h-full"
-          />
-          {/* https://youtu.be/FJ6F-defbbo?si=D7YZUcQezTnpBFvo */}
-          {/* Play Button */}
-          <button
-            onClick={() => setShowVideo(true)}
-            className="absolute inset-0 flex items-center justify-center text-white text-4xl"
+        {/* right section  */}
+        <div className="relative flex items-center justify-center w-full">
+          {/* Video Thumbnail */}
+          <div
+            className="relative cursor-pointer"
+            onClick={() => setOpen(true)}
           >
-            <div className="bg-black bg-opacity-60 p-5 rounded-full hover:scale-110 transition">
-              ▶
-            </div>
-          </button>
+            <img
+              src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
+              alt="Video Thumbnail"
+              className="rounded-lg shadow-lg max-w-3xl w-full"
+            />
 
-          {/* Modal - YouTube Popup */}
-          {showVideo && (
-            <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 px-4">
-              <div className="relative w-full max-w-3xl">
-                {/* Close Button */}
-                <button
-                  onClick={() => setShowVideo(false)}
-                  className="absolute -top-10 z-10 -right-10 m-4 text-white text-xl"
+            {/* Ripple Animation */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="ripple" />
+              <span className="ripple ripple-2" />
+              <span className="ripple ripple-3" />
+
+              {/* Play Button */}
+              <div className="relative z-10 w-20 h-20 bg-white bg-opacity-90 rounded-full flex items-center justify-center shadow-2xl hover:scale-105 transition-transform duration-300">
+                <svg
+                  className="w-10 h-10 text-blue-600"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
                 >
-                  ✕
-                </button>
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </div>
+          </div>
 
-                {/* YouTube Iframe with Autoplay */}
-                <div className="aspect-w-16 aspect-h-9">
-                  <iframe
-                    src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
-                    className="w-full h-full rounded-lg"
-                    frameBorder="0"
-                    allow="autoplay; encrypted-media"
-                    allowFullScreen
-                    title="YouTube Video"
-                  ></iframe>
-                </div>
+          {/* Modal Video Popup */}
+          {open && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 p-4">
+              <div class="relative w-full max-w-4xl h-[500px]">
+                <iframe
+                  className="w-full h-full rounded-lg"
+                  src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+                  frameBorder="0"
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
+                  title="YouTube video"
+                />
+                <button
+                  onClick={() => setOpen(false)}
+                  className="absolute top-2 right-2 text-white text-2xl hover:text-red-400 transition"
+                >
+                  &times;
+                </button>
               </div>
             </div>
           )}
         </div>
-
-        {/* <div className="bg-accent  rounded-3xl shadow-2xl flex justify-center items-center text-3xl">
-          <FaPlay />
-        </div> */}
       </div>
     </div>
   );
