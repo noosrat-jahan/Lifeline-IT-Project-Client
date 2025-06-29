@@ -1,10 +1,37 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { Checkbox } from "@mui/material"
 import axios from "axios"
+import Swal from "sweetalert2"
+import withReactContent from "sweetalert2-react-content"
 
 const RegisterPage = () => {
+  const [checking, setChecking] = useState(true)
   const navigate = useNavigate()
+
+  // Checks if user already logged in
+  useEffect(() => {
+    const checkLogin = async () => {
+      try {
+        const result = await axios.get(
+          import.meta.env.VITE_API_URL + "/api/auth/check",
+          { withCredentials: true }
+        )
+
+        if (result.data.status) {
+          navigate("/")
+        } else {
+          setChecking(false)
+          console.log("Okay, not logged in")
+        }
+      } catch (err) {
+        console.error("Error while checking login status:", err)
+      }
+    }
+
+    checkLogin()
+  }, [navigate])
+
   const handleRegister = async (e) => {
     e.preventDefault()
     const form = e.target
@@ -21,23 +48,30 @@ const RegisterPage = () => {
     }
 
     localStorage.setItem("RegisterInfo", JSON.stringify(registerInfo))
-    alert("Data saved to localStorage!")
-
     console.log(email)
 
+    const MySwal = withReactContent(Swal)
+
     try {
-      const request = await axios.post(
+      const result = await axios.post(
         import.meta.env.VITE_API_URL + "/api/auth/otp-verify",
         { email },
         { withCredentials: true }
       )
-      console.log(request.data)
-      navigate("/otppage")
+      if (result.data) navigate("/otppage")
     } catch (error) {
+      MySwal.fire({
+        title: "Oops?",
+        text: "Did you entered your info correctly? Please check.",
+        icon: "question",
+        confirmButtonText: "Oops!",
+      })
       console.error("Axios Error:", error.response?.data || error.message)
-      alert("Registration failed! Check console for details.")
     }
   }
+
+  if (checking) return null
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-[linear-gradient(135deg,_#dbeafe_0%,_#e0e7ff_100%)] font-sans p-4">
       <div className="w-full max-w-[28rem]">
