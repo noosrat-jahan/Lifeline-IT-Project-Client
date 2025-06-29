@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from "react";
 import { FaArrowRight } from "react-icons/fa6";
 import { FaPlay } from "react-icons/fa";
@@ -9,6 +10,16 @@ const Hero = () => {
   const [open, setOpen] = useState(false);
   const videoId = "uGx8wsKooBc";
 
+=======
+import React, { useState } from "react"
+import { FaArrowRight } from "react-icons/fa6"
+import { FaPlay } from "react-icons/fa"
+import { Link } from "react-router-dom"
+import banner from "../../../assets/banner.jpg"
+const Hero = () => {
+  const [showVideo, setShowVideo] = useState(false)
+  const videoId = "uGx8wsKooBc"
+>>>>>>> 4df1bad9d659d845f56e227726f362701d9eb1b7
   return (
     <div className=" space-y-10 mt-10">
       <div className="bg-accent w-11/12 mx-auto h-20">
@@ -127,7 +138,7 @@ const Hero = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero

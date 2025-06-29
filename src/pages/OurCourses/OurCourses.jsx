@@ -1,19 +1,18 @@
-import React, { useEffect, useState } from "react";
-import course1 from "../../assets/course1.jpg";
-import { Link } from "react-router-dom";
-import axios from "axios";
-import { FaStar } from "react-icons/fa";
+import React, { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
+import axios from "axios"
+import { FaStar } from "react-icons/fa"
 // import { motion } from "framer-motion"
 
 const OurCourses = () => {
-  const [courseData, setCourseData] = useState([]);
+  const [courseData, setCourseData] = useState([])
   useEffect(() => {
     axios
       .get("https://lifelineit-back.onrender.com/api/courses")
       .then((res) => {
-        setCourseData(res.data);
-      });
-  }, []);
+        setCourseData(res.data)
+      })
+  }, [])
 
   return (
     <div className="min-h-screen  ">
@@ -35,7 +34,7 @@ const OurCourses = () => {
 
               {/* Course image */}
               <img
-                src="https://i.ibb.co.com/NpnnggZ/cybersecurity-concept-collage-design.jpg"
+                src={course.thumbnail}
                 alt="Course"
                 className="w-full h-48 object-cover"
               />
@@ -54,7 +53,7 @@ const OurCourses = () => {
                 <div>
                   <p className="text-left flex items-center gap-2 text-amber-500">
                     {" "}
-                    Reviews 
+                    Reviews
                     <FaStar />
                     <FaStar />
                     <FaStar />
@@ -84,7 +83,7 @@ const OurCourses = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default OurCourses;
+export default OurCourses

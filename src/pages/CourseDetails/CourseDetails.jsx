@@ -1,21 +1,29 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import axios from "axios"
+import React, { useEffect, useState } from "react"
+import { Link, useParams } from "react-router-dom"
 
 const CourseDetails = () => {
-  const { route } = useParams();
-  console.log(route);
-  const [courseDetails, setCourseDetails] = useState({});
+  const { route } = useParams()
+
+  const [courseDetails, setCourseDetails] = useState({})
   useEffect(() => {
     axios
       .get(`https://lifelineit-back.onrender.com/api/courses/${route}`)
       .then((res) => {
+<<<<<<< HEAD
         setCourseDetails(res.data[0]);
       });
   }, []);
 
   const [open, setOpen] = useState(false);
   const videoId = "uGx8wsKooBc";
+=======
+        console.log(res.data)
+        setCourseDetails(res.data)
+      })
+  }, [route])
+
+>>>>>>> 4df1bad9d659d845f56e227726f362701d9eb1b7
   return (
     <div>
       <div className="mt-10 w-11/12 text-left mx-auto grid grid-cols-1 lg:grid-cols-2 justify-between gap-5">
@@ -23,12 +31,18 @@ const CourseDetails = () => {
           <h1 className="text-4xl text-accent font-bold">
             {courseDetails?.title}
           </h1>
+<<<<<<< HEAD
           <p className="text-lg text-accent">{courseDetails?.description}</p>
           <div className="bg-white p-4">
             <img
               src="https://i.ibb.co.com/NpnnggZ/cybersecurity-concept-collage-design.jpg"
               alt=""
             />
+=======
+          <p className="text-lg text-accent">{courseDetails.description}</p>
+          <div>
+            <img src={courseDetails.thumbnail} alt="" />
+>>>>>>> 4df1bad9d659d845f56e227726f362701d9eb1b7
           </div>
         </div>
 
@@ -103,7 +117,7 @@ const CourseDetails = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default CourseDetails;
+export default CourseDetails
