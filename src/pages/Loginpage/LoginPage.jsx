@@ -1,29 +1,77 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import "../../Footer.css"
 import { Link, useNavigate } from "react-router-dom"
 import { Checkbox } from "@mui/material"
 import axios from "axios"
+import Swal from "sweetalert2"
+import withReactContent from "sweetalert2-react-content"
 
 const LoginPage = () => {
+  const [checking, setChecking] = useState(true)
   const navigate = useNavigate()
+
+  // Checks if user already logged in
+  useEffect(() => {
+    const checkLogin = async () => {
+      try {
+        const result = await axios.get(
+          import.meta.env.VITE_API_URL + "/api/auth/check",
+          { withCredentials: true }
+        )
+
+        if (result.data.status) {
+          navigate("/")
+        } else {
+          setChecking(false)
+          console.log("Okay, not logged in")
+        }
+      } catch (err) {
+        console.error("Error while checking login status:", err)
+      }
+    }
+
+    checkLogin()
+  }, [navigate])
+
   const handleLogin = async (e) => {
+    const MySwal = withReactContent(Swal)
     e.preventDefault()
     const form = e.target
     const email = form.email.value
     const password = form.password.value
     try {
-      const request = await axios.post(
+      const result = await axios.post(
         import.meta.env.VITE_API_URL + "/api/auth/login",
         { email, password },
         { withCredentials: true }
       )
-      console.log(request.data)
-      navigate("/")
+
+      console.log(result)
+
+      if (result.data.success) {
+        MySwal.fire({
+          title: `Welcome Back, ${result.data.name}`,
+          text: result.data.message,
+          icon: "success",
+          confirmButtonText: "Cool!",
+        })
+        setTimeout(() => {
+          navigate("/")
+        }, 3000)
+      }
     } catch (error) {
+      MySwal.fire({
+        title: "Oops!",
+        text: "Invalid Credintials, please cross check your data",
+        icon: "error",
+        confirmButtonText: "Okay",
+      })
       console.error("Axios Error:", error.response?.data || error.message)
-      alert("Registration failed! Check console for details.")
     }
   }
+
+  if (checking) return null
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-[linear-gradient(135deg,_#dbeafe_0%,_#e0e7ff_100%)] font-sans p-4">
       <div className="w-full max-w-[28rem]">
@@ -32,7 +80,7 @@ const LoginPage = () => {
             Login
           </h1>
 
-          <form class="login-form" onSubmit={handleLogin}>
+          <form className="login-form" onSubmit={handleLogin}>
             <div className="relative mb-6">
               <input
                 type="email"
