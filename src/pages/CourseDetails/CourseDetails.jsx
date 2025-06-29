@@ -11,7 +11,7 @@ const CourseDetails = () => {
       .get(`https://lifelineit-back.onrender.com/api/courses/${route}`)
       .then((res) => {
 
-        setCourseDetails(res.data[0]);
+        setCourseDetails(res.data);
       });
   }, []);
 

@@ -9,6 +9,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { ChevronDown } from "lucide-react";
 
 const AboutPage = () => {
   return (
@@ -104,12 +105,13 @@ const AboutPage = () => {
       <Accordion
         type="single"
         collapsible
-        className="w-9/12 mx-auto text-primary rounded-sm text-left bg-muted p-3 mt-5 font-anek hover:no-underline"
+        className="w-9/12 mx-auto text-secondary rounded-sm text-left bg-blue-950/20 p-8 mt-5 font-anek hover:no-underline relative"
         defaultValue="item-1"
       >
         <AccordionItem value="item-1">
-          <AccordionTrigger>
+          <AccordionTrigger className="text-xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
             সঠিক কম্পিউটার কোর্সটি কিভাবে নির্বাচন করব?
+            
           </AccordionTrigger>
           <AccordionContent className="flex flex-col gap-4 text-balance">
             <p>
@@ -130,7 +132,9 @@ const AboutPage = () => {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-2">
-          <AccordionTrigger>কোর্সে কিভাবে ভর্তি হব?</AccordionTrigger>
+          <AccordionTrigger className="text-xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
+            কোর্সে কিভাবে ভর্তি হব?
+          </AccordionTrigger>
           <AccordionContent className="flex flex-col gap-4 text-balance">
             <p>
               খুব সহজ! ওয়েবসাইটে Sign Up করে, কোর্স সিলেক্ট করুন এবং “Enroll”
@@ -140,7 +144,9 @@ const AboutPage = () => {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-3">
-          <AccordionTrigger>কিসের মাধ্যমে পেমেন্ট করা যায়?</AccordionTrigger>
+          <AccordionTrigger className="text-xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
+            কিসের মাধ্যমে পেমেন্ট করা যায়?
+          </AccordionTrigger>
           <AccordionContent className="flex flex-col gap-4 text-balance">
             <p>
               আমরা বিকাশ, ব্যাংক এবং কার্ডের মাধ্যমে সুরক্ষিতভাবে পেমেন্ট গ্রহণ
@@ -149,7 +155,7 @@ const AboutPage = () => {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-4">
-          <AccordionTrigger>
+          <AccordionTrigger className="text-xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
             কোর্স শেষ করার পর সার্টিফিকেট দেওয়া হয় কি?
           </AccordionTrigger>
           <AccordionContent className="flex flex-col gap-4 text-balance">
@@ -160,7 +166,9 @@ const AboutPage = () => {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-5">
-          <AccordionTrigger>কোর্স কন্টেন্ট কিভাবে পাব?</AccordionTrigger>
+          <AccordionTrigger className="text-xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
+            কোর্স কন্টেন্ট কিভাবে পাব?
+          </AccordionTrigger>
           <AccordionContent className="flex flex-col gap-4 text-balance">
             <p>
               কোর্সে ভর্তি হওয়ার পর লগিন করে ড্যাশবোর্ডে কোর্স কন্টেন্ট দেখতে
@@ -168,6 +176,8 @@ const AboutPage = () => {
             </p>
           </AccordionContent>
         </AccordionItem>
+
+      
       </Accordion>
     </div>
   );
