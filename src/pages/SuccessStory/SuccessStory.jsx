@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import "keen-slider/keen-slider.min.css";
-import { useKeenSlider } from "keen-slider/react";
-import "keen-slider/keen-slider.min.css";
-import { useRef } from "react";
-import logo from "../../assets/Website Logo.png";
+import React, { useState } from "react"
+import "keen-slider/keen-slider.min.css"
+import { useKeenSlider } from "keen-slider/react"
+import "keen-slider/keen-slider.min.css"
+// import { useRef } from "react";
+import logo from "../../assets/Website Logo.png"
 const students = [
   {
     name: "Rahim Uddin",
@@ -36,7 +36,7 @@ const students = [
     instituteLogo: logo,
   },
   // Add more...
-];
+]
 
 const videos = [
   { id: "oaFJY1tBwEQ", title: "Student 1" },
@@ -45,40 +45,32 @@ const videos = [
   { id: "FJ6F-defbbo", title: "Student 4" },
   { id: "uGx8wsKooBc", title: "Student 5" },
   { id: "-QcVc3VKTGA", title: "Student 6" },
-];
+]
 
 const SuccessStory = () => {
-  const [selectedVideo, setSelectedVideo] = useState(null);
- const [picsliderRef, picinstanceRef] = useKeenSlider({
-  loop: false,
-  slides: {
-    perView: 4, // mobile default
-    spacing: 20,
-  },
-   breakpoints: {
-    640: {
-      slides: { perView: 2 },
+  const [selectedVideo, setSelectedVideo] = useState(null)
+  const [picsliderRef, picinstanceRef] = useKeenSlider({
+    loop: false,
+    slides: {
+      perView: 2, // mobile default
+      spacing: 20,
     },
-    1024: {
-      slides: { perView: 4 },
+    breakpoints: {
+      640: {
+        slides: { perView: 2 },
+      },
+      1024: {
+        slides: { perView: 4 },
+      },
     },
-  },
-});
- const [videosliderRef, videoinstanceRef] = useKeenSlider({
-  loop: false,
-  slides: {
-    perView: 4, // mobile default
-    spacing: 20,
-  },
-   breakpoints: {
-    640: {
-      slides: { perView: 2 },
+  })
+  const [videosliderRef, videoinstanceRef] = useKeenSlider({
+    loop: false,
+    slides: {
+      perView: 3, // mobile default
+      spacing: 20,
     },
-    1024: {
-      slides: { perView: 4 },
-    },
-  },
-});
+  })
   return (
     <div>
       {/* image card slider  */}
@@ -189,7 +181,7 @@ const SuccessStory = () => {
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SuccessStory;
+export default SuccessStory

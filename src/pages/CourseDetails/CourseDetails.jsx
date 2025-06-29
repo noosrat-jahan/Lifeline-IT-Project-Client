@@ -10,13 +10,20 @@ const CourseDetails = () => {
     axios
       .get(`https://lifelineit-back.onrender.com/api/courses/${route}`)
       .then((res) => {
+        console.log(res.data)
+        setCourseDetails(res.data)
+      })
+  }, [route])
 
-        setCourseDetails(res.data);
-      });
-  }, []);
+  function extractYouTubeID(url) {
+    // Regular expression to match most YouTube URL formats
+    const regExp =
+      /(?:youtube\.com\/(?:watch\?v=|embed\/|v\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/
+    const match = url.match(regExp)
+    return match ? match[1] : null
+  }
 
-  const [open, setOpen] = useState(false);
-  const videoId = "uGx8wsKooBc";
+  const [open, setOpen] = useState(false)
 
   return (
     <div>
@@ -32,7 +39,6 @@ const CourseDetails = () => {
               src="https://i.ibb.co.com/NpnnggZ/cybersecurity-concept-collage-design.jpg"
               alt=""
             />
-
           </div>
         </div>
 
@@ -44,7 +50,7 @@ const CourseDetails = () => {
               onClick={() => setOpen(true)}
             >
               <img
-                src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
+                src={courseDetails.thumbnail ? courseDetails.thumbnail : ""}
                 alt="Video Thumbnail"
                 className="rounded-lg shadow-lg max-w-3xl w-full"
               />
@@ -74,7 +80,9 @@ const CourseDetails = () => {
                 <div class="relative w-full max-w-4xl h-[500px]">
                   <iframe
                     className="w-full h-full rounded-lg"
-                    src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+                    src={`https://www.youtube.com/embed/${extractYouTubeID(
+                      courseDetails.introVideo
+                    )}?autoplay=1`}
                     frameBorder="0"
                     allow="autoplay; encrypted-media"
                     allowFullScreen
@@ -91,12 +99,19 @@ const CourseDetails = () => {
             )}
           </div>
 
-          <h1 className="text-blue-900 text-2xl text-center font-bold leading-loose">&#2547; 1500</h1>
-          <p className="text-xl text-blue-900 border-b-2 pb-2">Start Date: </p>
-          <p className="text-xl text-blue-900 border-b-2 pb-2">End Date: </p>
-          <p className="text-xl text-blue-900 border-b-2 pb-2">Total Classes: </p>
-          <p className="text-xl text-blue-900 border-b-2 pb-2">Class Duration: </p>
-          <Link to={`/`} >
+          <h1 className="text-blue-900 text-2xl text-center font-bold leading-loose">
+            &#2547; 1500
+          </h1>
+          <p className="text-xl text-blue-900 border-b-2 pb-2">
+            Start Date: {courseDetails.startDate}
+          </p>
+          <p className="text-xl text-blue-900 border-b-2 pb-2">
+            Total Classes: {courseDetails.totalClasses}
+          </p>
+          <p className="text-xl text-blue-900 border-b-2 pb-2">
+            Class Duration: {courseDetails.duration}
+          </p>
+          <Link to={`/`}>
             <button
               className="px-8 sm:px-10 lg:px-8 w-full
                 py-2 sm:py-3 rounded-full font-bold text-center flex items-center justify-center transition-all duration-500 bg-[linear-gradient(to_right,_#fc00ff_0%,_#00dbde_51%,_#fc00ff_100%)] bg-[length:200%_auto] text-white  shadow-[0_0_20px_#eee]  hover:bg-[position:right_center] hover:text-white"
