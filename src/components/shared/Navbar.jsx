@@ -1,5 +1,5 @@
-import React from "react";
-import { CircleCheckIcon, CircleHelpIcon, CircleIcon } from "lucide-react";
+import React from "react"
+import { CircleCheckIcon, CircleHelpIcon, CircleIcon } from "lucide-react"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -8,20 +8,25 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
-import { Link } from "react-router-dom";
-import { ListItem } from "@mui/material";
+} from "@/components/ui/navigation-menu"
+import { Link } from "react-router-dom"
+import { ListItem } from "@mui/material"
 const Navbar = () => {
   return (
     <div className="">
-      <NavigationMenu >
+      <NavigationMenu>
         <NavigationMenuList className="gap-6">
           <NavigationMenuItem>
             <NavigationMenuLink
               asChild
               className={navigationMenuTriggerStyle()}
             >
-              <Link to="/" className="bg-transparent text-navmenu text-xl font-roboto">Home</Link>
+              <Link
+                to="/"
+                className="bg-transparent text-navmenu text-xl font-roboto"
+              >
+                Home
+              </Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
@@ -29,12 +34,19 @@ const Navbar = () => {
               asChild
               className={navigationMenuTriggerStyle()}
             >
-              <Link to="/our-courses" className="bg-transparent text-navmenu text-xl font-roboto">Courses</Link>
+              <Link
+                to="/courses"
+                className="bg-transparent text-navmenu text-xl font-roboto"
+              >
+                Courses
+              </Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
 
-          <NavigationMenuItem >
-            <NavigationMenuTrigger className="bg-transparent text-navmenu text-xl font-roboto">Students</NavigationMenuTrigger>
+          <NavigationMenuItem>
+            <NavigationMenuTrigger className="bg-transparent text-navmenu text-xl font-roboto">
+              Students
+            </NavigationMenuTrigger>
             <NavigationMenuContent side="bottom" align="start" sideOffset={8}>
               <ul className="grid gap-2 md:w-[100px] lg:w-[200px] ">
                 <li className="flex flex-col items-start p-4 gap-4">
@@ -45,7 +57,7 @@ const Navbar = () => {
                     <Link to="/success-story">Success Story</Link>
                   </NavigationMenuLink>
                   <NavigationMenuLink asChild>
-                    <Link to="/student-review" >Student Reviews</Link>
+                    <Link to="/student-review">Student Reviews</Link>
                   </NavigationMenuLink>
                 </li>
               </ul>
@@ -57,7 +69,12 @@ const Navbar = () => {
               asChild
               className={navigationMenuTriggerStyle()}
             >
-              <Link to="/about" className="bg-transparent text-navmenu text-xl font-roboto">About Us</Link>
+              <Link
+                to="/about"
+                className="bg-transparent text-navmenu text-xl font-roboto"
+              >
+                About Us
+              </Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
 
@@ -66,16 +83,21 @@ const Navbar = () => {
               asChild
               className={navigationMenuTriggerStyle()}
             >
-              <Link to="/contact" className="bg-transparent text-navmenu text-xl font-roboto">Contact</Link>
+              <Link
+                to="/contact"
+                className="bg-transparent text-navmenu text-xl font-roboto"
+              >
+                Contact
+              </Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
     </div>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
 
 // import React, { useState } from "react";
 // import { Link } from "react-router-dom";
@@ -96,7 +118,6 @@ export default Navbar;
 //   return (
 //     <nav >
 //       <div className="max-w-7xl mx-auto px-4 flex justify-between items-center h-10">
-        
 
 //         {/* Hamburger for small devices */}
 //         <div className="md:hidden">

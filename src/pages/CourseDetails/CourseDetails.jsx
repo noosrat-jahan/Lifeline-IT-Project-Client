@@ -8,7 +8,7 @@ const CourseDetails = () => {
   const [courseDetails, setCourseDetails] = useState({})
   useEffect(() => {
     axios
-      .get(`https://lifelineit-back.onrender.com/api/courses/${route}`)
+      .get(import.meta.VITE_API_URL + `/api/courses/${route}`)
       .then((res) => {
         console.log(res.data)
         setCourseDetails(res.data)

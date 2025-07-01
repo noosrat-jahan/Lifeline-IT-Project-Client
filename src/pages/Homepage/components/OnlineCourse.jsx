@@ -1,39 +1,40 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { Star } from "lucide-react";
-import { FaArrowRight } from "react-icons/fa6";
-import feature from "../../../assets/feature.jpg";
-import course1 from "../../../assets/course1.jpg";
-import axios from "axios";
+import React, { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
+import { FaArrowRight } from "react-icons/fa6"
+import axios from "axios"
 const OnlineCourse = () => {
   const handleClick = () => {
     // navigate("/our-courses");
     setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }, 100); // delay to ensure page loads
-  };
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    }, 100) // delay to ensure page loads
+  }
 
-  const [online, setOnline] = useState([]);
+  const [data, setData] = useState([])
+  const [type, setType] = useState("online")
+
+  let getLatestCourses = async (type) => {
+    setType(type)
+    const result = await axios.get(
+      `https://lifelineit-back.onrender.com/api/courses/search?limit=3&type=${type}`
+    )
+    setData(result.data)
+  }
 
   useEffect(() => {
-    axios
-      .get(
-        `https://lifelineit-back.onrender.com/api/courses/search?limit=3&type=online`
-      )
-      .then((res) => {
-        setOnline(res.data);
-      });
-  }, []);
+    getLatestCourses(type)
+  }, [type])
+
   return (
     <div>
       <div className="flex justify-center">
         <h1 className="text-2xl font-bold bg-blue-900 rounded-full px-8 py-1.5 text-white">
-          Online Course
+          Online Courses
         </h1>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-10">
-        {online.map((course) => (
+        {data.map((course) => (
           <div
             key={course._id}
             className="max-w-sm xl:max-w-lg h-full rounded-xl overflow-hidden shadow-md bg-white relative border border-[#f09619e2] hover:shadow-lg hover:scale-[1.02] transition duration-300 cursor-pointer"
@@ -72,7 +73,7 @@ const OnlineCourse = () => {
                     Enroll Now
                   </button>
                 </Link>
-                <Link to="/course-details">
+                <Link to="/courses">
                   <button className="text-white  text-center  px-[20px] py-[10px] rounded-full shadow-[0_0_20px_#eee] bg-gradient-to-r from-[#FF8008] via-[#FFC837] to-[#FF8008] bg-[length:200%_auto] transition-all duration-500 hover:bg-[position:right_center] block">
                     View Details
                   </button>
@@ -83,7 +84,7 @@ const OnlineCourse = () => {
         ))}
       </div>
       <div className="flex justify-center mt-4">
-        <Link to="/online-course">
+        <Link to="/courses">
           <button
             onClick={handleClick}
             className="
@@ -110,7 +111,7 @@ const OnlineCourse = () => {
         </Link>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default OnlineCourse;
+export default OnlineCourse

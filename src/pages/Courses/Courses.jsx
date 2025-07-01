@@ -1,63 +1,75 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
-import { FaStar } from "react-icons/fa";
+import React, { useEffect, useState } from "react"
+import { Link, useLocation } from "react-router-dom"
+import axios from "axios"
+import { FaStar } from "react-icons/fa"
 // import { motion } from "framer-motion"
 
 const OurCourses = () => {
-  const [courseData, setCourseData] = useState([]);
-  useEffect(() => {
-    axios
-      .get("https://lifelineit-back.onrender.com/api/courses")
-      .then((res) => {
-        setCourseData(res.data);
-      });
-  }, []);
-
-  const [selected, setSelected] = useState("offline");
-  const [data, setData] = useState([]);
+  const [selected, setSelected] = useState("")
+  const [data, setData] = useState([])
+  const location = useLocation()
+  const { search } = location.state || {}
 
   useEffect(() => {
-    // Example fetch based on selected
-    
+    if (search) {
+      setSelected(search)
+    } else {
+      setSelected("All")
+    }
+  }, [search])
+
+  useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch(`https://lifelineit-back.onrender.com/api/courses/search?limit=3&type=${selected}`);
-      const result = await res.json();
-      setData(result);
-    };
-    fetchData();
-  }, [selected]);
+      let result
+      if (selected != "All") {
+        result = await axios.get(
+          import.meta.env.VITE_API_URL + `/api/courses/search?name=${selected}`
+        )
+      } else {
+        result = await axios.get(import.meta.env.VITE_API_URL + "/api/courses/")
+      }
+      console.log(result.data)
+      setData(result.data)
+    }
+    fetchData()
+  }, [selected])
 
   return (
     <div className="min-h-screen  ">
       <div className="w-10/12 mx-auto pt-10 text-left space-y-5">
         <div className="flex justify-between items-center">
           <div>
-            <h1 className="text-3xl text-accent font-bold">All Courses</h1>
+            <h1 className="text-3xl text-accent font-bold">
+              {selected} Courses
+            </h1>
             <p className="text-accent">
               Unlock Your Creative Potential: Learn the Skills to Dominate the
               Digital Landscape.
             </p>
           </div>
           <div>
-             <button
-          onClick={() => setSelected("offline")}
-          className={`px-5 py-1 rounded-full rounded-r-none shadow-md transition-all
-            ${selected === "offline"
-              ? "bg-gold text-white"
-              : "bg-white border border-blue-500 text-gold"}`}
-        >
-          Offline
-        </button>
-        <button
-          onClick={() => setSelected("online")}
-          className={`px-5 py-1 rounded-full rounded-l-none shadow-md transition-all
-            ${selected === "online"
-              ? "bg-gold text-white"
-              : "bg-white border border-blue-500 text-gold"}`}
-        >
-          Online
-        </button>
+            <button
+              onClick={() => setSelected("Offline")}
+              className={`px-5 py-1 rounded-full rounded-r-none shadow-md transition-all
+            ${
+              selected === "Offline"
+                ? "bg-gold text-white"
+                : "bg-white border border-blue-500 text-gold"
+            }`}
+            >
+              Offline
+            </button>
+            <button
+              onClick={() => setSelected("Online")}
+              className={`px-5 py-1 rounded-full rounded-l-none shadow-md transition-all
+            ${
+              selected === "Online"
+                ? "bg-gold text-white"
+                : "bg-white border border-blue-500 text-gold"
+            }`}
+            >
+              Online
+            </button>
           </div>
         </div>
 
@@ -78,8 +90,8 @@ const OurCourses = () => {
               />
 
               <div className="p-5 space-y-3">
-                <h3 className="bg-amber-200 border border-gray-400 mb-4 px-3 py-1 rounded-full text-center w-1/3 font-bold">
-                  {course.type}
+                <h3 className="bg-gray-200 border border-gray-400 mb-2 text-sm rounded-full text-center w-1/4 font-bold">
+                  {course.type == "online" ? "🟢 Online" : "🔴 Offline"}
                 </h3>
                 <h2 className="text-xl font-semibold text-gray-800 group-hover:text-[#F09819] transition">
                   {course.title}
@@ -124,7 +136,7 @@ const OurCourses = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default OurCourses;
+export default OurCourses
