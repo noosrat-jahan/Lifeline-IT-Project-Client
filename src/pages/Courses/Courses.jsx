@@ -37,7 +37,7 @@ const OurCourses = () => {
   return (
     <div className="min-h-screen  ">
       <div className="w-10/12 mx-auto pt-10 text-left space-y-5">
-        <div className="flex justify-between items-center">
+        <div className="flex flex-col lg:flex-row justify-between lg:items-center gap-10">
           <div>
             <h1 className="text-3xl text-accent font-bold">
               {selected} Courses
@@ -47,7 +47,7 @@ const OurCourses = () => {
               Digital Landscape.
             </p>
           </div>
-          <div>
+          <div >
             <button
               onClick={() => setSelected("Offline")}
               className={`px-5 py-1 rounded-full rounded-r-none shadow-md transition-all

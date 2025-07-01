@@ -14,9 +14,9 @@ const Reviews = () => {
           Learning communicate to global world and build a bright future with
           our histudy.
         </p>
-        <Link to="/success-story">
-          <button className="m-2 px-[45px] py-[15px] font-bold text-center flex items-center transition-all duration-500 bg-[linear-gradient(to_right,_#fc00ff_0%,_#00dbde_51%,_#fc00ff_100%)] bg-[length:200%_auto] text-white rounded-[10px] shadow-[0_0_20px_#eee] gap-3 hover:bg-[position:right_center] hover:text-white">
-            Success Stories <FaArrowRight />
+        <Link to="/student-review">
+          <button className="m-2 px-[30px] py-[12px] text-center uppercase transition-all duration-500 bg-[linear-gradient(to_right,_#249ffd_2%,_#3a7bd5_58%,_#00d2ff_100%)] bg-[length:200%_auto] text-white shadow-[0_0_15px_#000_90%] rounded-[10px]  hover:bg-[position:right_center] hover:text-white flex items-center gap-3 font-bold">
+            More Reviews <FaArrowRight />
           </button>
         </Link>
       </div>
