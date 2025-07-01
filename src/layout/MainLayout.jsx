@@ -6,7 +6,7 @@ import Marquee from "react-fast-marquee";
 const MainLayout = () => {
     return (
         <div className='font-roboto bg-gradient-to-b from-[#0B254C] via-[#348fd1] to-[#041630]'>
-            <Marquee className='bg-gold w-full p-2 xl:h-20 xl:text-xl text-white'>
+            <Marquee className='bg-gold w-full p-2  text-white'>
                 🚀Boost Your Skills with 90% OFF🔥 WhatsApp us: 📱 +8801867101740  | +8801887893100
             </Marquee>
             <Header></Header>

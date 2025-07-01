@@ -45,7 +45,7 @@ const OurCourses = () => {
           className={`px-5 py-1 rounded-full rounded-r-none shadow-md transition-all
             ${selected === "offline"
               ? "bg-gold text-white"
-              : "bg-white border border-blue-500 text-blue-500"}`}
+              : "bg-white border border-blue-500 text-gold"}`}
         >
           Offline
         </button>
@@ -54,7 +54,7 @@ const OurCourses = () => {
           className={`px-5 py-1 rounded-full rounded-l-none shadow-md transition-all
             ${selected === "online"
               ? "bg-gold text-white"
-              : "bg-white border border-blue-500 text-blue-500"}`}
+              : "bg-white border border-blue-500 text-gold"}`}
         >
           Online
         </button>
