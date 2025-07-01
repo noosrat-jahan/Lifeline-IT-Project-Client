@@ -1,39 +1,41 @@
-import React, { useEffect, useState } from "react"
-import { Link, useLocation } from "react-router-dom"
-import axios from "axios"
-import { FaStar } from "react-icons/fa"
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import axios from "axios";
+import { FaStar } from "react-icons/fa";
 // import { motion } from "framer-motion"
 
 const OurCourses = () => {
-  const location = useLocation()
-  const { search } = location.state || {}
-  const [selected, setSelected] = useState(search || "All")
+  const location = useLocation();
+  const { search } = location.state || {};
+  const [selected, setSelected] = useState(search || "All");
 
   useEffect(() => {
     if (search) {
-      setSelected(search)
+      setSelected(search);
     } else {
-      setSelected("All")
+      setSelected("All");
     }
-  }, [search])
+  }, [search]);
 
-  const [data, setData] = useState([])
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      let result
+      let result;
       if (selected != "All") {
         result = await axios.get(
           import.meta.env.VITE_API_URL + `/api/courses/search?name=${selected}`
-        )
+        );
       } else {
-        result = await axios.get(import.meta.env.VITE_API_URL + "/api/courses/")
+        result = await axios.get(
+          import.meta.env.VITE_API_URL + "/api/courses/"
+        );
       }
-      console.log(result.data)
-      setData(result.data)
-    }
-    fetchData()
-  }, [selected])
+      console.log(result.data);
+      setData(result.data);
+    };
+    fetchData();
+  }, [selected]);
 
   return (
     <div className="min-h-screen  ">
@@ -48,7 +50,7 @@ const OurCourses = () => {
               Digital Landscape.
             </p>
           </div>
-          <div >
+          <div>
             <button
               onClick={() => setSelected("Offline")}
               className={`px-5 py-1 rounded-full rounded-r-none shadow-md transition-all
@@ -78,7 +80,7 @@ const OurCourses = () => {
           {data.map((course) => (
             <div
               key={course._id}
-              className="max-w-md rounded-xl overflow-hidden shadow-md bg-white relative border border-[#f09619e2] hover:shadow-lg hover:scale-[1.02] transition duration-300 cursor-pointer "
+              className="max-w-sm xl:max-w-lg h-full rounded-xl overflow-hidden shadow-md bg-white relative border border-[#f09619e2] hover:shadow-lg hover:scale-[1.02] transition duration-300 cursor-pointer"
             >
               {/* Gradient top border */}
               <div className="h-2 bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819]"></div>
@@ -91,9 +93,6 @@ const OurCourses = () => {
               />
 
               <div className="p-5 space-y-3">
-                <h3 className="bg-gray-200 border border-gray-400 mb-2 text-sm rounded-full text-center w-1/4 font-bold">
-                  {course.type == "online" ? "🟢 Online" : "🔴 Offline"}
-                </h3>
                 <h2 className="text-xl font-semibold text-gray-800 group-hover:text-[#F09819] transition">
                   {course.title}
                 </h2>
@@ -102,34 +101,19 @@ const OurCourses = () => {
                 {/* Extra info */}
                 <div className="flex justify-between text-sm text-gray-500 pt-2">
                   <span>Duration: {course.duration}</span>
-                  <span>{course.price}</span>
+                  <span>Total Class: {course.totalClasses}</span>
                 </div>
-                <div>
-                  <p className="text-left flex items-center gap-2 text-amber-500">
-                    {" "}
-                    Reviews
-                    <FaStar />
-                    <FaStar />
-                    <FaStar />
-                    <FaStar />
-                    <FaStar />
-                  </p>
+                <div className="text-left">
+                  <p>Reviews</p>
                 </div>
                 <div className="flex justify-between">
                   {/* Button */}
-                  <Link to={`/course-details/${course.route}`}>
-                    <button
-                      className="px-8 sm:px-10 lg:px-8
-                                py-2 sm:py-3 rounded-full font-bold text-center flex items-center transition-all duration-500 bg-[linear-gradient(to_right,_#fc00ff_0%,_#00dbde_51%,_#fc00ff_100%)] bg-[length:200%_auto] text-white  shadow-[0_0_20px_#eee]  hover:bg-[position:right_center] hover:text-white"
-                    >
+                  <Link to="/course-details">
+                    <button className="m-2 px-[30px] py-[10px] text-center uppercase transition-all duration-500 bg-[linear-gradient(to_right,_#249ffd_2%,_#3a7bd5_58%,_#00d2ff_100%)] bg-[length:200%_auto] text-white shadow-[0_0_10px_#000_80%] rounded-full  hover:bg-[position:right_center] hover:text-white flex items-center gap-3 font-bold">
                       Enroll Now
                     </button>
                   </Link>
-                  <Link to={`/course-details/${course.route}`}>
-                    <button className="text-white  text-center  px-[20px] py-[10px] rounded-full shadow-[0_0_20px_#eee] bg-gradient-to-r from-[#FF8008] via-[#FFC837] to-[#FF8008] bg-[length:200%_auto] transition-all duration-500 hover:bg-[position:right_center] block">
-                      View Details
-                    </button>
-                  </Link>
+                  <h2 className="text-gray-700 text-lg">{course.price}</h2>
                 </div>
               </div>
             </div>
@@ -137,7 +121,7 @@ const OurCourses = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default OurCourses
+export default OurCourses;
