@@ -5,16 +5,16 @@ import { FaStar } from "react-icons/fa"
 // import { motion } from "framer-motion"
 
 const OurCourses = () => {
-  const [selected, setSelected] = useState("")
+  const [selected, setSelected] = useState("All")
   const [data, setData] = useState([])
   const location = useLocation()
   const { search } = location.state || {}
 
   useEffect(() => {
-    if (search) {
-      setSelected(search)
-    } else {
+    if (search == undefined) {
       setSelected("All")
+    } else {
+      setSelected(search)
     }
   }, [search])
 
