@@ -25,10 +25,10 @@ const Hero = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-28 text-left pt-10">
         {/* left section  */}
         <div className="flex flex-col items-start gap-8">
-          <h1 className="text-secondary font-poppins text-3xl md:text-4xl lg:text-5xl font-bold">
+          <h1 className="text-secondary font-poppins text-3xl xl:text-7xl md:text-4xl lg:text-5xl font-bold">
             One of the Best IT <br /> Training Institute <br /> In Bangladesh
           </h1>
-          <p className="text-sm text-secondary">
+          <p className="text-sm text-secondary xl:text-lg">
             Lifeline IT is operated by a Govt. approved organization | Est. 2021
             | Over 25,000+ Students Trained | Trusted by 2.30 Lakh+ Followers on
             Social Media.
@@ -44,7 +44,7 @@ const Hero = () => {
                 bg-[linear-gradient(to_right,_#fc00ff_0%,_#00dbde_51%,_#fc00ff_100%)] 
                 bg-[length:200%_auto] text-white  
                 shadow-[0_0_20px_#eee] 
-                gap-3 
+                gap-3  xl:text-lg
                 hover:bg-[position:right_center] hover:text-white"
               >
                 Courses <FaArrowRight />
@@ -64,6 +64,7 @@ const Hero = () => {
                 bg-[length:200%_auto]
                 transition-all duration-500
                 hover:bg-[position:right_center]
+                xl:text-lg
                 focus:outline-none focus:ring-2 focus:ring-[#EDDE5D] focus:ring-offset-2
               "
               >

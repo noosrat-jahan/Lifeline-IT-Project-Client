@@ -109,9 +109,9 @@ const Header = () => {
                 width: 300,
               }}
             >
-              <IconButton sx={{ p: "10px" }} aria-label="menu">
+              {/* <IconButton sx={{ p: "10px" }} aria-label="menu">
                 <MenuIcon />
-              </IconButton>
+              </IconButton> */}
               <InputBase
                 sx={{ ml: 1, flex: 1 }}
                 placeholder="Search here..."
@@ -218,7 +218,7 @@ const Header = () => {
                 >
                   Courses
                 </Link>
-                <Link to="/certificate-verify">Freelancer Story</Link>
+                <Link to="/certificate">Freelancer Story</Link>
                 <Link to="/success-story">Success Story</Link>
                 <Link to="/student-review">Student Reviews</Link>
                 <Link

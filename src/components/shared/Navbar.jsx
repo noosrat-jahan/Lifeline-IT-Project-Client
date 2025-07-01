@@ -39,7 +39,7 @@ const Navbar = () => {
               <ul className="grid gap-2 md:w-[100px] lg:w-[200px] ">
                 <li className="flex flex-col items-start p-4 gap-4">
                   <NavigationMenuLink asChild>
-                    <Link to="/certificate-verify">Freelancer Story</Link>
+                    <Link to="/certificate">Certificate Verify</Link>
                   </NavigationMenuLink>
                   <NavigationMenuLink asChild>
                     <Link to="/success-story">Success Story</Link>
@@ -128,7 +128,7 @@ export default Navbar;
 //                   <ul className="grid gap-2 md:w-[100px] lg:w-[200px]">
 //                     <li className="flex flex-col items-start p-4 gap-4">
 //                       <NavigationMenuLink asChild>
-//                         <Link to="/certificate-verify" >Freelancer Story</Link>
+//                         <Link to="/certificate" >Freelancer Story</Link>
 //                       </NavigationMenuLink>
 //                       <NavigationMenuLink asChild>
 //                         <Link to="/success-story" >Success Story</Link>
@@ -171,7 +171,7 @@ export default Navbar;
 //           <div>
 //             <p className="font-medium mb-2">Students</p>
 //             <div className="pl-4 space-y-2 text-sm">
-//               <Link to="/certificate-verify" onClick={() => setIsMobileOpen(false)} className="block">
+//               <Link to="/certificate" onClick={() => setIsMobileOpen(false)} className="block">
 //                 Freelancer Story
 //               </Link>
 //               <Link to="/success-story" onClick={() => setIsMobileOpen(false)} className="block">

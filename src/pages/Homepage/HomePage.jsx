@@ -11,7 +11,7 @@ import JoinCommunity from "./components/JoinCommunity";
 const HomePage = () => {
   return (
     <div>
-      <div className="w-10/12 mx-auto space-y-10">
+      <div className="w-10/12 xl:11/12 mx-auto space-y-10">
         <Hero></Hero>
         <About></About>
         <OnlineCourse></OnlineCourse>
@@ -20,7 +20,7 @@ const HomePage = () => {
       <div >
         <Reviews></Reviews>
       </div>
-      <div className="w-10/12 mx-auto space-y-10">
+      <div className="w-10/12 xl:11/12 mx-auto space-y-10">
         <Features></Features>
         <JoinCommunity></JoinCommunity>
       </div>

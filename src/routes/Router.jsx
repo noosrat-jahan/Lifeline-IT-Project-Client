@@ -42,7 +42,7 @@ const Router = createBrowserRouter([
         element: <AboutPage></AboutPage>,
       },
       {
-        path: "/certificate-verify",
+        path: "/certificate",
         element: <CertificateVerify></CertificateVerify>,
       },
       {
