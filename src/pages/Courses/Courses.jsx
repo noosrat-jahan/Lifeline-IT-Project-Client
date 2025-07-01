@@ -57,7 +57,7 @@ const OurCourses = () => {
             ${
               selected === "Offline"
                 ? "bg-gold text-white"
-                : "bg-white border border-blue-500 text-gold"
+                : "bg-white border border-blue-500 text-blue-900 "
             }`}
             >
               Offline
@@ -68,7 +68,7 @@ const OurCourses = () => {
             ${
               selected === "Online"
                 ? "bg-gold text-white"
-                : "bg-white border border-blue-500 text-gold"
+                : "bg-white border border-blue-500 text-blue-900"
             }`}
             >
               Online
