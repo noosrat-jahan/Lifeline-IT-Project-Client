@@ -5,10 +5,9 @@ import { FaStar } from "react-icons/fa"
 // import { motion } from "framer-motion"
 
 const OurCourses = () => {
-  const [selected, setSelected] = useState("")
-  const [data, setData] = useState([])
   const location = useLocation()
   const { search } = location.state || {}
+  const [selected, setSelected] = useState(search || "All")
 
   useEffect(() => {
     if (search) {
@@ -17,6 +16,8 @@ const OurCourses = () => {
       setSelected("All")
     }
   }, [search])
+
+  const [data, setData] = useState([])
 
   useEffect(() => {
     const fetchData = async () => {
@@ -54,7 +55,7 @@ const OurCourses = () => {
             ${
               selected === "Offline"
                 ? "bg-gold text-white"
-                : "bg-white border border-blue-500 text-blue-900"
+                : "bg-white border border-blue-500 text-gold"
             }`}
             >
               Offline
@@ -65,7 +66,7 @@ const OurCourses = () => {
             ${
               selected === "Online"
                 ? "bg-gold text-white"
-                : "bg-white border border-blue-500 text-blue-900"
+                : "bg-white border border-blue-500 text-gold"
             }`}
             >
               Online
