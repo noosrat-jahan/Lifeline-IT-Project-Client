@@ -1,41 +1,39 @@
-import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import axios from "axios";
-import { FaStar } from "react-icons/fa";
+import React, { useEffect, useState } from "react"
+import { Link, useLocation } from "react-router-dom"
+import axios from "axios"
+import { FaStar } from "react-icons/fa"
 // import { motion } from "framer-motion"
 
 const OurCourses = () => {
-  const location = useLocation();
-  const { search } = location.state || {};
-  const [selected, setSelected] = useState(search || "All");
+  const location = useLocation()
+  const { search } = location.state || {}
+  const [selected, setSelected] = useState(search || "All")
 
   useEffect(() => {
     if (search) {
-      setSelected(search);
+      setSelected(search)
     } else {
-      setSelected("All");
+      setSelected("All")
     }
-  }, [search]);
+  }, [search])
 
-  const [data, setData] = useState([]);
+  const [data, setData] = useState([])
 
   useEffect(() => {
     const fetchData = async () => {
-      let result;
+      let result
       if (selected != "All") {
         result = await axios.get(
           import.meta.env.VITE_API_URL + `/api/courses/search?name=${selected}`
-        );
+        )
       } else {
-        result = await axios.get(
-          import.meta.env.VITE_API_URL + "/api/courses/"
-        );
+        result = await axios.get(import.meta.env.VITE_API_URL + "/api/courses/")
       }
-      console.log(result.data);
-      setData(result.data);
-    };
-    fetchData();
-  }, [selected]);
+      console.log(result.data)
+      setData(result.data)
+    }
+    fetchData()
+  }, [selected])
 
   return (
     <div className="min-h-screen  ">
@@ -84,7 +82,6 @@ const OurCourses = () => {
             >
               {/* Gradient top border */}
               <div className="h-2 bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819]"></div>
-
               {/* Course image */}
               <img
                 src={course.thumbnail}
@@ -92,9 +89,10 @@ const OurCourses = () => {
                 className="w-full h-48 object-cover"
               />
 
-              
-
               <div className="p-5 space-y-3">
+                <small className="font-bold">
+                  {course.type == "online" ? "🟢 Online" : "🔴 Offline"}
+                </small>
                 <h2 className="text-xl font-semibold text-gray-800 group-hover:text-[#F09819] transition">
                   {course.title}
                 </h2>
@@ -123,7 +121,7 @@ const OurCourses = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default OurCourses;
+export default OurCourses
