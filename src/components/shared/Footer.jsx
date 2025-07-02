@@ -10,24 +10,25 @@ import {
 import logo from "../../assets/Website Logo.png";
 import { Link } from "react-router-dom";
 import paymentpic from "../../assets/payments.png";
-import { HashLink } from 'react-router-hash-link';
+import { HashLink } from "react-router-hash-link";
 
 const Footer = () => {
-
   const handleClick = () => {
     // navigate("/our-courses");
     setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: "smooth" })
-    }, 100) // delay to ensure page loads
-  }
-  
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 100); // delay to ensure page loads
+  };
+
   return (
     <footer className="text-white px-4 md:px-20 ">
       <div className=" grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Left Section */}
         <div className="text-left ">
           <div className="flex items-center gap-2 mb-3">
-            <Link to="/"><img src={logo} alt="Logo" className="" /></Link>
+            <Link to="/">
+              <img src={logo} alt="Logo" className="" />
+            </Link>
           </div>
           <p className="text-sm text-gray-200 text-justify leading-relaxed">
             Lifeline IT Training Institute is a Govt. approved IT Training
@@ -46,14 +47,18 @@ const Footer = () => {
         {/* Useful Links */}
         <div className="text-left lg:ml-20">
           <h3 className="text-lg font-semibold mb-3">Useful Links</h3>
-       <ul className="space-y-1 text-sm text-gray-200 [&>li:hover]:text-gold cursor-pointer">
+          <ul className="space-y-1 text-sm text-gray-200 [&>li:hover]:text-gold cursor-pointer">
             <li>Free Software</li>
             <li>Free Resources</li>
-            <li onClick={handleClick}><Link to="/certificate" >Certificate Verify</Link></li>
+            <li onClick={handleClick}>
+              <Link to="/certificate">Certificate Verify</Link>
+            </li>
             <li>Privacy Policy</li>
             <li>Refund Policy</li>
             <li>Terms & Condition</li>
-            <li><HashLink to="/about#faq">FAQ</HashLink></li>
+            <li>
+              <HashLink to="/about#faq">FAQ</HashLink>
+            </li>
           </ul>
         </div>
 
@@ -81,18 +86,27 @@ const Footer = () => {
             </li>
             <li>
               WhatsApp:{" "}
-              <span className="text-yellow-400 font-semibold">
-                01867 101740
-              </span>{" "}
+              <Link to="https://wa.me/01867101740">
+                <span className="text-yellow-400 font-semibold">
+                  01867 101740
+                </span>{" "}
+              </Link>
               (24x7)
             </li>
             <li>
               E-mail:{" "}
-              <span className="text-green-400">support@lifelineit.com</span>
+              <Link
+                to="mailto:support@lifelineit.com"
+              >
+                <span className="text-green-400">support@lifelineit.com</span>
+              </Link>
             </li>
             <li>
-              Location: Khan Building (3rd Floor), <br />
+              <HashLink to="/contact#location">
+Location: Khan Building (3rd Floor), <br />
               Sk. Mujib Road, Chowmuhuni, Agrabad, Chattogram.
+              </HashLink>
+              
             </li>
           </ul>
         </div>

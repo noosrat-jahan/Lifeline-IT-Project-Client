@@ -106,7 +106,7 @@ const AboutPage = () => {
         type="single"
         collapsible
         className="w-9/12 mx-auto text-secondary rounded-sm text-left bg-blue-950/20 p-8 mt-5 font-anek hover:no-underline relative"
-        defaultValue="item-1"
+        // defaultValue="item-1"
       >
         <AccordionItem value="item-1">
           <AccordionTrigger className="text-xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
