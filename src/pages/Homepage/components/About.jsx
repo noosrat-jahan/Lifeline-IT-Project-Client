@@ -3,6 +3,12 @@ import about from "../../../assets/Community Photo.png";
 import { Link } from "react-router-dom";
 
 const About = () => {
+   const handleClick = () => {
+    // navigate("/our-courses");
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    }, 100) // delay to ensure page loads
+  }
   return (
     <div>
       {/* know us  */}
@@ -36,7 +42,8 @@ const About = () => {
             inventore aut aliquid excepturi. Doloremque at libero eaque cumque
             consequuntur nihil voluptatem aut!
           </p>
-          <Link to="/about">
+          <Link to="/about"
+          onClick={handleClick}>
             <button className="text-white text-center lg:px-[35px] px-[20px] py-[8px] lg:py-[10px] rounded-[10px] shadow-[0_0_10px_#000_80%] bg-gradient-to-r from-[#f09619ee] via-[#e4d653] to-[#f9a917] bg-[length:200%_auto] transition-all duration-500 hover:bg-[position:right_center] block font-bold">
               More About us
             </button>

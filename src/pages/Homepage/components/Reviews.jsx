@@ -4,6 +4,12 @@ import Marquee from "react-fast-marquee";
 import { Link } from "react-router-dom";
 
 const Reviews = () => {
+   const handleClick = () => {
+    // navigate("/our-courses");
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    }, 100) // delay to ensure page loads
+  }
   return (
     <div className="w-full  mx-auto py-10 ">
       <div className="flex flex-col gap-3 justify-center items-center">
@@ -15,7 +21,7 @@ const Reviews = () => {
           our histudy.
         </p>
         <Link to="/student-review">
-          <button className="m-2 px-[30px] py-[12px] text-center uppercase transition-all duration-500 bg-[linear-gradient(to_right,_#249ffd_2%,_#3a7bd5_58%,_#00d2ff_100%)] bg-[length:200%_auto] text-white shadow-[0_0_15px_#000_90%] rounded-[10px]  hover:bg-[position:right_center] hover:text-white flex items-center gap-3 font-bold">
+          <button onClick={handleClick} className="m-2 px-[30px] py-[12px] text-center uppercase transition-all duration-500 bg-[linear-gradient(to_right,_#249ffd_2%,_#3a7bd5_58%,_#00d2ff_100%)] bg-[length:200%_auto] text-white shadow-[0_0_15px_#000_90%] rounded-[10px]  hover:bg-[position:right_center] hover:text-white flex items-center gap-3 font-bold">
             More Reviews <FaArrowRight />
           </button>
         </Link>

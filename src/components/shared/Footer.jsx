@@ -38,7 +38,7 @@ const Footer = () => {
           </p>
 
           <Link to="/contact">
-            <button className="mt-4 shadow-xl px-6 py-2 bg-[#4a64f5] hover:bg-[#3a53e0] text-white text-sm font-semibold rounded-full hover:shadow-lg transition-all duration-300">
+            <button onClick={handleClick} className="mt-4 shadow-xl px-6 py-2 bg-[#4a64f5] hover:bg-[#3a53e0] text-white text-sm font-semibold rounded-full hover:shadow-lg transition-all duration-300">
               Contact us →
             </button>
           </Link>

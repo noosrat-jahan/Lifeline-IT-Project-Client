@@ -92,6 +92,8 @@ const OurCourses = () => {
                 className="w-full h-48 object-cover"
               />
 
+              
+
               <div className="p-5 space-y-3">
                 <h2 className="text-xl font-semibold text-gray-800 group-hover:text-[#F09819] transition">
                   {course.title}
