@@ -29,7 +29,7 @@ const AboutPage = () => {
           <img
             src={mission}
             alt=""
-            className="rounded-xl border border-gray-100"
+            className="rounded-xl "
           />
         </div>
         <div className="flex flex-col items-start text-accent gap-5 text-left">
@@ -93,7 +93,7 @@ const AboutPage = () => {
           <img
             src={vision}
             alt=""
-            className="rounded-xl border border-gray-100"
+            className="rounded-xl"
           />
         </div>
       </div>
