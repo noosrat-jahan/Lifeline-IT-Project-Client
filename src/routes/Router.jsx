@@ -1,6 +1,6 @@
 import React from "react"
 import { createBrowserRouter } from "react-router-dom"
-import MainLayout from "../Layout/MainLayout"
+import MainLayout from "../layout/MainLayout"
 import HomePage from "@/pages/Homepage/HomePage"
 import AboutPage from "@/pages/Aboutpage/AboutPage"
 import ContactPage from "@/pages/Contactpage/ContactPage"
