@@ -176,6 +176,56 @@ const AboutPage = () => {
             </p>
           </AccordionContent>
         </AccordionItem>
+        <AccordionItem value="item-6">
+          <AccordionTrigger className="text-xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
+            কোর্সের মেয়াদ কতোদিন?
+          </AccordionTrigger>
+          <AccordionContent className="flex flex-col gap-4 text-balance">
+            <p>
+              প্রতিটি কোর্সের মেয়াদ কোর্স ডিটেইলস সেকশনে দেওয়া আছে। সাধারণত এটি কোর্সের ধরণ অনুযায়ী ১ থেকে ৬ মাস পর্যন্ত হতে পারে।
+            </p>
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-7">
+          <AccordionTrigger className="text-xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
+            কোর্স করার জন্য আগের কোনও অভিজ্ঞতার দরকার আছে কি?
+          </AccordionTrigger>
+          <AccordionContent className="flex flex-col gap-4 text-balance">
+            <p>
+              না, আমরা বেসিক থেকে অ্যাডভান্স কোর্স অফার করি, তাই আগের কোনও অভিজ্ঞতার দরকার নেই।
+            </p>
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-8">
+          <AccordionTrigger className="text-xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
+            কোর্স করার সময় কোনও সাপোর্ট পাব কি?
+          </AccordionTrigger>
+          <AccordionContent className="flex flex-col gap-4 text-balance">
+            <p>
+              হ্যাঁ! কোর্স করার সময় ইনস্ট্রাক্টর এবং সাপোর্ট টিমের Live Support সহ সহায়তা পাবেন।
+            </p>
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-9">
+          <AccordionTrigger className="text-xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
+            কোর্স সম্পূর্ণ করার পর চাকরি খুঁজতে সাহায্য করবেন কি?
+          </AccordionTrigger>
+          <AccordionContent className="flex flex-col gap-4 text-balance">
+            <p>
+              আমরা কোর্স সম্পূর্ণ করার পর কিভাবে চাকরির জন্য প্রস্তুতি নেওয়া যায় তা গাইড করে থাকি এবং নিয়মিত চাকরির খোঁজ সম্পর্কিত কন্টেন্ট শেয়ার করি।
+            </p>
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-10">
+          <AccordionTrigger className="text-xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
+            কিভাবে যোগাযোগ করবো?
+          </AccordionTrigger>
+          <AccordionContent className="flex flex-col gap-4 text-balance">
+            <p>
+              ওয়েবসাইটে দেওয়া Contact Number, Whatsapp, Messenger, Email বা লাইভ চ্যাটের মাধ্যমে যে কোনও সময় যোগাযোগ করতে পারবেন। 
+            </p>
+          </AccordionContent>
+        </AccordionItem>
 
       
       </Accordion>
