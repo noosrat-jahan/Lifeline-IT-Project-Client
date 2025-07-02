@@ -90,7 +90,7 @@ const OurCourses = () => {
               />
 
               <div className="p-5 space-y-3">
-                <small className="font-bold">
+                <small className="font-bold bg-[#225499] text-white rounded-full px-2 py-1">
                   {course.type == "online" ? "🟢 Online" : "🔴 Offline"}
                 </small>
                 <h2 className="text-xl font-semibold text-gray-800 group-hover:text-[#F09819] transition">
