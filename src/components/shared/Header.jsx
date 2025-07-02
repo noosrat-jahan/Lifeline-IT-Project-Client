@@ -657,14 +657,14 @@ const Header = () => {
               >
                 <Link to="/">Home</Link>
                 <Link to="/courses">Courses</Link>
-                <Link to="/certificate">Freelancer Story</Link>
+                <Link to="/certificate">Certificate Verify</Link>
                 <Link to="/success-story">Success Story</Link>
                 <Link to="/student-review">Student Reviews</Link>
                 <Link to="/about">About Us</Link>
                 <Link to="/contact">Contact</Link>
               </ul>
 
-              <div
+              {/* <div
                 onClick={() => setIsOpen(false)}
                 className="flex flex-col items-center gap-4"
               >
@@ -673,7 +673,7 @@ const Header = () => {
                     Success Stories <FaArrowRight />
                   </button>
                 </Link>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

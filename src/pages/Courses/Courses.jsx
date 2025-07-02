@@ -108,7 +108,7 @@ const OurCourses = () => {
                 </div>
                 <div className="flex justify-between">
                   {/* Button */}
-                  <Link to="/course-details">
+                  <Link to={`/course-details/${course.route}`}>
                     <button className="m-2 px-[30px] py-[10px] text-center uppercase transition-all duration-500 bg-[linear-gradient(to_right,_#249ffd_2%,_#3a7bd5_58%,_#00d2ff_100%)] bg-[length:200%_auto] text-white shadow-[0_0_10px_#000_80%] rounded-full  hover:bg-[position:right_center] hover:text-white flex items-center gap-3 font-bold">
                       Enroll Now
                     </button>
