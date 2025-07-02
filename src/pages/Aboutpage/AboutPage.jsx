@@ -1,15 +1,15 @@
-import React from "react";
-import mission from "../../assets/mission.jpg";
-import vision from "../../assets/vision.jpg";
-import { Link } from "react-router-dom";
+import React from "react"
+import mission from "../../assets/mission.jpg"
+import vision from "../../assets/vision.jpg"
+import { Link } from "react-router-dom"
 
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
-import { ChevronDown } from "lucide-react";
+} from "@/components/ui/accordion"
+import { ChevronDown } from "lucide-react"
 
 const AboutPage = () => {
   return (
@@ -100,7 +100,9 @@ const AboutPage = () => {
 
       {/* FAQ  */}
 
-      <h1 id="faq" className="mt-14 text-5xl text-accent scroll-smooth">Frequently Asked Question</h1>
+      <h1 id="faq" className="mt-14 text-5xl text-accent scroll-smooth">
+        Frequently Asked Question
+      </h1>
 
       <Accordion
         type="single"
@@ -111,12 +113,11 @@ const AboutPage = () => {
         <AccordionItem value="item-1">
           <AccordionTrigger className="text-2xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
             সঠিক কম্পিউটার কোর্সটি কিভাবে নির্বাচন করব?
-            
           </AccordionTrigger>
-          <AccordionContent className="flex text-xl flex-col gap-4 text-balance">
+          <AccordionContent className="flex text-xl flex-col gap-4 text-balance ">
             <p>
-              সঠিক কম্পিউটার কোর্স নির্বাচন করার জন্য আগে ভাবতে হবে আপনার আগ্রহ
-              এবং লক্ষ্য কী। যেমন — • আপনি চাকরির জন্য শিখতে চান, না
+              → সঠিক কম্পিউটার কোর্স নির্বাচন করার জন্য আগে ভাবতে হবে আপনার
+              আগ্রহ এবং লক্ষ্য কী। যেমন — • আপনি চাকরির জন্য শিখতে চান, না
               ফ্রিল্যান্সিং বা ব্যবসা করার জন্য? • আপনার আগ্রহ কিসে — ডিজাইন,
               ভিডিও এডিটিং, ডিজিটাল মার্কেটিং, AI (Artificial Intelligence),
               ওয়েব ডেভেলপমেন্ট, নাকি অফিস ম্যানেজমেন্ট? যদি আগ্রহ আর চাহিদা মিলে
@@ -137,7 +138,7 @@ const AboutPage = () => {
           </AccordionTrigger>
           <AccordionContent className="flex text-xl flex-col gap-4 text-balance">
             <p>
-              খুব সহজ! ওয়েবসাইটে Sign Up করে, কোর্স সিলেক্ট করুন এবং “Enroll”
+              → খুব সহজ! ওয়েবসাইটে Sign Up করে, কোর্স সিলেক্ট করুন এবং “Enroll”
               বাটনে ক্লিক করুন। পেমেন্ট সম্পূর্ণ করার পরই কোর্সে অ্যাক্সেস
               পাবেন। ভিডিও গাইডলাইন পেতে লিংকে ক্লিক করুন-
             </p>
@@ -149,8 +150,8 @@ const AboutPage = () => {
           </AccordionTrigger>
           <AccordionContent className="flex text-xl flex-col gap-4 text-balance">
             <p>
-              আমরা বিকাশ, ব্যাংক এবং কার্ডের মাধ্যমে সুরক্ষিতভাবে পেমেন্ট গ্রহণ
-              করি।
+              → আমরা বিকাশ, ব্যাংক এবং কার্ডের মাধ্যমে সুরক্ষিতভাবে পেমেন্ট
+              গ্রহণ করি।
             </p>
           </AccordionContent>
         </AccordionItem>
@@ -160,7 +161,7 @@ const AboutPage = () => {
           </AccordionTrigger>
           <AccordionContent className="flex text-xl flex-col gap-4 text-balance">
             <p>
-              হ্যাঁ! প্রতিটি কোর্স শেষ করার পর আপনাকে ডাউনলোড করার মতো অনলাইন
+              → হ্যাঁ! প্রতিটি কোর্স শেষ করার পর আপনাকে ডাউনলোড করার মতো অনলাইন
               সার্টিফিকেট দেওয়া হয়।
             </p>
           </AccordionContent>
@@ -171,7 +172,7 @@ const AboutPage = () => {
           </AccordionTrigger>
           <AccordionContent className="flex text-xl flex-col gap-4 text-balance">
             <p>
-              কোর্সে ভর্তি হওয়ার পর লগিন করে ড্যাশবোর্ডে কোর্স কন্টেন্ট দেখতে
+              → কোর্সে ভর্তি হওয়ার পর লগিন করে ড্যাশবোর্ডে কোর্স কন্টেন্ট দেখতে
               পাবেন এবং নির্দিষ্ট মডিউল অনুসারে শিখতে পারবেন।
             </p>
           </AccordionContent>
@@ -182,7 +183,8 @@ const AboutPage = () => {
           </AccordionTrigger>
           <AccordionContent className="flex text-xl flex-col gap-4 text-balance">
             <p>
-              প্রতিটি কোর্সের মেয়াদ কোর্স ডিটেইলস সেকশনে দেওয়া আছে। সাধারণত এটি কোর্সের ধরণ অনুযায়ী ১ থেকে ৬ মাস পর্যন্ত হতে পারে।
+              → প্রতিটি কোর্সের মেয়াদ কোর্স ডিটেইলস সেকশনে দেওয়া আছে। সাধারণত
+              এটি কোর্সের ধরণ অনুযায়ী ১ থেকে ৬ মাস পর্যন্ত হতে পারে।
             </p>
           </AccordionContent>
         </AccordionItem>
@@ -192,7 +194,8 @@ const AboutPage = () => {
           </AccordionTrigger>
           <AccordionContent className="flex text-xl flex-col gap-4 text-balance">
             <p>
-              না, আমরা বেসিক থেকে অ্যাডভান্স কোর্স অফার করি, তাই আগের কোনও অভিজ্ঞতার দরকার নেই।
+              → না, আমরা বেসিক থেকে অ্যাডভান্স কোর্স অফার করি, তাই আগের কোনও
+              অভিজ্ঞতার দরকার নেই।
             </p>
           </AccordionContent>
         </AccordionItem>
@@ -202,7 +205,8 @@ const AboutPage = () => {
           </AccordionTrigger>
           <AccordionContent className="flex text-xl flex-col gap-4 text-balance">
             <p>
-              হ্যাঁ! কোর্স করার সময় ইনস্ট্রাক্টর এবং সাপোর্ট টিমের Live Support সহ সহায়তা পাবেন।
+              → হ্যাঁ! কোর্স করার সময় ইনস্ট্রাক্টর এবং সাপোর্ট টিমের Live
+              Support সহ সহায়তা পাবেন।
             </p>
           </AccordionContent>
         </AccordionItem>
@@ -212,7 +216,9 @@ const AboutPage = () => {
           </AccordionTrigger>
           <AccordionContent className="flex text-xl flex-col gap-4 text-balance">
             <p>
-              আমরা কোর্স সম্পূর্ণ করার পর কিভাবে চাকরির জন্য প্রস্তুতি নেওয়া যায় তা গাইড করে থাকি এবং নিয়মিত চাকরির খোঁজ সম্পর্কিত কন্টেন্ট শেয়ার করি।
+              → আমরা কোর্স সম্পূর্ণ করার পর কিভাবে চাকরির জন্য প্রস্তুতি নেওয়া
+              যায় তা গাইড করে থাকি এবং নিয়মিত চাকরির খোঁজ সম্পর্কিত কন্টেন্ট
+              শেয়ার করি।
             </p>
           </AccordionContent>
         </AccordionItem>
@@ -222,15 +228,14 @@ const AboutPage = () => {
           </AccordionTrigger>
           <AccordionContent className="flex text-xl flex-col gap-4 text-balance">
             <p>
-              ওয়েবসাইটে দেওয়া Contact Number, Whatsapp, Messenger, Email বা লাইভ চ্যাটের মাধ্যমে যে কোনও সময় যোগাযোগ করতে পারবেন। 
+              → ওয়েবসাইটে দেওয়া Contact Number, Whatsapp, Messenger, Email বা
+              লাইভ চ্যাটের মাধ্যমে যে কোনও সময় যোগাযোগ করতে পারবেন।
             </p>
           </AccordionContent>
         </AccordionItem>
-
-      
       </Accordion>
     </div>
-  );
-};
+  )
+}
 
-export default AboutPage;
+export default AboutPage
