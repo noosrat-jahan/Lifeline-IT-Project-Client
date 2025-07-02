@@ -30,7 +30,7 @@ const CertificateVerify = () => {
               id="cerInput"
               ref={inputRef}
               className="w-full p-[12px_18px] text-[16px] border-2 border-gold rounded-lg outline-none transition duration-300 focus:shadow-[0_0_8px_gold]"
-              placeholder="Enter Certificate Number"
+              placeholder="Enter Certificate Number / Student ID"
             />
             <button
               className="w-full bg-gold text-white border-0 p-[12px_18px] text-[16px] rounded-lg cursor-pointer transition-colors duration-300 flex items-center justify-center gap-2 hover:bg-[#f38a00]"

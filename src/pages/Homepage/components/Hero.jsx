@@ -37,15 +37,7 @@ const Hero = () => {
           <div className="flex gap-3 items-center">
             <Link to="/our-courses">
               <button
-                className="  px-6 sm:px-10 lg:px-12
-                py-2 sm:py-3 rounded-full 
-                font-bold text-center 
-                flex items-center transition-all duration-500 
-                bg-[linear-gradient(to_right,_#fc00ff_0%,_#00dbde_51%,_#fc00ff_100%)] 
-                bg-[length:200%_auto] text-white  
-                shadow-[0_0_20px_#eee] 
-                gap-3  xl:text-lg
-                hover:bg-[position:right_center] hover:text-white"
+                className="m-2 px-[30px] py-[12px] text-center uppercase transition-all duration-500 bg-[linear-gradient(to_right,_#249ffd_2%,_#3a7bd5_58%,_#00d2ff_100%)] bg-[length:200%_auto] text-white shadow-[0_0_10px_#000_80%] rounded-full  hover:bg-[position:right_center] hover:text-white flex items-center gap-3 font-bold"
               >
                 Courses <FaArrowRight />
               </button>
@@ -57,11 +49,8 @@ const Hero = () => {
                 flex items-center gap-2
                 text-white text-center
                 text-sm  lg:text-lg
-                px-6 sm:px-10 lg:px-12
-                py-2.5 sm:py-3 rounded-full
-                shadow-[0_0_20px_#eee]
-                bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819]
-                bg-[length:200%_auto]
+                px-[30px] py-[10px] rounded-full
+               shadow-[0_0_10px_#f09619ee] bg-gradient-to-r from-[#f09619ee] via-[#e4d653] to-[#f9a917] bg-[length:200%_auto]
                 transition-all duration-500
                 hover:bg-[position:right_center]
                 xl:text-lg
