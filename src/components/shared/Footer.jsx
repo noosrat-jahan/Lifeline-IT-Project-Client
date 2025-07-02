@@ -10,8 +10,16 @@ import {
 import logo from "../../assets/Website Logo.png";
 import { Link } from "react-router-dom";
 import paymentpic from "../../assets/payments.png";
+import { HashLink } from 'react-router-hash-link';
 
 const Footer = () => {
+
+  const handleClick = () => {
+    // navigate("/our-courses");
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    }, 100) // delay to ensure page loads
+  }
   
   return (
     <footer className="text-white px-4 md:px-20 ">
@@ -41,11 +49,11 @@ const Footer = () => {
        <ul className="space-y-1 text-sm text-gray-200 [&>li:hover]:text-gold cursor-pointer">
             <li>Free Software</li>
             <li>Free Resources</li>
-            <li>Certificate Verify</li>
+            <li onClick={handleClick}><Link to="/certificate" >Certificate Verify</Link></li>
             <li>Privacy Policy</li>
             <li>Refund Policy</li>
             <li>Terms & Condition</li>
-            <li>FAQ</li>
+            <li><HashLink to="/about#faq">FAQ</HashLink></li>
           </ul>
         </div>
 

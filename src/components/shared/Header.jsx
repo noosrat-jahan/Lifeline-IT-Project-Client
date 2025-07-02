@@ -545,7 +545,7 @@ const Header = () => {
 
           {/* Floating Full-Width Search Bar */}
           {mobileSearchOpen && (
-            <div className="fixed transition-all duration-200 top-28 left-0 right-0 z-50 px-4">
+            <div className="fixed transition-all duration-200 top-28 left-0 right-0 z-50 px-4 w-[80%] mx-auto">
               <Paper
                 component="form"
                 onSubmit={handleSearch}
@@ -656,7 +656,7 @@ const Header = () => {
                 className="flex flex-col items-center gap-6 text-base text-neutral-700 font-normal font-roboto"
               >
                 <Link to="/">Home</Link>
-                <Link to="/our-courses">Courses</Link>
+                <Link to="/courses">Courses</Link>
                 <Link to="/certificate">Freelancer Story</Link>
                 <Link to="/success-story">Success Story</Link>
                 <Link to="/student-review">Student Reviews</Link>

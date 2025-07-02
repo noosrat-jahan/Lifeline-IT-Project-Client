@@ -100,7 +100,7 @@ const AboutPage = () => {
 
       {/* FAQ  */}
 
-      <h1 className="mt-14 text-5xl text-accent">Frequently Asked Question</h1>
+      <h1 id="faq" className="mt-14 text-5xl text-accent scroll-smooth">Frequently Asked Question</h1>
 
       <Accordion
         type="single"
