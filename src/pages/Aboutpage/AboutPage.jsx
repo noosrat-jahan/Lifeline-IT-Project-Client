@@ -15,8 +15,8 @@ const AboutPage = () => {
   return (
     <div className="pb-10">
       {/* hero  */}
-      <div className="background-image w-full">
-        <h1 className="text-secondary lg:text-5xl font-semibold">
+      <div className="background-image p-4 w-full">
+        <h1 className="text-secondary text-xl md:text-3xl lg:text-5xl font-semibold">
           Take Challenge for Build Your Life. <br /> The World Most Lessons for
           Back to Your Life.
         </h1>
@@ -100,21 +100,21 @@ const AboutPage = () => {
 
       {/* FAQ  */}
 
-      <h1 id="faq" className="mt-14 text-5xl text-accent scroll-smooth">
+      <h1 id="faq" className="mt-14 text-xl lg:text-5xl text-accent scroll-smooth">
         Frequently Asked Question
       </h1>
 
       <Accordion
         type="single"
         collapsible
-        className="w-9/12 mx-auto text-secondary rounded-sm text-left bg-blue-950/20 p-8 mt-5 font-anek hover:no-underline relative"
+        className="lg:w-9/12 w-10/12 mx-auto text-secondary rounded-sm text-left bg-blue-950/20 lg:p-8 p-5 mt-5 font-anek hover:no-underline relative"
         // defaultValue="item-1"
       >
         <AccordionItem value="item-1">
-          <AccordionTrigger className="text-2xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
+          <AccordionTrigger className="lg:text-2xl text-xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
             সঠিক কম্পিউটার কোর্সটি কিভাবে নির্বাচন করব?
           </AccordionTrigger>
-          <AccordionContent className="flex text-xl flex-col gap-4 text-balance ">
+          <AccordionContent className="flex lg:text-xl text-base flex-col gap-4 text-balance ">
             <p>
               → সঠিক কম্পিউটার কোর্স নির্বাচন করার জন্য আগে ভাবতে হবে আপনার
               আগ্রহ এবং লক্ষ্য কী। যেমন — • আপনি চাকরির জন্য শিখতে চান, না
@@ -133,10 +133,10 @@ const AboutPage = () => {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-2">
-          <AccordionTrigger className="text-2xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
+          <AccordionTrigger className="lg:text-2xl text-xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
             কোর্সে কিভাবে ভর্তি হব?
           </AccordionTrigger>
-          <AccordionContent className="flex text-xl flex-col gap-4 text-balance">
+          <AccordionContent className="flex lg:text-xl text-base flex-col gap-4 text-balance">
             <p>
               → খুব সহজ! ওয়েবসাইটে Sign Up করে, কোর্স সিলেক্ট করুন এবং “Enroll”
               বাটনে ক্লিক করুন। পেমেন্ট সম্পূর্ণ করার পরই কোর্সে অ্যাক্সেস
@@ -145,10 +145,10 @@ const AboutPage = () => {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-3">
-          <AccordionTrigger className="text-2xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
+          <AccordionTrigger className="lg:text-2xl text-xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
             কিসের মাধ্যমে পেমেন্ট করা যায়?
           </AccordionTrigger>
-          <AccordionContent className="flex text-xl flex-col gap-4 text-balance">
+          <AccordionContent className="flex lg:text-xl text-base flex-col gap-4 text-balance">
             <p>
               → আমরা বিকাশ, ব্যাংক এবং কার্ডের মাধ্যমে সুরক্ষিতভাবে পেমেন্ট
               গ্রহণ করি।
@@ -156,10 +156,10 @@ const AboutPage = () => {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-4">
-          <AccordionTrigger className="text-2xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
+          <AccordionTrigger className="lg:text-2xl text-xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
             কোর্স শেষ করার পর সার্টিফিকেট দেওয়া হয় কি?
           </AccordionTrigger>
-          <AccordionContent className="flex text-xl flex-col gap-4 text-balance">
+          <AccordionContent className="flex lg:text-xl text-base flex-col gap-4 text-balance">
             <p>
               → হ্যাঁ! প্রতিটি কোর্স শেষ করার পর আপনাকে ডাউনলোড করার মতো অনলাইন
               সার্টিফিকেট দেওয়া হয়।
@@ -167,10 +167,10 @@ const AboutPage = () => {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-5">
-          <AccordionTrigger className="text-2xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
+          <AccordionTrigger className="lg:text-2xl text-xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
             কোর্স কন্টেন্ট কিভাবে পাব?
           </AccordionTrigger>
-          <AccordionContent className="flex text-xl flex-col gap-4 text-balance">
+          <AccordionContent className="flex lg:text-xl text-base flex-col gap-4 text-balance">
             <p>
               → কোর্সে ভর্তি হওয়ার পর লগিন করে ড্যাশবোর্ডে কোর্স কন্টেন্ট দেখতে
               পাবেন এবং নির্দিষ্ট মডিউল অনুসারে শিখতে পারবেন।
@@ -178,10 +178,10 @@ const AboutPage = () => {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-6">
-          <AccordionTrigger className="text-2xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
+          <AccordionTrigger className="lg:text-2xl text-xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
             কোর্সের মেয়াদ কতোদিন?
           </AccordionTrigger>
-          <AccordionContent className="flex text-xl flex-col gap-4 text-balance">
+          <AccordionContent className="flex lg:text-xl text-base flex-col gap-4 text-balance">
             <p>
               → প্রতিটি কোর্সের মেয়াদ কোর্স ডিটেইলস সেকশনে দেওয়া আছে। সাধারণত
               এটি কোর্সের ধরণ অনুযায়ী ১ থেকে ৬ মাস পর্যন্ত হতে পারে।
@@ -189,10 +189,10 @@ const AboutPage = () => {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-7">
-          <AccordionTrigger className="text-2xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
+          <AccordionTrigger className="lg:text-2xl text-xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
             কোর্স করার জন্য আগের কোনও অভিজ্ঞতার দরকার আছে কি?
           </AccordionTrigger>
-          <AccordionContent className="flex text-xl flex-col gap-4 text-balance">
+          <AccordionContent className="flex lg:text-xl text-base flex-col gap-4 text-balance">
             <p>
               → না, আমরা বেসিক থেকে অ্যাডভান্স কোর্স অফার করি, তাই আগের কোনও
               অভিজ্ঞতার দরকার নেই।
@@ -200,10 +200,10 @@ const AboutPage = () => {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-8">
-          <AccordionTrigger className="text-2xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
+          <AccordionTrigger className="lg:text-2xl text-xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
             কোর্স করার সময় কোনও সাপোর্ট পাব কি?
           </AccordionTrigger>
-          <AccordionContent className="flex text-xl flex-col gap-4 text-balance">
+          <AccordionContent className="flex lg:text-xl text-base flex-col gap-4 text-balance">
             <p>
               → হ্যাঁ! কোর্স করার সময় ইনস্ট্রাক্টর এবং সাপোর্ট টিমের Live
               Support সহ সহায়তা পাবেন।
@@ -211,10 +211,10 @@ const AboutPage = () => {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-9">
-          <AccordionTrigger className="text-2xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
+          <AccordionTrigger className="lg:text-2xl text-xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
             কোর্স সম্পূর্ণ করার পর চাকরি খুঁজতে সাহায্য করবেন কি?
           </AccordionTrigger>
-          <AccordionContent className="flex text-xl flex-col gap-4 text-balance">
+          <AccordionContent className="flex lg:text-xl text-base flex-col gap-4 text-balance">
             <p>
               → আমরা কোর্স সম্পূর্ণ করার পর কিভাবে চাকরির জন্য প্রস্তুতি নেওয়া
               যায় তা গাইড করে থাকি এবং নিয়মিত চাকরির খোঁজ সম্পর্কিত কন্টেন্ট
@@ -223,10 +223,10 @@ const AboutPage = () => {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-10">
-          <AccordionTrigger className="text-2xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
+          <AccordionTrigger className="lg:text-2xl text-xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
             কিভাবে যোগাযোগ করবো?
           </AccordionTrigger>
-          <AccordionContent className="flex text-xl flex-col gap-4 text-balance">
+          <AccordionContent className="flex lg:text-xl text-base flex-col gap-4 text-balance">
             <p>
               → ওয়েবসাইটে দেওয়া Contact Number, Whatsapp, Messenger, Email বা
               লাইভ চ্যাটের মাধ্যমে যে কোনও সময় যোগাযোগ করতে পারবেন।

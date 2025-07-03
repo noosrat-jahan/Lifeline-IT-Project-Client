@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { FaArrowRight } from "react-icons/fa6";
 import { FaPlay } from "react-icons/fa";
@@ -6,15 +5,19 @@ import { Link } from "react-router-dom";
 import banner from "../../../assets/banner.jpg";
 
 import "../../../App.css";
+import { IoMdClose } from "react-icons/io";
 const Hero = () => {
   const [open, setOpen] = useState(false);
+  const [close, setClose] = useState(false);
   const videoId = "uGx8wsKooBc";
-
 
   return (
     <div className=" space-y-10 mt-10">
-      <div className="bg-accent w-11/12 mx-auto h-20">
+      <div className={`bg-accent w-11/12 mx-auto h-20 relative ${close? "hidden" : "block"}`}>
         <img src={banner} alt="" className="h-full w-full bg-cover" />
+        <span onClick={()=>setClose(!close)} className="text-black bg-white rounded-full p-1 font-bold text-xl absolute right-0 top-0 cursor-pointer">
+          <IoMdClose />
+        </span>
       </div>
       <div className="text-primary text-3xl  w-auto mx-auto shadow-xl rounded-full px-5 py-3">
         <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-white to-red-400 font-bold text-base md:text-xl lg:text-3xl">
@@ -22,23 +25,22 @@ const Hero = () => {
         </h1>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-28 text-left pt-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-14 lg:gap-28 text-left lg:pt-10">
         {/* left section  */}
         <div className="flex flex-col items-start gap-8">
-          <h1 className="text-secondary font-poppins text-3xl md:text-4xl lg:text-5xl font-bold">
+          <h1 className="text-secondary font-poppins text-2xl md:text-3xl lg:text-5xl font-bold lg:leading-snug whitespace-pre-line">
             One of the Best IT <br /> Training Institute <br /> In Bangladesh
           </h1>
+
           <p className="text-sm text-secondary ">
             Lifeline IT is operated by a Govt. approved organization | Est. 2021
             | Over 25,000+ Students Trained | Trusted by 2.30 Lakh+ Followers on
             Social Media.
           </p>
 
-          <div className="flex gap-3 items-center">
+          <div className="flex gap-3 items-center justify-start">
             <Link to="/courses">
-              <button
-                className="m-2 px-[30px] py-[12px] text-center uppercase transition-all duration-500 bg-[linear-gradient(to_right,_#249ffd_2%,_#3a7bd5_58%,_#00d2ff_100%)] bg-[length:200%_auto] text-white shadow-[0_0_10px_#000_80%] rounded-full  hover:bg-[position:right_center] hover:text-white flex items-center gap-3 font-bold"
-              >
+              <button className=" px-[25px] py-[8px] text-center  transition-all duration-500 bg-[linear-gradient(to_right,_#249ffd_2%,_#3a7bd5_58%,_#00d2ff_100%)] bg-[length:200%_auto] text-white shadow-[0_0_10px_#000_80%] rounded-full  hover:bg-[position:right_center] hover:text-white flex items-center gap-2 font-bold">
                 Courses <FaArrowRight />
               </button>
             </Link>
@@ -48,16 +50,16 @@ const Hero = () => {
                 className="
                 flex items-center gap-2
                 text-white text-center
-                text-sm  lg:text-lg
-                px-[30px] py-[10px] rounded-full
+                
+                px-[25px] py-[8px] rounded-full
                shadow-[0_0_10px_#f09619ee] bg-gradient-to-r from-[#f09619ee] via-[#e4d653] to-[#f9a917] bg-[length:200%_auto]
                 transition-all duration-500
                 hover:bg-[position:right_center]
-                xl:text-lg
+                
                 focus:outline-none focus:ring-2 focus:ring-[#EDDE5D] focus:ring-offset-2
               "
               >
-                Sign Up <FaArrowRight />
+                Register <FaArrowRight />
               </button>
             </Link>
           </div>
@@ -83,7 +85,7 @@ const Hero = () => {
               <span className="ripple ripple-3" />
 
               {/* Play Button */}
-              <div className="relative z-10 w-20 h-20 bg-white bg-opacity-90 rounded-full flex items-center justify-center shadow-2xl hover:scale-105 transition-transform duration-300">
+              <div className="relative z-10 md:w-14 md:h-14 lg:w-20 lg:h-20 bg-white bg-opacity-90 rounded-full flex items-center justify-center shadow-2xl hover:scale-105 transition-transform duration-300">
                 <svg
                   className="w-10 h-10 text-blue-600"
                   fill="currentColor"
@@ -119,7 +121,7 @@ const Hero = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

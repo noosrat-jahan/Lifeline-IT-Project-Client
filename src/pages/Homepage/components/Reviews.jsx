@@ -12,7 +12,7 @@ const Reviews = () => {
   }
   return (
     <div className="w-full  mx-auto py-10 ">
-      <div className="flex flex-col gap-3 justify-center items-center">
+      <div className="flex flex-col gap-3 p-3 justify-center items-center">
         <h1 className="text-xl md:text-4xl lg:text-5xl text-secondary font-extrabold">
           What Our Learners Say
         </h1>
