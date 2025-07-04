@@ -1,39 +1,48 @@
-import React, { useEffect, useState } from "react"
-import { Link, useLocation } from "react-router-dom"
-import axios from "axios"
-import { FaStar } from "react-icons/fa"
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import axios from "axios";
+import { FaStar } from "react-icons/fa";
+import Loader from "@/components/shared/Loader";
 // import { motion } from "framer-motion"
 
 const OurCourses = () => {
-  const location = useLocation()
-  const { search } = location.state || {}
-  const [selected, setSelected] = useState(search || "All")
+  const location = useLocation();
+  const { search } = location.state || {};
+  const [selected, setSelected] = useState(search || "All");
 
   useEffect(() => {
     if (search) {
-      setSelected(search)
+      setSelected(search);
     } else {
-      setSelected("All")
+      setSelected("All");
     }
-  }, [search])
+  }, [search]);
 
-  const [data, setData] = useState([])
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true); // loading start
 
   useEffect(() => {
     const fetchData = async () => {
-      let result
+      let result;
       if (selected != "All") {
         result = await axios.get(
           import.meta.env.VITE_API_URL + `/api/courses/search?name=${selected}`
-        )
+        );
       } else {
-        result = await axios.get(import.meta.env.VITE_API_URL + "/api/courses/")
+        result = await axios.get(
+          import.meta.env.VITE_API_URL + "/api/courses/"
+        );
       }
-      console.log(result.data)
-      setData(result.data)
-    }
-    fetchData()
-  }, [selected])
+      console.log(result.data);
+      setData(result.data);
+      setLoading(false);
+    };
+    fetchData();
+  }, [selected]);
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <div className="min-h-screen  ">
@@ -121,7 +130,7 @@ const OurCourses = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default OurCourses
+export default OurCourses;
