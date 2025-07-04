@@ -86,7 +86,7 @@ html {
 
 .background-image {
   position: relative;
-  min-height: 300px; /* বা যত height দরকার */
+  /* min-height: 300px; বা যত height দরকার */
   background-image: url("./assets/Community Photo.png");
   background-position: center;
   background-repeat: no-repeat;

@@ -15,8 +15,8 @@ const AboutPage = () => {
   return (
     <div className="pb-10">
       {/* hero  */}
-      <div className="background-image p-4 w-full">
-        <h1 className="text-secondary text-xl md:text-3xl lg:text-5xl font-semibold">
+      <div className="background-image p-4 w-full h-[280px] md:h-[400px] lg:h-[600px] xl:h-[720px]">
+        <h1 className="text-secondary text-xl md:text-3xl lg:text-4xl xl:text-6xl font-semibold">
           Take Challenge for Build Your Life. <br /> The World Most Lessons for
           Back to Your Life.
         </h1>
@@ -24,19 +24,19 @@ const AboutPage = () => {
 
       {/* our mission  */}
 
-      <div className="mt-14 w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div className="mt-14 w-11/12 mx-auto grid grid-cols-1 lg:grid-cols-2  gap-10">
         <div className="">
           <img
             src={mission}
             alt=""
-            className="rounded-xl "
+            className="rounded-xl h-[280px] md:h-[550px]"
           />
         </div>
         <div className="flex flex-col items-start text-accent gap-5 text-left">
           <button className="rounded-full bg-gold/50 px-5 py-1.5 border border-gold">
             KNOW ABOUT US
           </button>
-          <h1 className="text-5xl font-bold">Our Mission</h1>
+          <h1 className="text-3xl lg:text-5xl xl:text-6xl font-bold">Our Mission</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde saepe
             voluptas totam animi aspernatur harum pariatur dolorem optio porro
@@ -61,12 +61,12 @@ const AboutPage = () => {
 
       {/* our vision  */}
 
-      <div className="mt-14 w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div className="mt-14 w-11/12 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
         <div className="flex flex-col text-accent items-start gap-5 text-left">
           <button className="rounded-full  bg-gold/50 px-5 py-1.5 border border-gold">
             HOW WE WORK
           </button>
-          <h1 className="text-5xl font-bold">Our Vission</h1>
+          <h1 className="text-3xl lg:text-5xl xl:text-6xl font-bold">Our Vission</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde saepe
             voluptas totam animi aspernatur harum pariatur dolorem optio porro
@@ -100,18 +100,18 @@ const AboutPage = () => {
 
       {/* FAQ  */}
 
-      <h1 id="faq" className="mt-14 text-xl lg:text-5xl text-accent scroll-smooth">
+      <h1 id="faq" className="mt-14 text-xl md:text-4xl lg:text-5xl text-accent scroll-smooth">
         Frequently Asked Question
       </h1>
 
       <Accordion
         type="single"
         collapsible
-        className="lg:w-9/12 w-10/12 mx-auto text-secondary rounded-sm text-left bg-blue-950/20 lg:p-8 p-5 mt-5 font-anek hover:no-underline relative"
+        className="lg:w-9/12 w-10/12 mx-auto text-secondary rounded-sm text-left bg-blue-950/20 lg:p-8 p-5 mt-10 font-anek hover:no-underline relative"
         // defaultValue="item-1"
       >
         <AccordionItem value="item-1">
-          <AccordionTrigger className="lg:text-2xl text-xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
+          <AccordionTrigger className="lg:text-2xl text-xl xl:text-3xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
             সঠিক কম্পিউটার কোর্সটি কিভাবে নির্বাচন করব?
           </AccordionTrigger>
           <AccordionContent className="flex lg:text-xl text-base flex-col gap-4 text-balance ">
@@ -133,7 +133,7 @@ const AboutPage = () => {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-2">
-          <AccordionTrigger className="lg:text-2xl text-xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
+          <AccordionTrigger className="lg:text-2xl text-xl xl:text-3xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
             কোর্সে কিভাবে ভর্তি হব?
           </AccordionTrigger>
           <AccordionContent className="flex lg:text-xl text-base flex-col gap-4 text-balance">
@@ -145,7 +145,7 @@ const AboutPage = () => {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-3">
-          <AccordionTrigger className="lg:text-2xl text-xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
+          <AccordionTrigger className="lg:text-2xl text-xl xl:text-3xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
             কিসের মাধ্যমে পেমেন্ট করা যায়?
           </AccordionTrigger>
           <AccordionContent className="flex lg:text-xl text-base flex-col gap-4 text-balance">
@@ -156,7 +156,7 @@ const AboutPage = () => {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-4">
-          <AccordionTrigger className="lg:text-2xl text-xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
+          <AccordionTrigger className="lg:text-2xl text-xl xl:text-3xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
             কোর্স শেষ করার পর সার্টিফিকেট দেওয়া হয় কি?
           </AccordionTrigger>
           <AccordionContent className="flex lg:text-xl text-base flex-col gap-4 text-balance">
@@ -167,7 +167,7 @@ const AboutPage = () => {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-5">
-          <AccordionTrigger className="lg:text-2xl text-xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
+          <AccordionTrigger className="lg:text-2xl text-xl xl:text-3xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
             কোর্স কন্টেন্ট কিভাবে পাব?
           </AccordionTrigger>
           <AccordionContent className="flex lg:text-xl text-base flex-col gap-4 text-balance">
@@ -178,7 +178,7 @@ const AboutPage = () => {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-6">
-          <AccordionTrigger className="lg:text-2xl text-xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
+          <AccordionTrigger className="lg:text-2xl text-xl xl:text-3xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
             কোর্সের মেয়াদ কতোদিন?
           </AccordionTrigger>
           <AccordionContent className="flex lg:text-xl text-base flex-col gap-4 text-balance">
@@ -189,7 +189,7 @@ const AboutPage = () => {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-7">
-          <AccordionTrigger className="lg:text-2xl text-xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
+          <AccordionTrigger className="lg:text-2xl text-xl xl:text-3xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
             কোর্স করার জন্য আগের কোনও অভিজ্ঞতার দরকার আছে কি?
           </AccordionTrigger>
           <AccordionContent className="flex lg:text-xl text-base flex-col gap-4 text-balance">
@@ -200,7 +200,7 @@ const AboutPage = () => {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-8">
-          <AccordionTrigger className="lg:text-2xl text-xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
+          <AccordionTrigger className="lg:text-2xl text-xl xl:text-3xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
             কোর্স করার সময় কোনও সাপোর্ট পাব কি?
           </AccordionTrigger>
           <AccordionContent className="flex lg:text-xl text-base flex-col gap-4 text-balance">
@@ -211,7 +211,7 @@ const AboutPage = () => {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-9">
-          <AccordionTrigger className="lg:text-2xl text-xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
+          <AccordionTrigger className="lg:text-2xl text-xl xl:text-3xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
             কোর্স সম্পূর্ণ করার পর চাকরি খুঁজতে সাহায্য করবেন কি?
           </AccordionTrigger>
           <AccordionContent className="flex lg:text-xl text-base flex-col gap-4 text-balance">
@@ -223,7 +223,7 @@ const AboutPage = () => {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-10">
-          <AccordionTrigger className="lg:text-2xl text-xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
+          <AccordionTrigger className="lg:text-2xl text-xl xl:text-3xl font-bold text-transparent bg-clip-text  bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819] bg-[length:200%_auto] transition-all duration-1000 hover:bg-[position:right_center]">
             কিভাবে যোগাযোগ করবো?
           </AccordionTrigger>
           <AccordionContent className="flex lg:text-xl text-base flex-col gap-4 text-balance">

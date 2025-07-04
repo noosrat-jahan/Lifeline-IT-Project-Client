@@ -38,8 +38,11 @@ const Footer = () => {
           </p>
 
           <Link to="/contact">
-            <button onClick={handleClick} className="mt-4 shadow-xl px-6 py-2 bg-[#4a64f5] hover:bg-[#3a53e0] text-white text-sm font-semibold rounded-full hover:shadow-lg transition-all duration-300">
-              Contact us  →
+            <button
+              onClick={handleClick}
+              className="mt-4 shadow-xl px-4 py-2 bg-[#4a64f5] hover:bg-[#3a53e0] text-white text-sm font-semibold rounded-full hover:shadow-lg transition-all duration-300 flex"
+            >
+              Contact us →
             </button>
           </Link>
         </div>
@@ -95,18 +98,15 @@ const Footer = () => {
             </li>
             <li>
               E-mail:{" "}
-              <Link
-                to="mailto:support@lifelineit.com"
-              >
+              <Link to="mailto:support@lifelineit.com">
                 <span className="text-green-400">support@lifelineit.com</span>
               </Link>
             </li>
             <li>
               <HashLink to="/contact#location">
-Location: Khan Building (3rd Floor), <br />
-              Sk. Mujib Road, Chowmuhuni, Agrabad, Chattogram.
+                Location: Khan Building (3rd Floor), <br />
+                Sk. Mujib Road, Chowmuhuni, Agrabad, Chattogram.
               </HashLink>
-              
             </li>
           </ul>
         </div>

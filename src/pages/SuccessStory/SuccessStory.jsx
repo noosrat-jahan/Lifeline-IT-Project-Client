@@ -50,26 +50,41 @@ const videos = [
 const SuccessStory = () => {
   const [selectedVideo, setSelectedVideo] = useState(null)
   const [picsliderRef, picinstanceRef] = useKeenSlider({
-    loop: false,
-    slides: {
-      perView: 2, // mobile default
-      spacing: 20,
-    },
+    loop: true,
+
     breakpoints: {
-      640: {
-        slides: { perView: 2 },
+      "(min-width: 400px)": {
+        slides: { perView: 2, spacing: 8 },
       },
-      1024: {
-        slides: { perView: 4 },
+      "(min-width: 1000px)": {
+        slides: { perView: 3, spacing: 10 },
       },
     },
+    slides: { perView: 1 },
+    // slides: {
+    //   perView: 2, // mobile default
+    //   spacing: 20,
+    // },
+    // breakpoints: {
+    //   640: {
+    //     slides: { perView: 2 },
+    //   },
+    //   1024: {
+    //     slides: { perView: 4 },
+    //   },
+    // },
   })
   const [videosliderRef, videoinstanceRef] = useKeenSlider({
-    loop: false,
-    slides: {
-      perView: 3, // mobile default
-      spacing: 20,
+    loop: true,
+     breakpoints: {
+      "(min-width: 400px)": {
+        slides: { perView: 2, spacing: 8 },
+      },
+      "(min-width: 1000px)": {
+        slides: { perView: 3, spacing: 10 },
+      },
     },
+    slides: { perView: 1 },
   })
   return (
     <div>
@@ -78,13 +93,13 @@ const SuccessStory = () => {
         {/* Arrows */}
         <button
           onClick={() => picinstanceRef.current?.prev()}
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white shadow px-2 py-1 rounded-full z-10 duration-300"
+          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gold shadow px-2 py-1 rounded-full z-10 duration-300"
         >
           ◀
         </button>
         <button
           onClick={() => picinstanceRef.current?.next()}
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white shadow px-2 py-1 rounded-full z-10 duration-300"
+          className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gold  shadow px-2 py-1 rounded-full z-10 duration-300"
         >
           ▶
         </button>
@@ -122,13 +137,13 @@ const SuccessStory = () => {
         {/* Arrows */}
         <button
           onClick={() => videoinstanceRef.current?.prev()}
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white shadow px-2 py-1 rounded-full z-10"
+          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gold shadow px-2 py-1 rounded-full z-10"
         >
           ◀
         </button>
         <button
           onClick={() => videoinstanceRef.current?.next()}
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white shadow px-2 py-1 rounded-full z-10"
+          className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gold shadow px-2 py-1 rounded-full z-10"
         >
           ▶
         </button>
