@@ -16,7 +16,7 @@ const AboutPage = () => {
     <div className="pb-10">
       {/* hero  */}
       <div className="background-image p-4 w-full h-[280px] md:h-[400px] lg:h-[600px] xl:h-[720px]">
-        <h1 className="text-secondary text-xl md:text-3xl lg:text-4xl xl:text-6xl font-semibold">
+        <h1 className="text-secondary text-xl md:text-3xl lg:text-3xl xl:text-6xl font-semibold">
           Take Challenge for Build Your Life. <br /> The World Most Lessons for
           Back to Your Life.
         </h1>

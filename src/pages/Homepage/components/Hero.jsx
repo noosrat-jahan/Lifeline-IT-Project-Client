@@ -13,7 +13,7 @@ const Hero = () => {
 
   return (
     <div className=" space-y-10 mt-10">
-      <div className={`bg-accent w-11/12 mx-auto h-20 relative ${close? "hidden" : "block"}`}>
+      <div className={`bg-accent w-full mx-auto h-28 relative ${close? "hidden" : "block"}`}>
         <img src={banner} alt="" className="h-full w-full bg-cover" />
         <span onClick={()=>setClose(!close)} className="text-black bg-white rounded-full p-1 font-bold text-xl absolute right-0 top-0 cursor-pointer">
           <IoMdClose />
