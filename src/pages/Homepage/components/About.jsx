@@ -13,7 +13,7 @@ const About = () => {
     <div>
       {/* know us  */}
 
-      <div className=" mt-20 grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div className=" mt-20 grid grid-cols-1 lg:grid-cols-2 gap-10">
         <div className="">
           <img
             src={about}
@@ -25,7 +25,7 @@ const About = () => {
           <button className="rounded-full text-accent bg-gold/50 px-5 py-1.5 border border-gold">
             ABOUT LIFELINE IT
           </button>
-          <h1 className="text-5xl font-bold text-accent">
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-accent">
             Our Origins and Story
           </h1>
           <p className="text-secondary">

@@ -28,7 +28,7 @@ const OnlineCourse = () => {
   return (
     <div>
       <div className="flex justify-center">
-        <h1 className="text-2xl font-bold bg-blue-900 rounded-full px-8 py-1.5 text-white">
+        <h1 className="text-lg lg:text-2xl font-bold bg-blue-900 rounded-full px-8 py-1.5 text-white">
           Offline Courses
         </h1>
       </div>

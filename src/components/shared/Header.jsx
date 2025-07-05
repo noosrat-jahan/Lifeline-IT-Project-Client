@@ -595,7 +595,7 @@ const Header = () => {
 
           {/* Login/Dashboard button */}
           <Link to={isLoggedIn ? "/future-dashboard-link-goes-here" : "/login"}>
-            <button className="text-white text-center lg:px-[25px] px-[20px] py-[8px] lg:py-[10px] rounded-[10px] shadow-[0_0_10px_#000] bg-gradient-to-r from-[#f09619ee] via-[#e4d653] to-[#f9a917] bg-[length:200%_auto] transition-all duration-500 hover:bg-[position:right_center] block font-bold">
+            <button className="text-white text-center lg:px-[25px] px-[10px] py-[6px] lg:py-[12px] rounded-[10px] shadow-[0_0_10px_#000] bg-gradient-to-r from-[#f09619ee] via-[#e4d653] to-[#f9a917] bg-[length:200%_auto] transition-all duration-500 hover:bg-[position:right_center]  font-bold flex text-sm">
               {isLoggedIn ? "🎓 Dashboard" : "Login"}
             </button>
           </Link>
