@@ -1,34 +1,35 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { FaArrowRight } from "react-icons/fa6";
-import axios from "axios";
+import React, { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
+import { FaArrowRight } from "react-icons/fa6"
+import axios from "axios"
 const OnlineCourse = () => {
   const handleClick = () => {
     // navigate("/our-courses");
     setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }, 100); // delay to ensure page loads
-  };
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    }, 100) // delay to ensure page loads
+  }
 
-  const [data, setData] = useState([]);
-  const [type, setType] = useState("offline");
+  const [data, setData] = useState([])
+  const [typeName, setType] = useState("offline")
 
   let getLatestCourses = async (type) => {
-    setType(type);
+    setType(type)
     const result = await axios.get(
-      `https://lifelineit-back.onrender.com/api/courses/search?limit=3&type=${type}`
-    );
-    setData(result.data);
-  };
+      import.meta.env.VITE_API_URL +
+        `/api/courses/search?limit=3&name=${typeName}`
+    )
+    setData(result.data)
+  }
 
   useEffect(() => {
-    getLatestCourses(type);
-  }, [type]);
+    getLatestCourses(typeName)
+  }, [typeName])
 
   return (
     <div>
       <div className="flex justify-center">
-        <h1 className="text-lg lg:text-2xl font-bold bg-blue-900 rounded-full px-8 py-1.5 text-white">
+        <h1 className="text-2xl font-bold bg-blue-900 rounded-full px-8 py-1.5 text-white">
           Offline Courses
         </h1>
       </div>
@@ -63,12 +64,12 @@ const OnlineCourse = () => {
               <div className="text-left">
                 <p>Reviews</p>
               </div>
-              <div className="flex justify-between items-center">
+              <div className="flex justify-between">
                 {/* Button */}
                 <Link to={`/courses/${course.route}`}>
                   <button
                     onClick={handleClick}
-                    className="m-2 lg:px-[30px] px-[20px] py-[8px] lg:py-[10px] text-center uppercase transition-all duration-500 bg-[linear-gradient(to_right,_#249ffd_2%,_#3a7bd5_58%,_#00d2ff_100%)] bg-[length:200%_auto] text-white shadow-[0_0_10px_#000_80%] rounded-full  hover:bg-[position:right_center] hover:text-white flex items-center gap-3 font-bold"
+                    className="m-2 px-[30px] py-[10px] text-center uppercase transition-all duration-500 bg-[linear-gradient(to_right,_#249ffd_2%,_#3a7bd5_58%,_#00d2ff_100%)] bg-[length:200%_auto] text-white shadow-[0_0_10px_#000_80%] rounded-full  hover:bg-[position:right_center] hover:text-white flex items-center gap-3 font-bold"
                   >
                     Enroll Now
                   </button>
@@ -107,7 +108,7 @@ const OnlineCourse = () => {
         </Link>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default OnlineCourse;
+export default OnlineCourse
