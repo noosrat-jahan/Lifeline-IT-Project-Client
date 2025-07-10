@@ -8,7 +8,7 @@ const CourseDetails = () => {
   const [courseDetails, setCourseDetails] = useState({})
   useEffect(() => {
     axios
-      .get(import.meta.VITE_API_URL + `/api/courses/${route}`)
+      .get(import.meta.env.VITE_API_URL + `/api/courses/${route}`)
       .then((res) => {
         console.log(res.data)
         setCourseDetails(res.data)
@@ -25,15 +25,19 @@ const CourseDetails = () => {
 
   const [open, setOpen] = useState(false)
 
+  const instructors = courseDetails.instructors
+  console.log(instructors)
+
   return (
     <div>
-      <div className="mt-10 w-11/12 text-left mx-auto grid grid-cols-1 lg:grid-cols-2 justify-between gap-5">
-        <div className="space-y-3">
-          <h1 className="text-4xl text-accent font-bold">
+      <div className="mt-10 w-11/12 text-left mx-auto grid grid-cols-1 lg:grid-cols-3 justify-between gap-8">
+        <div className="space-y-6 col-span-2">
+          <h1 className="lg:text-6xl text-accent font-bold">
             {courseDetails?.title}
           </h1>
 
-          <p className="text-lg text-accent">{courseDetails?.description}</p>
+          <p className="text-xl text-accent">{courseDetails?.description}</p>
+          <p className="text-lg text-amber-400">Total Classes: {courseDetails?.totalClasses}</p>
           <div className="bg-white p-4">
             <img
               src="https://i.ibb.co.com/NpnnggZ/cybersecurity-concept-collage-design.jpg"
@@ -42,7 +46,7 @@ const CourseDetails = () => {
           </div>
         </div>
 
-        <div className="bg-accent rounded-md shadow-md flex flex-col h-full w-3/4 ml-auto border-2 border-gold p-4 space-y-6 ">
+        <div className="bg-accent rounded-md shadow-md flex flex-col h-full  ml-auto border-2 border-gold p-4 space-y-6 ">
           <div className="relative flex items-center justify-center w-full">
             {/* Video Thumbnail */}
             <div
@@ -62,7 +66,7 @@ const CourseDetails = () => {
                 <span className="ripple ripple-3" />
 
                 {/* Play Button */}
-                <div className="relative z-10 w-20 h-20 bg-white bg-opacity-90 rounded-full flex items-center justify-center shadow-2xl hover:scale-105 transition-transform duration-300">
+                <div className="relative z-10 w-16 h-16 bg-white bg-opacity-90 rounded-full flex items-center justify-center shadow-2xl hover:scale-105 transition-transform duration-300">
                   <svg
                     className="w-10 h-10 text-blue-600"
                     fill="currentColor"
@@ -103,13 +107,13 @@ const CourseDetails = () => {
             &#2547; 1500
           </h1>
           <p className="text-xl text-blue-900 border-b-2 pb-2">
-            Start Date: {courseDetails.startDate}
+            <span className="font-bold">Start Date:</span> {courseDetails.startDate}
           </p>
           <p className="text-xl text-blue-900 border-b-2 pb-2">
-            Total Classes: {courseDetails.totalClasses}
+            <span className="font-bold">Total Classes: </span> {courseDetails.totalClasses}
           </p>
           <p className="text-xl text-blue-900 border-b-2 pb-2">
-            Class Duration: {courseDetails.duration}
+            <span className="font-bold">Class Duration:</span> {courseDetails.duration}
           </p>
           <Link to={`/`}>
             <button
@@ -120,6 +124,36 @@ const CourseDetails = () => {
             </button>
           </Link>
         </div>
+
+        <div>
+          <h1 className="font-bold text-xl text-white mb-4">Instructor</h1>
+        
+          {instructors.map((instructor) => (
+            <div
+              key={instructor}
+              className="relative group w-64  bg-white p-4 rounded-2xl shadow-md text-center transition"
+            >
+              {/* Profile Picture */}
+              <img
+                src={instructor.image}
+                alt="Instructor"
+                className="w-24 h-24 mx-auto rounded-full object-cover border-4 border-blue-200 shadow"
+              />
+
+              {/* Name & Designation */}
+              <h3 className="mt-4 text-lg font-semibold text-gray-800">
+                {instructor.name}
+              </h3>
+              <p className="text-sm text-gray-500">Frontend Mentor</p>
+
+              {/* Floating Pop-up Below the Card */}
+              <div className="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 w-60 bg-white text-gray-700 text-sm shadow-lg p-3 rounded-lg opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-300 z-20">
+                <p>{instructor.about}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        
       </div>
     </div>
   )
