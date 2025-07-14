@@ -52,17 +52,19 @@ const RegisterPage = () => {
 
     const MySwal = withReactContent(Swal)
 
+    let resultMessage
     try {
       const result = await axios.post(
         import.meta.env.VITE_API_URL + "/api/auth/otp-verify",
         { email },
         { withCredentials: true }
       )
+      resultMessage = result.data.message
       if (result.data) navigate("/otppage")
     } catch (error) {
       MySwal.fire({
         title: "Oops?",
-        text: "Did you entered your info correctly? Please check.",
+        text: resultMessage || "Invalid credentials, please try again.",
         icon: "question",
         confirmButtonText: "Oops!",
       })
