@@ -25,7 +25,7 @@ const CourseDetails = () => {
 
   const [open, setOpen] = useState(false)
 
-  const instructors = courseDetails.instructors
+  const instructors = courseDetails?.instructors
   console.log(instructors)
 
   return (
@@ -128,7 +128,7 @@ const CourseDetails = () => {
         <div>
           <h1 className="font-bold text-xl text-white mb-4">Instructor</h1>
         
-          {instructors.map((instructor) => (
+          {instructors?.map((instructor) => (
             <div
               key={instructor}
               className="relative group w-64  bg-white p-4 rounded-2xl shadow-md text-center transition"

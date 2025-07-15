@@ -1,30 +1,31 @@
-import React, { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
-import { FaArrowRight } from "react-icons/fa6"
-import axios from "axios"
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa6";
+import axios from "axios";
 const OnlineCourse = () => {
   const handleClick = () => {
     // navigate("/our-courses");
     setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: "smooth" })
-    }, 100) // delay to ensure page loads
-  }
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 100); // delay to ensure page loads
+  };
 
-  const [data, setData] = useState([])
-  const [typeName, setTypeName] = useState("online")
+  const [data, setData] = useState([]);
+  // const [typeName, setTypeName] = useState("online");
 
-  let getLatestCourses = async (type) => {
-    setTypeName(type)
-    const result = await axios.get(
+  let getLatestCourses = async () => {
+    
+    const result = await axios.get(      
       import.meta.env.VITE_API_URL +
-        `/api/courses/search?limit=3&name=${typeName}`
-    )
-    setData(result.data)
-  }
+        `/api/courses/search?limit=3&name=online`
+    );
+    setData(result.data);
+    console.log(result.data);
+  };
 
   useEffect(() => {
-    getLatestCourses(typeName)
-  }, [typeName])
+    getLatestCourses();
+  }, []);
 
   return (
     <div>
@@ -108,7 +109,7 @@ const OnlineCourse = () => {
         </Link>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default OnlineCourse
+export default OnlineCourse;
