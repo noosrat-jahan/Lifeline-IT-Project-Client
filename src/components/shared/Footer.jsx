@@ -11,6 +11,7 @@ import logo from "../../assets/Website Logo.png";
 import { Link } from "react-router-dom";
 import paymentpic from "../../assets/payments.png";
 import { HashLink } from "react-router-hash-link";
+import ScrollToTop from "./ScrollToTop";
 
 const Footer = () => {
   const handleClick = () => {
@@ -131,6 +132,7 @@ const Footer = () => {
           <img src={paymentpic} alt="" />
         </div>
       </div>
+      <ScrollToTop></ScrollToTop>
     </footer>
   );
 };
