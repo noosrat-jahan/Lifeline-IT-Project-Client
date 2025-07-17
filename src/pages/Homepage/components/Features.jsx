@@ -1,8 +1,9 @@
 import React from "react";
 import { GraduationCap, BookOpen, ShieldCheck } from "lucide-react";
-import people from "../../../assets/Asset 4.png"
-import live from "../../../assets/Live Support.jpg"
-import support from "../../../assets/Asset 5.png"
+import people from "../../../assets/Asset 4.png";
+import live from "../../../assets/Live Support.jpg";
+import support from "../../../assets/Asset 5.png";
+import CountUp from "react-countup";
 const Features = () => {
   return (
     <div className="text-[#3473a8]">
@@ -16,9 +17,7 @@ const Features = () => {
       </div>
       <div className="py-16 px-4  text-white relative">
         {/* Heading */}
-        <h2 className="text-center  text-xl font-semibold mb-12">
-          
-        </h2>
+        <h2 className="text-center  text-xl font-semibold mb-12"></h2>
 
         {/* Top horizontal white line */}
         <div className="absolute top-[50px] left-1/2 transform -translate-x-1/2 w-[90%] h-[2px] bg-white/50 z-0" />
@@ -34,7 +33,10 @@ const Features = () => {
 
             {/* <BookOpen size={48} className=" mb-4" /> */}
             <img src={people} alt="" />
-            <h3 className="text-3xl font-bold text-[#3473a8] mt-3">5,00,000+</h3>
+            <h3 className="text-3xl font-bold text-[#3473a8] mt-3">
+              <CountUp end={500000} duration={2.5} separator="," start={0} />
+              <span>+</span>
+            </h3>
             <p className="text-[#3473a8] mt-2">Learners & Counting</p>
           </div>
 
@@ -44,7 +46,7 @@ const Features = () => {
             <div className="absolute -top-16 w-4 h-4 rounded-full bg-white border-4 border-[#6C93B7]"></div>
 
             {/* <GraduationCap size={48} className=" mb-4" /> */}
-            <img src={live} alt="" className=""/>
+            <img src={live} alt="" className="" />
             {/* <h3 className="text-3xl font-bold text-[#3473a8] ">25,000+</h3>
             <p className="mt-2 text-[#3473a8]">Total Student</p> */}
           </div>

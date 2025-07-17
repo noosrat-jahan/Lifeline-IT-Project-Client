@@ -1,26 +1,44 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaArrowRight } from "react-icons/fa6";
 import { FaPlay } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import banner from "../../../assets/banner.jpg";
+import { motion } from "framer-motion";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import "../../../App.css";
 import { IoMdClose } from "react-icons/io";
+import { Typewriter } from "react-simple-typewriter";
 const Hero = () => {
   const [open, setOpen] = useState(false);
   const [close, setClose] = useState(false);
   const videoId = "uGx8wsKooBc";
 
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   return (
     <div className=" space-y-10 mt-10">
-      <div className={`bg-accent w-full mx-auto h-16 md:h-20 lg:h-28 relative ${close? "hidden" : "block"}`}>
+      <div
+        className={`bg-accent w-full mx-auto h-16 md:h-20 lg:h-28 relative ${
+          close ? "hidden" : "block"
+        }`}
+      >
         <img src={banner} alt="" className="h-full w-full bg-cover" />
-        <span onClick={()=>setClose(!close)} className="text-black bg-white rounded-full p-1 font-bold text-xl absolute right-0 top-0 cursor-pointer">
+        <span
+          onClick={() => setClose(!close)}
+          className="text-black bg-white rounded-full p-1 font-bold text-xl absolute right-0 top-0 cursor-pointer"
+        >
           <IoMdClose />
         </span>
       </div>
       <div className="text-primary text-3xl  w-auto mx-auto shadow-xl rounded-full px-5 py-3">
-        <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-white to-red-400 font-bold text-base md:text-xl lg:text-3xl">
+        <h1
+          data-aos="fade-up"
+          className="text-transparent bg-clip-text bg-gradient-to-r from-white to-red-400 font-bold text-base md:text-xl lg:text-3xl"
+        >
           From Zero to Skilled, Your IT Journey Starts Here.
         </h1>
       </div>
@@ -29,7 +47,20 @@ const Hero = () => {
         {/* left section  */}
         <div className="flex flex-col items-start gap-8">
           <h1 className="text-secondary font-poppins text-2xl md:text-3xl lg:text-5xl font-bold lg:leading-snug whitespace-pre-line">
-            One of the Best IT <br /> Training Institute <br /> In Bangladesh
+            <Typewriter
+              words={[
+                "One of the Best IT",
+                "Training Institute",
+                "In Bangladesh",
+              ]}
+              loop={0} // 0 = no loop, or use Infinity
+              cursor
+              cursorStyle=""
+              typeSpeed={50}
+              deleteSpeed={50}
+              delaySpeed={1500}
+            />
+            {/* One of the Best IT <br /> Training Institute <br /> In Bangladesh */}
           </h1>
 
           <p className="text-sm text-secondary ">

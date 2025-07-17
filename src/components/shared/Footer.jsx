@@ -41,9 +41,9 @@ const Footer = () => {
           <Link to="/contact">
             <button
               onClick={handleClick}
-              className="mt-4 shadow-xl px-4 py-2 bg-[#4a64f5] hover:bg-[#3a53e0] text-white text-sm font-semibold rounded-full hover:shadow-lg transition-all duration-300 flex"
+              className="mt-4 shadow-xl px-4 py-2 hover:px-8 gap-3 bg-[#4a64f5] hover:bg-[#3a53e0] text-white text-sm font-semibold rounded-full hover:shadow-lg transition-all duration-300 flex"
             >
-              Contact us →
+              Contact us <span>→</span>
             </button>
           </Link>
         </div>
