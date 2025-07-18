@@ -48,12 +48,8 @@ const Hero = () => {
         <div className="flex flex-col items-start gap-8">
           <h1 className="text-secondary font-poppins text-2xl md:text-3xl lg:text-5xl font-bold lg:leading-snug whitespace-pre-line">
             <Typewriter
-              words={[
-                "One of the Best IT",
-                "Training Institute",
-                "In Bangladesh",
-              ]}
-              loop={0} // 0 = no loop, or use Infinity
+              words={["One of the Best IT Training Institute In Bangladesh"]}
+              loop={1} // 0 = no loop, or use Infinity
               cursor
               cursorStyle=""
               typeSpeed={50}

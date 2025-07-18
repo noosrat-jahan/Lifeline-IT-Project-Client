@@ -1,10 +1,33 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { GraduationCap, BookOpen, ShieldCheck } from "lucide-react";
 import people from "../../../assets/Asset 4.png";
 import live from "../../../assets/Live Support.jpg";
 import support from "../../../assets/Asset 5.png";
 import CountUp from "react-countup";
 const Features = () => {
+  const [startCount, setStartCount] = useState(false);
+  const countRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setStartCount(true);
+        }
+      },
+      { threshold: 0.5 } // 50% দেখা গেলেই trigger
+    );
+
+    if (countRef.current) {
+      observer.observe(countRef.current);
+    }
+
+    return () => {
+      if (countRef.current) {
+        observer.unobserve(countRef.current);
+      }
+    };
+  }, []);
   return (
     <div className="text-[#3473a8]">
       <div>
@@ -33,10 +56,24 @@ const Features = () => {
 
             {/* <BookOpen size={48} className=" mb-4" /> */}
             <img src={people} alt="" />
-            <h3 className="text-3xl font-bold text-[#3473a8] mt-3">
-              <CountUp end={500000} duration={2.5} separator="," start={0} />
+            {/* <div
+              ref={countRef}
+              className="text-3xl font-bold text-center text-black"
+            >
+              {startCount && (
+                <CountUp end={500000} duration={2.5} separator="," start={0} />
+              )}
+            </div> */}
+            <h3
+              ref={countRef}
+              className="text-3xl font-bold text-[#3473a8] mt-3"
+            >
+              {startCount && (
+                <CountUp end={500000} duration={2.5} separator="," start={0} />
+              )}
               <span>+</span>
             </h3>
+
             <p className="text-[#3473a8] mt-2">Learners & Counting</p>
           </div>
 

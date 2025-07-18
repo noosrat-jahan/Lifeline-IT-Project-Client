@@ -19,7 +19,7 @@ const RegisterPage = () => {
         )
 
         if (result.data.status) {
-          navigate("/")
+           window.location.href = `${import.meta.env.VITE_DASHBOARD_PAGE}`;
         } else {
           setChecking(false)
           console.log("Okay, not logged in")
