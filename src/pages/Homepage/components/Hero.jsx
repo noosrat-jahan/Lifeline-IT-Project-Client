@@ -13,42 +13,53 @@ import { Typewriter } from "react-simple-typewriter";
 const Hero = () => {
   const [open, setOpen] = useState(false);
   const [close, setClose] = useState(false);
+  const Offer = "";
+  const [offer, setOffer] = useState(false);
   const videoId = "uGx8wsKooBc";
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
 
+  useEffect(()=>{
+    if (Offer) {
+    setOffer(true);
+  }
+  },[])
+
   return (
     <div className=" space-y-10 mt-10">
-      <div
-        className={`bg-accent w-full mx-auto h-16 md:h-20 lg:h-28 relative ${
-          close ? "hidden" : "block"
-        }`}
-      >
-        <img src={banner} alt="" className="h-full w-full bg-cover" />
-        <span
-          onClick={() => setClose(!close)}
-          className="text-black bg-white rounded-full p-1 font-bold text-xl absolute right-0 top-0 cursor-pointer"
+      {offer && (
+        <div
+          className={`bg-accent w-full mx-auto h-20 md:h-24 lg:h-28 relative ${
+            close ? "hidden" : "block"
+          }`}
         >
-          <IoMdClose />
-        </span>
-      </div>
-      <div className="text-primary text-3xl  w-auto mx-auto shadow-xl rounded-full px-5 py-3">
+          <img src={banner} alt="" className="h-full w-full bg-cover" />
+          <span
+            onClick={() => setClose(!close)}
+            className="text-black bg-white rounded-full p-1 font-bold text-xl absolute right-0 top-0 cursor-pointer"
+          >
+            <IoMdClose />
+          </span>
+        </div>
+      )}
+
+      {/* <div className="text-primary text-3xl  w-auto mx-auto shadow-xl rounded-full px-5 py-3">
         <h1
           data-aos="fade-up"
           className="text-transparent bg-clip-text bg-gradient-to-r from-white to-red-400 font-bold text-base md:text-xl lg:text-3xl"
         >
           From Zero to Skilled, Your IT Journey Starts Here.
         </h1>
-      </div>
+      </div> */}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-14 lg:gap-28 text-left lg:pt-10">
+      <div className="grid grid-cols-1 grid-flow-row-reverse lg:grid-flow-row md:grid-cols-2 gap-4 lg:gap-28 text-left lg:pt-4">
         {/* left section  */}
-        <div className="flex flex-col items-start gap-8">
-          <h1 className="text-secondary font-poppins text-2xl md:text-3xl lg:text-5xl font-bold lg:leading-snug whitespace-pre-line">
+        <div className="flex flex-col items-start gap-5">
+          <h1 className="text-secondary font-poppins text-2xl md:text-3xl lg:text-4xl font-bold lg:leading-snug whitespace-pre-line">
             <Typewriter
-              words={["One of the Best IT Training Institute In Bangladesh"]}
+              words={["From Zero to Skilled, Your IT Journey Starts Here."]}
               loop={1} // 0 = no loop, or use Infinity
               cursor
               cursorStyle=""

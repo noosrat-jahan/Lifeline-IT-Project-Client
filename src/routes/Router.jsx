@@ -70,7 +70,7 @@ const Router = createBrowserRouter([
         element: <RegisterPage></RegisterPage>,
       },
     ],
-    errorElement: <ErrorPage />
+    
   },
 ])
 

@@ -13,7 +13,7 @@ const HomePage = () => {
     <div>
       <div className="w-10/12 xl:11/12 mx-auto space-y-10">
         <Hero></Hero>
-        <About></About>
+        {/* <About></About> */}
         <OnlineCourse></OnlineCourse>
         <OfflineCourse></OfflineCourse>
       </div>

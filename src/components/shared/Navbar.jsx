@@ -1,5 +1,5 @@
-import React from "react"
-import { CircleCheckIcon, CircleHelpIcon, CircleIcon } from "lucide-react"
+import React, { useEffect, useState } from "react";
+import { CircleCheckIcon, CircleHelpIcon, CircleIcon } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -8,14 +8,59 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
-import { Link } from "react-router-dom"
-import { ListItem } from "@mui/material"
+} from "@/components/ui/navigation-menu";
+import { Link } from "react-router-dom";
+import {
+  Avatar,
+  Box,
+  IconButton,
+  ListItem,
+  Menu,
+  MenuItem,
+  Tooltip,
+  Typography,
+} from "@mui/material";
+import { FaUserGraduate } from "react-icons/fa";
+import { IoMdLock } from "react-icons/io";
+import { FaArrowRightFromBracket, FaQ } from "react-icons/fa6";
+import { GrCloudSoftware, GrResources } from "react-icons/gr";
+import { SiCodementor } from "react-icons/si";
+import { AiOutlineTeam } from "react-icons/ai";
+import { HashLink } from "react-router-hash-link";
+
 const Navbar = () => {
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+  const [isOpen, setIsOpen] = useState(false);
+  //  const toggleNavbar = () => setIsOpen(!isOpen)
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isOpen]);
+
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
+
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
+
   return (
     <div className="">
       <NavigationMenu>
-        <NavigationMenuList className="gap-6">
+        <NavigationMenuList className="gap-2">
           <NavigationMenuItem>
             <NavigationMenuLink
               asChild
@@ -91,13 +136,109 @@ const Navbar = () => {
               </Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
+
+          <NavigationMenuItem>
+            <Box
+              sx={{
+                flexGrow: 0,
+              }}
+            >
+              <Tooltip title="Open Menu">
+                <IconButton
+                  onClick={handleOpenUserMenu}
+                  sx={{ p: 0 }}
+                  // className="border-2 border-blue-700"
+                >
+                  {/* <Avatar alt="" src={''} /> */}
+                  <Link
+                    to=""
+                    className="bg-transparent text-navmenu text-xl font-roboto "
+                  >
+                    More
+                  </Link>
+                </IconButton>
+              </Tooltip>
+              <Menu
+                sx={{ mt: "38px" }}
+                id="menu-appbar"
+                anchorEl={anchorElUser}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                open={Boolean(anchorElUser)}
+                onClose={handleCloseUserMenu}
+              >
+                <MenuItem
+                  onClick={handleCloseUserMenu}
+                  sx={{
+                    "&:hover": {
+                      backgroundColor: "transparent", // removes hover background
+                    },
+                    padding: 1.5,
+                    // optional: remove default padding if needed
+                  }}
+                >
+                  <Typography sx={{ textAlign: "center" }}>
+                    <Link
+                      to="/"
+                      className="flex items-center gap-2 hover:bg-gray-100 transition-all duration-300 p-2 rounded-md pb-2"
+                    >
+                      <GrCloudSoftware /> Free Software
+                    </Link>
+
+                    <Link
+                      to="/"
+                      className="flex items-center gap-2 hover:bg-gray-100 transition-all duration-300  p-2 rounded-md "
+                    >
+                      <GrResources /> Free Resources
+                    </Link>
+
+                    <Link
+                      to="/"
+                      // onClick={handleLogout}
+                      className="flex items-center gap-2 p-2 hover:bg-gray-100 transition-all duration-300 rounded-md"
+                    >
+                      <SiCodementor /> Join as a Mentor
+                    </Link>
+                    <Link
+                      to="/"
+                      // onClick={handleLogout}
+                      className="flex items-center gap-2 p-2 hover:bg-gray-100 transition-all duration-300 rounded-md"
+                    >
+                      <AiOutlineTeam /> Our Team
+                    </Link>
+                    <Link
+                      to="/"
+                      // onClick={handleLogout}
+                      className="flex items-center gap-2 p-2 hover:bg-gray-100 transition-all duration-300 rounded-md"
+                    >
+                      <FaArrowRightFromBracket /> Our Agency
+                    </Link>
+
+                    <HashLink
+                      to="/about#faq"
+                      className="flex items-center gap-2 p-2 hover:bg-gray-100 transition-all duration-300 rounded-md"
+                    >
+                      <FaQ /> FAQ
+                    </HashLink>
+                  </Typography>
+                </MenuItem>
+              </Menu>
+            </Box>
+          </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
 
 // import React, { useState } from "react";
 // import { Link } from "react-router-dom";

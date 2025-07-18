@@ -19,11 +19,7 @@ const ContactPage = () => {
           {/* Phone Section */}
           <div className="bg-white/95 shadow-md rounded border p-6">
             <div className="flex justify-center mb-3">
-              <img
-                src={hotline}
-                alt="Hotline"
-                className="w-16 h-16"
-              />
+              <img src={hotline} alt="Hotline" className="w-16 h-16" />
             </div>
             <h3 className="text-lg font-semibold">
               Call or <span className="text-green-600">Whatsapp</span>
@@ -96,7 +92,7 @@ const ContactPage = () => {
         </div>
       </section>
 
-      <div  className="w-full h-[400px] rounded-xl overflow-hidden shadow-lg border">
+      <div className="w-11/12 h-[400px] rounded-xl overflow-hidden shadow-lg border">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.532293918768!2d91.8127519!3d22.3335215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30acd975e74cda55%3A0x94027122a25df466!2sLifeline%20IT%20Training%20Institute!5e0!3m2!1sen!2sbd!4v1750874391220!5m2!1sen!2sbd"
           width="100%"
