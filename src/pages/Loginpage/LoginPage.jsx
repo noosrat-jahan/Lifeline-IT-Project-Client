@@ -56,7 +56,7 @@ const LoginPage = () => {
           confirmButtonText: "Cool!",
         })
         setTimeout(() => {
-          navigate("/")
+          window.location.href = `${import.meta.env.VITE_DASHBOARD_PAGE}`;
         }, 3000)
       }
     } catch (error) {

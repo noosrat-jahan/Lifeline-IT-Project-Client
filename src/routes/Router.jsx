@@ -13,6 +13,7 @@ import SuccessStory from "@/pages/SuccessStory/SuccessStory"
 import StudentReview from "@/pages/StudentReview/StudentReview"
 import CertificateVerify from "@/pages/CertificateVerify/CertificateVerify"
 import CourseDetails from "@/pages/CourseDetails/CourseDetails"
+import ErrorPage from "@/pages/Error/ErrorPage"
 
 const Router = createBrowserRouter([
   {
@@ -69,6 +70,7 @@ const Router = createBrowserRouter([
         element: <RegisterPage></RegisterPage>,
       },
     ],
+    errorElement: <ErrorPage />
   },
 ])
 
