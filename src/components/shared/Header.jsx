@@ -1,29 +1,28 @@
-
-import React, { useEffect, useState } from "react";
-import logo from "../../assets/Website Logo.png";
-import { HiAdjustments } from "react-icons/hi";
-import Paper from "@mui/material/Paper";
-import InputBase from "@mui/material/InputBase";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
-import SearchIcon from "@mui/icons-material/Search";
-import { Switch } from "@/components/ui/switch";
-import Navbar from "./Navbar";
-import { Link, useNavigate } from "react-router-dom";
-import { FaArrowRight } from "react-icons/fa";
-import axios from "axios";
-import { AiOutlineMenuFold } from "react-icons/ai";
-import { IoMdClose } from "react-icons/io";
+import React, { useEffect, useState } from "react"
+import logo from "../../assets/Website Logo.png"
+import { HiAdjustments } from "react-icons/hi"
+import Paper from "@mui/material/Paper"
+import InputBase from "@mui/material/InputBase"
+import IconButton from "@mui/material/IconButton"
+import MenuIcon from "@mui/icons-material/Menu"
+import SearchIcon from "@mui/icons-material/Search"
+import { Switch } from "@/components/ui/switch"
+import Navbar from "./Navbar"
+import { Link, useNavigate } from "react-router-dom"
+import { FaArrowRight } from "react-icons/fa"
+import axios from "axios"
+import { AiOutlineMenuFold } from "react-icons/ai"
+import { IoMdClose } from "react-icons/io"
 
 const Header = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [user, setUser] = useState({});
-  const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [enabled, setEnabled] = useState(false);
-  const [query, setQuery] = useState("");
-  const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
-  const navigate = useNavigate();
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [user, setUser] = useState({})
+  const [isOpen, setIsOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [enabled, setEnabled] = useState(false)
+  const [query, setQuery] = useState("")
+  const [mobileSearchOpen, setMobileSearchOpen] = useState(false)
+  const navigate = useNavigate()
 
   useEffect(() => {
     const verifyLogin = async () => {
@@ -31,33 +30,33 @@ const Header = () => {
         const result = await axios.get(
           import.meta.env.VITE_API_URL + "/api/auth/check",
           { withCredentials: true }
-        );
+        )
         if (result.status === 200 && result.data.status === true) {
-          setIsLoggedIn(true);
-          setUser(result.data.user);
+          setIsLoggedIn(true)
+          setUser(result.data.user)
         }
       } catch (error) {
-        setIsLoggedIn(false);
-        console.error("Login check error:", error.message);
+        setIsLoggedIn(false)
+        console.error("Login check error:", error.message)
       }
-    };
-    verifyLogin();
-  }, []);
+    }
+    verifyLogin()
+  }, [])
 
-  const toggleNavbar = () => setIsOpen(!isOpen);
+  const toggleNavbar = () => setIsOpen(!isOpen)
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    const handleScroll = () => setIsScrolled(window.scrollY > 50)
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   const handleSearch = (e) => {
-    e.preventDefault();
-    if (!query.trim()) return;
-    navigate("/courses", { state: { search: query } });
-    setMobileSearchOpen(false); // close floating search if on mobile
-  };
+    e.preventDefault()
+    if (!query.trim()) return
+    navigate("/courses", { state: { search: query } })
+    setMobileSearchOpen(false) // close floating search if on mobile
+  }
 
   return (
     <div className="p-3 flex items-center justify-around">
@@ -139,7 +138,13 @@ const Header = () => {
           </div>
 
           {/* Login/Dashboard button */}
-          <Link to={isLoggedIn ? "https://lifeline-it-student-dashboard.web.app/dashboard" : "/login"}>
+          <Link
+            to={
+              isLoggedIn
+                ? "https://dashboard.lifelineitinstitute.com"
+                : "/login"
+            }
+          >
             <button className="text-white text-center lg:px-[25px] px-[10px] py-[6px] lg:py-[12px] rounded-[10px] shadow-[0_0_10px_#000] bg-gradient-to-r from-[#f09619ee] via-[#e4d653] to-[#f9a917] bg-[length:200%_auto] transition-all duration-500 hover:bg-[position:right_center]  font-bold flex text-sm">
               {isLoggedIn ? "🎓 Dashboard" : "Login"}
             </button>
@@ -229,16 +234,10 @@ const Header = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Header;
-
-
-
-
-
-
+export default Header
 
 // import React from "react";
 // import logo from "../../assets/Website Logo.png";
