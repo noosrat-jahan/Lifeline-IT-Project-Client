@@ -4,6 +4,7 @@ import { Outlet } from "react-router-dom";
 import Footer from "@/components/shared/Footer";
 import Marquee from "react-fast-marquee";
 import Preloader from "@/components/shared/Preloader";
+import ErrorBoundary from "@/pages/ErrorBoundary";
 const MainLayout = () => {
   const [loading, setLoading] = useState(true);
 
@@ -20,7 +21,8 @@ const MainLayout = () => {
       {loading ? (
         <Preloader />
       ) : (
-        <div className="font-roboto bg-gradient-to-b from-[#0B254C] via-[#348fd1] to-[#041630]">
+        <ErrorBoundary>
+          <div className="font-roboto bg-gradient-to-b from-[#0B254C] via-[#348fd1] to-[#041630]">
           {/* <Marquee className="bg-gold w-full p-2  text-white">
             🚀Boost Your Skills with 90% OFF🔥 WhatsApp us: 📱 +8801867101740 |
             +8801887893100
@@ -31,6 +33,7 @@ const MainLayout = () => {
           </div>
           <Footer></Footer>
         </div>
+        </ErrorBoundary>
       )}
     </>
   );

@@ -34,6 +34,13 @@ const Navbar = () => {
 
   const [isOpen, setIsOpen] = useState(false);
   //  const toggleNavbar = () => setIsOpen(!isOpen)
+
+   const handleClick = () => {
+    // navigate("/our-courses");
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 100); // delay to ensure page loads
+  };
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -65,6 +72,7 @@ const Navbar = () => {
             <NavigationMenuLink
               asChild
               className={navigationMenuTriggerStyle()}
+              onClick={handleClick}
             >
               <Link
                 to="/"
@@ -78,6 +86,7 @@ const Navbar = () => {
             <NavigationMenuLink
               asChild
               className={navigationMenuTriggerStyle()}
+              onClick={handleClick}
             >
               <Link
                 to="/courses"
@@ -95,13 +104,13 @@ const Navbar = () => {
             <NavigationMenuContent side="bottom" align="start" sideOffset={8}>
               <ul className="grid gap-2 md:w-[100px] lg:w-[200px] ">
                 <li className="flex flex-col items-start p-4 gap-4">
-                  <NavigationMenuLink asChild>
+                  <NavigationMenuLink asChild onClick={handleClick}>
                     <Link to="/certificate">Certificate Verify</Link>
                   </NavigationMenuLink>
-                  <NavigationMenuLink asChild>
+                  <NavigationMenuLink asChild onClick={handleClick}>
                     <Link to="/success-story">Success Story</Link>
                   </NavigationMenuLink>
-                  <NavigationMenuLink asChild>
+                  <NavigationMenuLink asChild onClick={handleClick}>
                     <Link to="/student-review">Student Reviews</Link>
                   </NavigationMenuLink>
                 </li>
@@ -113,6 +122,7 @@ const Navbar = () => {
             <NavigationMenuLink
               asChild
               className={navigationMenuTriggerStyle()}
+              onClick={handleClick}
             >
               <Link
                 to="/about"
@@ -127,6 +137,7 @@ const Navbar = () => {
             <NavigationMenuLink
               asChild
               className={navigationMenuTriggerStyle()}
+              onClick={handleClick}
             >
               <Link
                 to="/contact"
@@ -151,7 +162,7 @@ const Navbar = () => {
                 >
                   {/* <Avatar alt="" src={''} /> */}
                   <Link
-                    to=""
+                    to="#"
                     className="bg-transparent text-navmenu text-xl font-roboto "
                   >
                     More

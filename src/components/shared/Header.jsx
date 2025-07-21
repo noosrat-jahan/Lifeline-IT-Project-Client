@@ -60,7 +60,7 @@ const Header = () => {
   };
 
   return (
-    <div className="p-3 flex items-center justify-around">
+    <div className="p-3 flex items-center justify-around sticky top-0 z-50 bg-[#0c2851] shadow">
       {/* Logo */}
       <div className="lg:w-3/12">
         <Link to="/">
