@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import cerbg from "../../assets/cerbg.jpg";
+import LazyLoadWrapper from "@/components/shared/LazyLoadWrapper";
 const CertificateVerify = () => {
   const [showDetails, setShowDetails] = useState(false);
   const inputRef = useRef(null);
@@ -19,6 +20,7 @@ const CertificateVerify = () => {
         className="flex justify-center items-center min-h-screen bg-cover bg-center p-5"
         style={{ backgroundImage: `url(${cerbg})` }}
       >
+        <LazyLoadWrapper></LazyLoadWrapper>
         <div className="bg-white p-[35px_30px] rounded-2xl shadow-[0_12px_30px_#00000014] max-w-[600px] w-full text-center transition ease-in-out duration-300 hover:-translate-y-0.5">
           <h2 className="text-[26px] text-[#0B254C] mb-[25px]">
             Verify Your Certificate

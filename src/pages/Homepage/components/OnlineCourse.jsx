@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa6";
 import axios from "axios";
 import { FaStar } from "react-icons/fa";
+import LazyLoadWrapper from "@/components/shared/LazyLoadWrapper";
 const OnlineCourse = () => {
   const handleClick = () => {
     // navigate("/our-courses");
@@ -36,7 +37,8 @@ const OnlineCourse = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-10">
         {data.map((course) => (
-          <div
+          <LazyLoadWrapper>
+            <div
             key={course._id}
             className="max-w-sm xl:max-w-lg h-full rounded-xl overflow-hidden shadow-md bg-white relative border border-[#f09619e2] hover:shadow-lg hover:scale-[1.02] transition duration-300 cursor-pointer flex flex-col justify-between"
           >
@@ -92,6 +94,7 @@ const OnlineCourse = () => {
               </div>
             </div>
           </div>
+          </LazyLoadWrapper>
         ))}
       </div>
       <div className="flex justify-center mt-4">

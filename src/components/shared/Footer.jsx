@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import paymentpic from "../../assets/payments.png";
 import { HashLink } from "react-router-hash-link";
 import ScrollToTop from "./ScrollToTop";
+import HelplineButton from "./HelplineButton";
 
 const Footer = () => {
   const handleClick = () => {
@@ -132,7 +133,10 @@ const Footer = () => {
           <img src={paymentpic} alt="" />
         </div>
       </div>
+      <HelplineButton></HelplineButton>
       <ScrollToTop></ScrollToTop>
+      
+      
     </footer>
   );
 };

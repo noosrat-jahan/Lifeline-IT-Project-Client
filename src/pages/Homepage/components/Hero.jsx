@@ -53,8 +53,9 @@ const Hero = () => {
           From Zero to Skilled, Your IT Journey Starts Here.
         </h1>
       </div> */}
+      {/* grid grid-cols-1 grid-flow-row-reverse lg:grid-flow-row md:grid-cols-2 */}
 
-      <div className="grid grid-cols-1 grid-flow-row-reverse lg:grid-flow-row md:grid-cols-2 gap-4 lg:gap-28 text-left lg:pt-4">
+      <div className=" flex flex-col-reverse lg:flex-row  gap-8 lg:gap-24 text-left lg:pt-4">
         {/* left section  */}
         <div className="flex flex-col items-start gap-5">
           <h1 className="text-secondary font-poppins text-2xl md:text-3xl lg:text-4xl font-bold lg:leading-snug whitespace-pre-line">
