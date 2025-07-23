@@ -141,8 +141,7 @@ const Header = () => {
           <Link
             to={
               isLoggedIn
-                ? (window.location.href =
-                    "https://dashboard.lifelineitinstitute.com")
+                ? "https://dashboard.lifelineitinstitute.com"
                 : "/login"
             }
           >
