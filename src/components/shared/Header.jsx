@@ -77,16 +77,16 @@ const Header = () => {
   };
 
   return (
-    <div className="p-3 flex items-center justify-around sticky top-0 z-50 bg-[#0c2851] shadow">
+    <div className="p-2 flex items-center justify-around sticky top-0 z-50 bg-[#0c2851] shadow">
       {/* Logo */}
       <div className="lg:w-3/12">
         <Link to="/">
-          <img src={logo} alt="Logo" className="w-full md:w-1/2 lg:w-full" />
+          <img src={logo} alt="Logo" className="w-full md:w-3/4 " />
         </Link>
       </div>
 
       {/* Main Controls */}
-      <div className="flex lg:flex-col items-center lg:gap-5">
+      <div className="flex lg:flex-col items-center lg:gap-3">
         <div className="flex items-center justify-around gap-4">
           {/* Adjustments icon (desktop only) */}
           <div className="text-primary bg-secondary rounded-sm p-2 text-lg hidden lg:block">
@@ -149,7 +149,7 @@ const Header = () => {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
               />
-              <IconButton type="submit" sx={{ p: "10px" }}>
+              <IconButton type="submit" sx={{ p: "8px" }}>
                 <SearchIcon />
               </IconButton>
             </Paper>
@@ -163,14 +163,14 @@ const Header = () => {
                 : "/login"
             }
           >
-            <button className="text-white text-center lg:px-[25px] px-[10px] py-[6px] lg:py-[12px] rounded-[10px] shadow-[0_0_10px_#000] bg-gradient-to-r from-[#f09619ee] via-[#e4d653] to-[#f9a917] bg-[length:200%_auto] transition-all duration-500 hover:bg-[position:right_center]  font-bold flex text-sm">
+            <button className="text-white text-sm lg:text-base text-center lg:px-[22px] px-[12px] py-[6px] lg:py-[11px] rounded-[10px] shadow-[0_0_10px_#000] bg-gradient-to-r from-[#f09619ee] via-[#d3c440] to-[#f9a917] bg-[length:200%_auto] transition-all duration-500 hover:bg-[position:right_center]  font-bold flex">
               {isLoggedIn ? "🎓 Dashboard" : "Login"}
             </button>
           </Link>
 
           {/* Success Stories (desktop only) */}
           <Link to="/success-story" className="hidden lg:flex">
-            <button className="m-2 px-[30px] py-[12px] text-center uppercase transition-all duration-500 bg-[linear-gradient(to_right,_#249ffd_2%,_#3a7bd5_58%,_#00d2ff_100%)] bg-[length:200%_auto] text-white shadow-[0_0_15px_#000] rounded-[10px]  hover:bg-[position:right_center] hover:text-white flex items-center gap-3 font-bold">
+            <button className="m-2 px-[26px] py-[12px] text-center uppercase transition-all duration-500 bg-[linear-gradient(to_right,_#249ffd_2%,_#3a7bd5_58%,_#00d2ff_100%)] bg-[length:200%_auto] text-white shadow-[0_0_15px_#000] rounded-[10px]  hover:bg-[position:right_center] hover:text-white flex items-center gap-3 font-bold">
               Success Stories <FaArrowRight />
             </button>
           </Link>
@@ -232,49 +232,49 @@ const Header = () => {
                 <Link
                   onClick={handleClick}
                   to="/"
-                  className="hover:bg-gray-200 rounded p-2 hover:text-black"
+                  className="bg-gray-200 rounded px-3 py-1 text-black"
                 >
                   Home
                 </Link>
                 <Link
                   onClick={handleClick}
                   to="/courses"
-                  className="hover:bg-gray-200 rounded p-2 hover:text-black"
+                  className="bg-gray-200 rounded px-3 py-1 text-black"
                 >
                   Courses
                 </Link>
                 <Link
                   onClick={handleClick}
                   to="/certificate"
-                  className="hover:bg-gray-200 rounded p-2 hoveonClick={handleClick} r:text-black"
+                  className="bg-gray-200 rounded px-3 py-1 text-black"
                 >
                   Certificate Verify
                 </Link>
                 <Link
                   onClick={handleClick}
                   to="/success-story"
-                  className="hover:bg-gray-200 rounded p-2 hover:text-black"
+                  className="bg-gray-200 rounded px-3 py-1 text-black"
                 >
                   Success Story
                 </Link>
                 <Link
                   onClick={handleClick}
                   to="/student-review"
-                  className="hover:bg-gray-200 rounded p-2 hover:text-black"
+                  className="bg-gray-200 rounded px-3 py-1 text-black"
                 >
                   Student Reviews
                 </Link>
                 <Link
                   onClick={handleClick}
                   to="/about"
-                  className="hover:bg-gray-200 rounded p-2 hover:text-black"
+                  className="bg-gray-200 rounded px-3 py-1 text-black"
                 >
                   About Us
                 </Link>
                 <Link
                   onClick={handleClick}
                   to="/contact"
-                  className="hover:bg-gray-200 rounded p-2 hover:text-black"
+                  className="bg-gray-200 rounded px-3 py-1 text-black"
                 >
                   Contact
                 </Link>
@@ -282,43 +282,43 @@ const Header = () => {
                 {/* more options  */}
                 <Link
                   to="/"
-                  className="flex items-center gap-2 hover:bg-gray-100 transition-all duration-300 p-2 rounded-md pb-2"
+                  className="bg-gray-200 rounded px-3 py-1 text-black"
                 >
                    Free Software
                 </Link>
 
                 <Link
                   to="/"
-                  className="flex items-center gap-2 hover:bg-gray-100 transition-all duration-300  p-2 rounded-md "
+                 className="bg-gray-200 rounded px-3 py-1 text-black"
                 >
                    Free Resources
                 </Link>
 
                 <Link
                   to="/"
-                  // onClick={handleLogout}
-                  className="flex items-center gap-2 p-2 hover:bg-gray-100 transition-all duration-300 rounded-md"
+                
+                  className="bg-gray-200 rounded px-3 py-1 text-black"
                 >
                    Join as a Mentor
                 </Link>
                 <Link
                   to="/"
-                  // onClick={handleLogout}
-                  className="flex items-center gap-2 p-2 hover:bg-gray-100 transition-all duration-300 rounded-md"
+                 
+                  className="bg-gray-200 rounded px-3 py-1 text-black"
                 >
                    Our Team
                 </Link>
                 <Link
                   to="/"
                   // onClick={handleLogout}
-                  className="flex items-center gap-2 p-2 hover:bg-gray-100 transition-all duration-300 rounded-md"
+                 className="bg-gray-200 rounded px-3 py-1 text-black"
                 >
                    Our Agency
                 </Link>
 
                 <HashLink
                   to="/about#faq"
-                  className="flex items-center gap-2 p-2 hover:bg-gray-100 transition-all duration-300 rounded-md"
+                 className="bg-gray-200 rounded px-3 py-1 text-black"
                 >
                    FAQ
                 </HashLink>
