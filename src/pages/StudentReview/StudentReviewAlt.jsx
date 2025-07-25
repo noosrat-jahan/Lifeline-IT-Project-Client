@@ -4,20 +4,7 @@ import Marquee from "react-fast-marquee";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-
-import "../../App.css";
-
-// import required modules
-import { Pagination, Autoplay, Navigation } from "swiper/modules";
-import TestimonialCard from "./Components/TestimonialCard ";
-
-const StudentReview = () => {
+const StudentReviewAlt = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
@@ -33,8 +20,8 @@ const StudentReview = () => {
   }, []);
 
   const fiveReviews = [];
-  for (let i = 0; i < reviews.length; i += 6) {
-    fiveReviews.push(reviews.slice(i, i + 6));
+  for (let i = 0; i < reviews.length; i += 5) {
+    fiveReviews.push(reviews.slice(i, i + 5));
   }
   console.log(fiveReviews);
   return (
@@ -57,35 +44,46 @@ const StudentReview = () => {
       {/* review displaying section  */}
       <div className="bg-white py-10 mt-6">
         <div className="space-y-5  w-11/12 mx-auto  relative overflow-hidden ">
-          {fiveReviews.map((reviews, idx) => (
-            <Swiper
-              key={reviews.length}
-              pagination={{ clickable: true }}
-              spaceBetween={30}
-              loop={true}
-              autoplay={{
-                delay: 3000,
-                disableOnInteraction: false,
-                reverseDirection: idx % 2 !== 0,
-              }}
-              speed={3000}
-              modules={[Pagination, Autoplay, Navigation]}
-              className="mySwiper"
-            >
-              {reviews.map((review) => (
-                <SwiperSlide key={review.SlNo}>
-                  <TestimonialCard review={review} />
-                </SwiperSlide>
-              ))}
-            </Swiper>
+          {fiveReviews.map((reviews) => (
+            <Marquee key={reviews.length}>
+              {
+                reviews.map(review=>( <div key={review.SlNo} className="max-w-md bg-white shadow-lg rounded-lg p-6 mx-3">
+                <div className="flex items-center mb-4">
+                  <img
+                    src={review.Image}
+                    alt="Reviewer"
+                    className="w-16 h-16 rounded-full border-2 border-gray-300 object-cover"
+                  />
+                  <div className="flex items-center ml-4 space-x-2">
+                    <h3 className="text-lg font-semibold">{review.Name}</h3>
+                    <FaQuoteRight className="text-gray-400 text-xl" />
+                  </div>
+                </div>
+
+                <p className="text-gray-700 mb-4">
+                  {review.ReviewText}
+                </p>
+
+                {/* Hardcoded rating stars */}
+                <div className="flex space-x-1 text-yellow-400">
+                  <FaStar />
+                  <FaStar />
+                  <FaStar />
+                  <FaStar />
+                  <FaStar />
+                </div>
+              </div>))
+              }
+             
+            </Marquee>
           ))}
 
           {/* ✅ Fade effect for top marquee */}
-          <div className="absolute top-0 left-0 h-full w-10 bg-gradient-to-r from-[#fff] to-transparent z-20 pointer-events-none" />
+          <div className="absolute top-0 left-0 h-full w-10 bg-gradient-to-r from-[#fff] to-transparent z-10 pointer-events-none" />
           <div className="absolute top-0 right-0 h-full w-10 bg-gradient-to-l from-[#fff] to-transparent z-10 pointer-events-none" />
-
+          
           {/* ✅ Fade effect for bottom marquee */}
-          <div className="absolute bottom-0 left-0 h-full w-10 bg-gradient-to-r from-[#fff] to-transparent z-20 pointer-events-none" />
+          <div className="absolute bottom-0 left-0 h-full w-10 bg-gradient-to-r from-[#fff] to-transparent z-10 pointer-events-none" />
           <div className="absolute bottom-0 right-0 h-full w-10 bg-gradient-to-l from-[#fff] to-transparent z-10 pointer-events-none" />
         </div>
       </div>
@@ -93,4 +91,5 @@ const StudentReview = () => {
   );
 };
 
-export default StudentReview;
+export default StudentReviewAlt;
+

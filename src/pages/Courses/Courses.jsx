@@ -80,10 +80,7 @@ const OurCourses = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 py-10">
           {data.map((course) => (
             <LazyLoadWrapper key={course._id}>
-              <div
-                
-                className="max-w-sm xl:max-w-lg h-full rounded-xl overflow-hidden shadow-md bg-white relative border border-[#f09619e2] hover:shadow-lg hover:scale-[1.02] transition duration-300 cursor-pointer flex flex-col justify-between"
-              >
+              <div className="max-w-sm xl:max-w-lg h-full rounded-xl overflow-hidden shadow-md bg-white relative border border-[#f09619e2] hover:shadow-lg hover:scale-[1.02] transition duration-300 cursor-pointer flex flex-col justify-between">
                 {/* Gradient top border */}
                 <div className="h-2 bg-gradient-to-r from-[#F09819] via-[#EDDE5D] to-[#F09819]"></div>
                 {/* Course image */}
@@ -118,10 +115,10 @@ const OurCourses = () => {
                       <FaStar />
                     </p>
                   </div>
-                  <div className="flex justify-between items-start">
+                  <div className="flex justify-between  items-start w-full">
                     {/* Button */}
                     <Link to={`/courses/${course.route}`}>
-                      <button className="m-2 px-[30px] py-[10px] text-center uppercase transition-all duration-500 bg-[linear-gradient(to_right,_#249ffd_2%,_#3a7bd5_58%,_#00d2ff_100%)] bg-[length:200%_auto] text-white shadow-[0_0_10px_#000_80%] rounded-full  hover:bg-[position:right_center] hover:text-white flex items-center gap-3 font-bold">
+                      <button className=" px-[20px] py-[7px] lg:px-[30px] lg:py-[10px] text-center uppercase transition-all duration-500 bg-[linear-gradient(to_right,_#249ffd_2%,_#3a7bd5_58%,_#00d2ff_100%)] bg-[length:200%_auto] text-white shadow-[0_0_10px_#000_80%] rounded-full  hover:bg-[position:right_center] hover:text-white flex items-center gap-2 font-bold">
                         Enroll Now
                       </button>
                     </Link>

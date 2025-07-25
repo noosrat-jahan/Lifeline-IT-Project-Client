@@ -31,7 +31,7 @@ const CertificateVerify = () => {
               type="text"
               id="cerInput"
               ref={inputRef}
-              className="w-full p-[12px_18px] text-[16px] border-2 border-[#0B254C] rounded-lg outline-none transition duration-300 focus:shadow-[0_0_8px_#3e7ad3]"
+              className="w-full p-[12px_16px] text-[10px] lg:text-[16px] border-2 border-[#0B254C] rounded-lg outline-none transition duration-300 focus:shadow-[0_0_8px_#3e7ad3]"
               placeholder="Enter Certificate Number / Student ID"
             />
             <button

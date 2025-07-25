@@ -55,7 +55,7 @@ const Reviews = () => {
       <div className="bg-white py-10 mt-6">
         <div className="space-y-5  w-11/12 mx-auto  relative overflow-hidden ">
           {fiveReviews.map((reviews, index) => (
-            <Marquee key={reviews.length} direction={index % 2 === 0 ? "left" : "right"}>
+            <Marquee key={reviews.length} direction={index % 2 === 0 ? "left" : "right"} pauseOnHover>
               {reviews.map((review) => (
                 <div
                   key={review.length}

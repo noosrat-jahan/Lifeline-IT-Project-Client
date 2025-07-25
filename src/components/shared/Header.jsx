@@ -1,28 +1,29 @@
-import React, { useEffect, useState } from "react"
-import logo from "../../assets/Website Logo.png"
-import { HiAdjustments } from "react-icons/hi"
-import Paper from "@mui/material/Paper"
-import InputBase from "@mui/material/InputBase"
-import IconButton from "@mui/material/IconButton"
-import MenuIcon from "@mui/icons-material/Menu"
-import SearchIcon from "@mui/icons-material/Search"
-import { Switch } from "@/components/ui/switch"
-import Navbar from "./Navbar"
-import { Link, useNavigate } from "react-router-dom"
-import { FaArrowRight } from "react-icons/fa"
-import axios from "axios"
-import { AiOutlineMenuFold } from "react-icons/ai"
-import { IoMdClose } from "react-icons/io"
+import React, { useEffect, useState } from "react";
+import logo from "../../assets/Website Logo.png";
+import { HiAdjustments } from "react-icons/hi";
+import Paper from "@mui/material/Paper";
+import InputBase from "@mui/material/InputBase";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
+import SearchIcon from "@mui/icons-material/Search";
+import { Switch } from "@/components/ui/switch";
+import Navbar from "./Navbar";
+import { Link, useNavigate } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa";
+import axios from "axios";
+import { AiOutlineMenuFold } from "react-icons/ai";
+import { IoMdClose } from "react-icons/io";
+import { HashLink } from "react-router-hash-link";
 
 const Header = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
-  const [user, setUser] = useState({})
-  const [isOpen, setIsOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [enabled, setEnabled] = useState(false)
-  const [query, setQuery] = useState("")
-  const [mobileSearchOpen, setMobileSearchOpen] = useState(false)
-  const navigate = useNavigate()
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState({});
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [enabled, setEnabled] = useState(false);
+  const [query, setQuery] = useState("");
+  const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const verifyLogin = async () => {
@@ -30,33 +31,50 @@ const Header = () => {
         const result = await axios.get(
           import.meta.env.VITE_API_URL + "/api/auth/check",
           { withCredentials: true }
-        )
+        );
         if (result.status === 200 && result.data.status === true) {
-          setIsLoggedIn(true)
-          setUser(result.data.user)
+          setIsLoggedIn(true);
+          setUser(result.data.user);
         }
       } catch (error) {
-        setIsLoggedIn(false)
-        console.error("Login check error:", error.message)
+        setIsLoggedIn(false);
+        console.error("Login check error:", error.message);
       }
-    }
-    verifyLogin()
-  }, [])
+    };
+    verifyLogin();
+  }, []);
 
-  const toggleNavbar = () => setIsOpen(!isOpen)
+  const toggleNavbar = () => setIsOpen(!isOpen);
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50)
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleSearch = (e) => {
-    e.preventDefault()
-    if (!query.trim()) return
-    navigate("/courses", { state: { search: query } })
-    setMobileSearchOpen(false) // close floating search if on mobile
-  }
+    e.preventDefault();
+    if (!query.trim()) return;
+    navigate("/courses", { state: { search: query } });
+    setMobileSearchOpen(false); // close floating search if on mobile
+  };
+
+  const handleClick = () => {
+    // navigate("/our-courses");
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 100); // delay to ensure page loads
+  };
 
   return (
     <div className="p-3 flex items-center justify-around sticky top-0 z-50 bg-[#0c2851] shadow">
@@ -89,7 +107,7 @@ const Header = () => {
 
           {/* Floating Full-Width Search Bar */}
           {mobileSearchOpen && (
-            <div className="fixed transition-all duration-200 top-28 left-0 right-0 z-50 px-4 w-[80%] mx-auto">
+            <div className="fixed transition-all duration-200 top-20 left-0 right-0 z-50 px-4 w-[80%] mx-auto">
               <Paper
                 component="form"
                 onSubmit={handleSearch}
@@ -141,8 +159,7 @@ const Header = () => {
           <Link
             to={
               isLoggedIn
-                ? (window.location.href =
-                    "https://dashboard.lifelineitinstitute.com")
+                ? `${import.meta.env.VITE_STUDENT_DASHBOARD_URL}`
                 : "/login"
             }
           >
@@ -174,10 +191,16 @@ const Header = () => {
           <div className="text-white text-lg lg:hidden" onClick={toggleNavbar}>
             <AiOutlineMenuFold />
           </div>
+          {isOpen && (
+            <div
+              className="fixed inset-0 bg-black bg-opacity-50 z-40"
+              onClick={() => setIsOpen(false)}
+            />
+          )}
 
           {/* Mobile Drawer */}
           <div
-            className={`fixed z-10 top-0 right-0 h-screen overflow-auto lg:hidden w-11/12 bg-blue-50 border-l border-neutral-300 shadow-lg transition-transform duration-500 ease-in-out transform ${
+            className={`fixed z-50 top-0 right-0 h-screen overflow-auto lg:hidden w-11/12 bg-[#0B254C] border-l border-neutral-300 shadow-lg transition-transform duration-500 ease-in-out transform ${
               isOpen ? "translate-x-0" : "translate-x-full"
             }`}
           >
@@ -204,15 +227,101 @@ const Header = () => {
             <div className="flex-1 flex flex-col items-center justify-between gap-6 p-6">
               <ul
                 onClick={() => setIsOpen(false)}
-                className="flex flex-col items-center gap-6 text-base text-neutral-700 font-normal font-roboto"
+                className="flex flex-col items-center gap-6 text-base text-white font-normal font-roboto"
               >
-                <Link to="/">Home</Link>
-                <Link to="/courses">Courses</Link>
-                <Link to="/certificate">Certificate Verify</Link>
-                <Link to="/success-story">Success Story</Link>
-                <Link to="/student-review">Student Reviews</Link>
-                <Link to="/about">About Us</Link>
-                <Link to="/contact">Contact</Link>
+                <Link
+                  onClick={handleClick}
+                  to="/"
+                  className="hover:bg-gray-200 rounded p-2 hover:text-black"
+                >
+                  Home
+                </Link>
+                <Link
+                  onClick={handleClick}
+                  to="/courses"
+                  className="hover:bg-gray-200 rounded p-2 hover:text-black"
+                >
+                  Courses
+                </Link>
+                <Link
+                  onClick={handleClick}
+                  to="/certificate"
+                  className="hover:bg-gray-200 rounded p-2 hoveonClick={handleClick} r:text-black"
+                >
+                  Certificate Verify
+                </Link>
+                <Link
+                  onClick={handleClick}
+                  to="/success-story"
+                  className="hover:bg-gray-200 rounded p-2 hover:text-black"
+                >
+                  Success Story
+                </Link>
+                <Link
+                  onClick={handleClick}
+                  to="/student-review"
+                  className="hover:bg-gray-200 rounded p-2 hover:text-black"
+                >
+                  Student Reviews
+                </Link>
+                <Link
+                  onClick={handleClick}
+                  to="/about"
+                  className="hover:bg-gray-200 rounded p-2 hover:text-black"
+                >
+                  About Us
+                </Link>
+                <Link
+                  onClick={handleClick}
+                  to="/contact"
+                  className="hover:bg-gray-200 rounded p-2 hover:text-black"
+                >
+                  Contact
+                </Link>
+
+                {/* more options  */}
+                <Link
+                  to="/"
+                  className="flex items-center gap-2 hover:bg-gray-100 transition-all duration-300 p-2 rounded-md pb-2"
+                >
+                   Free Software
+                </Link>
+
+                <Link
+                  to="/"
+                  className="flex items-center gap-2 hover:bg-gray-100 transition-all duration-300  p-2 rounded-md "
+                >
+                   Free Resources
+                </Link>
+
+                <Link
+                  to="/"
+                  // onClick={handleLogout}
+                  className="flex items-center gap-2 p-2 hover:bg-gray-100 transition-all duration-300 rounded-md"
+                >
+                   Join as a Mentor
+                </Link>
+                <Link
+                  to="/"
+                  // onClick={handleLogout}
+                  className="flex items-center gap-2 p-2 hover:bg-gray-100 transition-all duration-300 rounded-md"
+                >
+                   Our Team
+                </Link>
+                <Link
+                  to="/"
+                  // onClick={handleLogout}
+                  className="flex items-center gap-2 p-2 hover:bg-gray-100 transition-all duration-300 rounded-md"
+                >
+                   Our Agency
+                </Link>
+
+                <HashLink
+                  to="/about#faq"
+                  className="flex items-center gap-2 p-2 hover:bg-gray-100 transition-all duration-300 rounded-md"
+                >
+                   FAQ
+                </HashLink>
               </ul>
 
               {/* <div
@@ -235,10 +344,10 @@ const Header = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
 
 // import React from "react";
 // import logo from "../../assets/Website Logo.png";

@@ -103,7 +103,7 @@ const AboutPage = () => {
       {/* our vision  */}
 
       <LazyLoadWrapper>
-        <div className="mt-14 w-11/12 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div className="mt-14 w-11/12 mx-auto flex flex-col-reverse lg:flex-row gap-10">
           <div className="flex flex-col text-accent items-start gap-5 text-left">
             <button className="rounded-full  bg-gold/50 px-5 py-1.5 border border-gold">
               HOW WE WORK
@@ -145,7 +145,7 @@ const AboutPage = () => {
       <LazyLoadWrapper>
         <h1
           id="faq"
-          className="mt-14 text-xl md:text-4xl lg:text-5xl text-accent scroll-smooth font-bold"
+          className="mt-14  text-xl md:text-4xl lg:text-5xl text-accent scroll-smooth font-bold"
         >
           Frequently Asked Question
         </h1>
