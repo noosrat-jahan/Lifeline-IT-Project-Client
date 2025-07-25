@@ -159,7 +159,7 @@ const Header = () => {
           <Link
             to={
               isLoggedIn
-                ? `${import.meta.env.VITE_STUDENT_DASHBOARD_URL}`
+                ? "https://dashboard.lifelineitinstitute.com"
                 : "/login"
             }
           >
